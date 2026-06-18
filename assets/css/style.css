@@ -283,6 +283,11 @@ section { padding: 100px 0; }
   border-bottom: 1px solid var(--border);
   position: relative; overflow: hidden;
 }
+.product-img img {
+  width: 100%; height: 100%; object-fit: cover; display: block;
+  transition: transform 0.5s ease;
+}
+.product-card:hover .product-img img { transform: scale(1.04); }
 .product-img-placeholder {
   font-size: 0.65rem; font-weight: 700; letter-spacing: 0.2em;
   text-transform: uppercase; color: var(--muted); opacity: 0.5;
