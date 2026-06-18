@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <script>(function(){var t=localStorage.getItem('gt-theme');if(t)document.documentElement.setAttribute('data-theme',t);})()</script>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Pump-Driven Two-Phase Liquid Cooling — Glory Technology</title>
+  <meta name="description" content="Aerospace-derived pump-driven two-phase liquid cooling technology. 20× more efficient than single-phase cooling. PUE below 1.10. Engineered for AI and high-density data centres."/>
+  <link rel="canonical" href="https://www.glory-technology.com/liquid-cooling"/>
+  <meta property="og:title" content="Pump-Driven Two-Phase Liquid Cooling — Glory Technology"/>
+  <meta property="og:description" content="Aerospace-derived cooling technology delivering PUE below 1.10 for AI and HPC data centres."/>
+  <meta property="og:image" content="https://www.glory-technology.com/assets/img/og-image.jpg"/>
+  <meta property="og:url" content="https://www.glory-technology.com/liquid-cooling"/>
+  <meta name="twitter:card" content="summary_large_image"/>
+  <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;600;800&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="assets/css/style.css"/>
+  <style>
+    /* ── Page-specific styles ── */
+    .lc-hero {
+      min-height: 92vh; display: flex; align-items: center;
+      padding-top: 68px; position: relative; overflow: hidden;
+    }
+    .lc-hero-bg {
+      position: absolute; inset: 0;
+      background: var(--bg);
+    }
+    [data-theme="dark"] .lc-hero-bg {
+      background: radial-gradient(ellipse 80% 60% at 60% 40%, rgba(232,64,0,0.08) 0%, #0D0B09 60%);
+    }
+    [data-theme="light"] .lc-hero-bg {
+      background: radial-gradient(ellipse 80% 60% at 60% 40%, rgba(26,64,96,0.06) 0%, #FAFCFF 60%);
+    }
+    .lc-hero-inner {
+      position: relative; z-index: 2;
+      max-width: 1280px; margin: 0 auto; padding: 80px 32px;
+      display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 64px; align-items: center;
+    }
+    .lc-tag {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-size: 0.65rem; font-weight: 700; letter-spacing: 0.3em;
+      text-transform: uppercase; color: var(--accent);
+      background: var(--accent-glow); border: 1px solid var(--border-strong);
+      padding: 6px 14px; border-radius: 100px; margin-bottom: 20px;
+    }
+
+    /* ── Stats bar ── */
+    .stats-bar {
+      display: grid; grid-template-columns: repeat(4,1fr);
+      border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
+      background: var(--surface);
+    }
+    .stat-cell {
+      padding: 32px 28px; border-right: 1px solid var(--border);
+      text-align: center;
+    }
+    .stat-cell:last-child { border-right: none; }
+    .stat-big { font-size: clamp(1.8rem,3vw,2.8rem); font-weight: 800; color: var(--accent); letter-spacing: -0.03em; line-height: 1; }
+    .stat-unit { font-size: 0.9rem; font-weight: 300; color: var(--muted); margin-top: 6px; }
+
+    /* ── How it works (phase diagram) ── */
+    .phase-steps { display: grid; grid-template-columns: repeat(3,1fr); gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: 10px; overflow: hidden; }
+    .phase-step { background: var(--surface); padding: 32px 28px; }
+    .phase-step-num { font-size: 2rem; font-weight: 800; color: var(--accent); opacity: 0.3; line-height: 1; margin-bottom: 12px; }
+    .phase-step h4 { font-size: 0.95rem; font-weight: 800; color: var(--text); margin-bottom: 8px; letter-spacing: -0.01em; }
+    .phase-step p { font-size: 0.85rem; font-weight: 300; color: var(--muted); line-height: 1.7; }
+
+    /* ── System tabs ── */
+    .sys-tabs { display: flex; gap: 0; border-bottom: 1px solid var(--border); margin-bottom: 40px; }
+    .sys-tab {
+      padding: 14px 28px; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.1em;
+      text-transform: uppercase; color: var(--muted); cursor: pointer;
+      border-bottom: 2px solid transparent; transition: color 0.2s, border-color 0.2s;
+      background: none; border-top: none; border-left: none; border-right: none;
+    }
+    .sys-tab:hover { color: var(--text); }
+    .sys-tab.active { color: var(--accent); border-bottom-color: var(--accent); }
+    .sys-panel { display: none; }
+    .sys-panel.active { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; }
+
+    /* ── Comparison table ── */
+    .comp-table { width: 100%; border-collapse: collapse; }
+    .comp-table th, .comp-table td { padding: 16px 20px; text-align: left; border-bottom: 1px solid var(--border); }
+    .comp-table th { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--muted); background: var(--surface); }
+    .comp-table td { font-size: 0.875rem; font-weight: 300; color: var(--text); }
+    .comp-table tr.highlight td { background: var(--accent-glow); }
+    .comp-table tr.highlight td:first-child { font-weight: 700; color: var(--accent); }
+    .badge { display: inline-flex; align-items: center; gap: 4px; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.08em; padding: 2px 9px; border-radius: 100px; }
+    .badge-good { background: rgba(59,180,100,0.12); color: #2a9a56; border: 1px solid rgba(59,180,100,0.25); }
+    .badge-mid  { background: rgba(230,160,30,0.12); color: #b07800; border: 1px solid rgba(230,160,30,0.25); }
+    .badge-bad  { background: rgba(220,50,50,0.10);  color: #cc2222; border: 1px solid rgba(220,50,50,0.20); }
+
+    /* ── Patent strip ── */
+    .patent-row { display: flex; gap: 16px; flex-wrap: wrap; margin-top: 24px; }
+    .patent-pill {
+      font-size: 0.75rem; font-weight: 600; color: var(--text-2);
+      background: var(--surface); border: 1px solid var(--border);
+      padding: 8px 16px; border-radius: 6px;
+    }
+
+    /* ── SVG diagram helpers ── */
+    .diagram-wrap { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 24px; }
+    .diagram-wrap svg { width: 100%; height: auto; display: block; }
+    svg .d-label { font-family: 'Barlow', sans-serif; font-size: 11px; font-weight: 600; }
+    svg .d-sub   { font-family: 'Barlow', sans-serif; font-size: 9px; font-weight: 300; }
+
+    /* Cold plate animation */
+    @keyframes flowRight { 0%{stroke-dashoffset:200} 100%{stroke-dashoffset:0} }
+    @keyframes pulseHeat { 0%,100%{opacity:0.5} 50%{opacity:1} }
+    .flow-line { stroke-dasharray:8 4; animation: flowRight 2s linear infinite; }
+    .heat-src  { animation: pulseHeat 1.5s ease-in-out infinite; }
+
+    /* Phase change SVG animation */
+    @keyframes bubble { 0%{transform:translateY(0) scale(1)} 100%{transform:translateY(-40px) scale(0.6); opacity:0} }
+    .bubble { animation: bubble 1.8s ease-in infinite; }
+    .bubble:nth-child(2){animation-delay:0.3s}
+    .bubble:nth-child(3){animation-delay:0.7s}
+    .bubble:nth-child(4){animation-delay:1.1s}
+    .bubble:nth-child(5){animation-delay:0.5s}
+
+    /* ── Image grid ── */
+    .img-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 16px; }
+    .img-box { border-radius: 8px; overflow: hidden; border: 1px solid var(--border); }
+    .img-box img { width:100%; height:200px; object-fit:cover; display:block; }
+
+    /* ── Responsive ── */
+    @media(max-width:1024px){
+      .lc-hero-inner { grid-template-columns:1fr; }
+      .stats-bar { grid-template-columns:repeat(2,1fr); }
+      .stats-bar .stat-cell:nth-child(2){ border-right:none; }
+      .phase-steps { grid-template-columns:1fr; }
+      .sys-panel.active { grid-template-columns:1fr; }
+      .img-grid { grid-template-columns:1fr; }
+    }
+    @media(max-width:768px){
+      .stats-bar { grid-template-columns:1fr 1fr; }
+      .comp-table th:nth-child(n+4), .comp-table td:nth-child(n+4) { display:none; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── NAV ── -->
+<nav class="nav" role="navigation">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">GLORY<span>.</span>TECH</a>
+    <ul class="nav-links">
+      <li><a href="products.html" data-en="Products" data-zh="产品">Products</a></li>
+      <li><a href="solutions.html" data-en="Solutions" data-zh="解决方案">Solutions</a></li>
+      <li><a href="about.html" data-en="About" data-zh="关于我们">About</a></li>
+      <li><a href="contact.html" data-en="Contact" data-zh="联系我们">Contact</a></li>
+    </ul>
+    <div class="nav-controls">
+      <button class="ctrl-btn" id="lang-btn" aria-label="Switch language"><span class="lang-label">中</span></button>
+      <button class="ctrl-btn" id="theme-btn" aria-label="Toggle theme">
+        <span class="theme-icon"><svg viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></span>
+        <span class="theme-label">Dark</span>
+      </button>
+    </div>
+    <button class="nav-toggle" aria-label="Open menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="nav-mobile">
+  <a href="products.html" data-en="Products" data-zh="产品">Products</a>
+  <a href="solutions.html" data-en="Solutions" data-zh="解决方案">Solutions</a>
+  <a href="about.html" data-en="About" data-zh="关于我们">About</a>
+  <a href="contact.html" data-en="Contact" data-zh="联系我们">Contact</a>
+</div>
+
+<!-- ── HERO ── -->
+<section class="lc-hero" aria-label="Product hero">
+  <div class="lc-hero-bg" aria-hidden="true"></div>
+  <div class="lc-hero-inner">
+    <div>
+      <div class="lc-tag reveal" data-en="Data Centre Cooling Technology" data-zh="数据中心冷却技术">Data Centre Cooling Technology</div>
+      <h1 class="display-xl reveal" data-d="60">
+        <span data-en-html="Pump-Driven<br><em>Two-Phase</em><br>Liquid Cooling" data-zh-html="泵驱<br><em>两相</em><br>液冷技术">Pump-Driven<br><em>Two-Phase</em><br>Liquid Cooling</span>
+      </h1>
+      <p class="body-lg reveal" data-d="140" style="max-width:520px; margin:20px 0 36px;"
+        data-en="Aerospace-derived technology that solves the heat dissipation challenge of high-power AI chips — delivering green, efficient, precise and safe cooling for the next generation of data centres."
+        data-zh="源自航空航天领域的技术，解决高功率AI芯片的散热难题——为下一代数据中心提供绿色、高效、精确且安全的冷却解决方案。">
+        Aerospace-derived technology that solves the heat dissipation challenge of high-power AI chips — delivering green, efficient, precise and safe cooling for the next generation of data centres.
+      </p>
+      <div class="hero-actions reveal" data-d="200">
+        <a href="contact.html" class="btn btn-primary" data-en="Request a Consultation" data-zh="申请咨询">Request a Consultation</a>
+        <a href="#how-it-works" class="btn btn-outline" data-en="How It Works" data-zh="工作原理">How It Works</a>
+      </div>
+    </div>
+
+    <!-- Hero diagram: Cold Plate SVG -->
+    <div class="diagram-wrap reveal" data-d="100" aria-label="Cold plate cooling diagram">
+      <svg viewBox="0 0 400 320" xmlns="http://www.w3.org/2000/svg">
+        <!-- Background grid subtle -->
+        <defs>
+          <pattern id="g" width="20" height="20" patternUnits="userSpaceOnUse">
+            <path d="M 20 0 L 0 0 0 20" fill="none" stroke="currentColor" stroke-width="0.3" opacity="0.12"/>
+          </pattern>
+          <marker id="arr" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto">
+            <path d="M0,0 L6,3 L0,6 Z" fill="var(--accent)"/>
+          </marker>
+          <marker id="arr-blue" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto">
+            <path d="M0,0 L6,3 L0,6 Z" fill="#4A90B8"/>
+          </marker>
+        </defs>
+        <rect width="400" height="320" fill="url(#g)" rx="6"/>
+
+        <!-- COLD PLATE body -->
+        <rect x="120" y="100" width="160" height="110" rx="6" fill="none" stroke="var(--accent)" stroke-width="1.5" opacity="0.7"/>
+        <text x="200" y="92" text-anchor="middle" fill="var(--accent)" class="d-label">Two-Phase Cold Plate</text>
+        <text x="200" y="103" text-anchor="middle" fill="var(--muted)" class="d-sub">0.5mm microchannels</text>
+
+        <!-- Microchannels -->
+        <line x1="130" y1="120" x2="270" y2="120" stroke="var(--accent-2)" stroke-width="1.5" opacity="0.6"/>
+        <line x1="130" y1="133" x2="270" y2="133" stroke="var(--accent-2)" stroke-width="1.5" opacity="0.6"/>
+        <line x1="130" y1="146" x2="270" y2="146" stroke="var(--accent-2)" stroke-width="1.5" opacity="0.6"/>
+        <line x1="130" y1="159" x2="270" y2="159" stroke="var(--accent-2)" stroke-width="1.5" opacity="0.6"/>
+        <line x1="130" y1="172" x2="270" y2="172" stroke="var(--accent-2)" stroke-width="1.5" opacity="0.6"/>
+        <line x1="130" y1="185" x2="270" y2="185" stroke="var(--accent-2)" stroke-width="1.5" opacity="0.6"/>
+        <line x1="130" y1="198" x2="270" y2="198" stroke="var(--accent-2)" stroke-width="1.5" opacity="0.6"/>
+
+        <!-- Flow arrows (animated) -->
+        <line x1="140" y1="126" x2="260" y2="126" stroke="var(--accent)" stroke-width="1.2" stroke-dasharray="8 4" class="flow-line"/>
+        <line x1="260" y1="152" x2="140" y2="152" stroke="#4A90B8" stroke-width="1.2" stroke-dasharray="8 4" class="flow-line" style="animation-delay:0.4s"/>
+        <line x1="140" y1="178" x2="260" y2="178" stroke="var(--accent)" stroke-width="1.2" stroke-dasharray="8 4" class="flow-line" style="animation-delay:0.8s"/>
+
+        <!-- Heat source (CPU chip) -->
+        <rect x="145" y="220" width="110" height="50" rx="4" fill="var(--accent)" opacity="0.15" class="heat-src"/>
+        <rect x="145" y="220" width="110" height="50" rx="4" fill="none" stroke="var(--accent)" stroke-width="1.5"/>
+        <text x="200" y="240" text-anchor="middle" fill="var(--accent)" class="d-label">CPU / GPU</text>
+        <text x="200" y="254" text-anchor="middle" fill="var(--muted)" class="d-sub">Heat Source  &gt;600W</text>
+
+        <!-- Connection lines: chip to plate -->
+        <line x1="200" y1="220" x2="200" y2="210" stroke="var(--accent)" stroke-width="2" stroke-dasharray="3 2"/>
+
+        <!-- Input/output pipes -->
+        <!-- Liquid in (left) -->
+        <line x1="10" y1="145" x2="120" y2="145" stroke="#4A90B8" stroke-width="2.5" marker-end="url(#arr-blue)"/>
+        <text x="5" y="137" fill="#4A90B8" class="d-sub" text-anchor="start">Liquid</text>
+        <text x="5" y="148" fill="#4A90B8" class="d-sub" text-anchor="start">Refrigerant</text>
+
+        <!-- Vapor out (right) -->
+        <line x1="280" y1="145" x2="390" y2="145" stroke="var(--accent)" stroke-width="2.5" marker-end="url(#arr)"/>
+        <text x="285" y="137" fill="var(--accent)" class="d-sub">Liquid-Vapor</text>
+        <text x="285" y="148" fill="var(--accent)" class="d-sub">Mixture Out</text>
+
+        <!-- Bubbles (phase change) -->
+        <g transform="translate(200,155)">
+          <circle cx="-20" cy="0" r="4" fill="var(--accent)" opacity="0.5" class="bubble"/>
+          <circle cx="0" cy="5" r="5.5" fill="var(--accent)" opacity="0.6" class="bubble"/>
+          <circle cx="20" cy="-2" r="3.5" fill="var(--accent)" opacity="0.4" class="bubble"/>
+          <circle cx="-10" cy="-8" r="3" fill="var(--accent)" opacity="0.5" class="bubble"/>
+          <circle cx="12" cy="8" r="4" fill="var(--accent)" opacity="0.45" class="bubble"/>
+        </g>
+
+        <!-- Precision label -->
+        <rect x="10" y="275" width="380" height="34" rx="4" fill="var(--accent-glow)" stroke="var(--border-strong)" stroke-width="1"/>
+        <text x="200" y="289" text-anchor="middle" fill="var(--text)" class="d-label">Temperature Control: 25°C – 85°C  ±1.5°C precision</text>
+        <text x="200" y="302" text-anchor="middle" fill="var(--muted)" class="d-sub">Pump-driven pressure adjusts boiling point dynamically</text>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- ── STATS BAR ── -->
+<div class="stats-bar">
+  <div class="stat-cell reveal">
+    <div class="stat-big">20×</div>
+    <div class="stat-unit" data-en="More efficient than single-phase liquid cooling" data-zh="比单相液冷效率高20倍">More efficient than single-phase liquid cooling</div>
+  </div>
+  <div class="stat-cell reveal" data-d="80">
+    <div class="stat-big">&lt;1.10</div>
+    <div class="stat-unit" data-en="Annual PUE (Dual-Loop system)" data-zh="全年PUE（双循环系统）">Annual PUE (Dual-Loop system)</div>
+  </div>
+  <div class="stat-cell reveal" data-d="160">
+    <div class="stat-big">±1.5°C</div>
+    <div class="stat-unit" data-en="Chip temperature control precision" data-zh="芯片温度控制精度">Chip temperature control precision</div>
+  </div>
+  <div class="stat-cell reveal" data-d="240">
+    <div class="stat-big">600W+</div>
+    <div class="stat-unit" data-en="Per-chip heat dissipation capacity" data-zh="单芯片散热容量">Per-chip heat dissipation capacity</div>
+  </div>
+</div>
+
+<!-- ── HOW IT WORKS ── -->
+<section id="how-it-works">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="eyebrow" data-en="The Science" data-zh="工作原理">The Science</div>
+      <h2 class="display-lg" data-en="Why Two-Phase Works" data-zh="两相为何高效"><span data-en-html="Why Two-Phase<br>Works" data-zh-html="两相冷却<br>为何高效">Why Two-Phase<br>Works</span></h2>
+      <p class="body-lg" style="max-width:560px; margin: 16px auto 0;"
+        data-en="Phase change (liquid → vapour) absorbs vastly more heat than temperature rise alone. That's the physics behind every breakthrough in the system."
+        data-zh="相变（液体→蒸汽）吸收的热量远超单纯温升。这是系统每项突破背后的物理原理。">
+        Phase change (liquid → vapour) absorbs vastly more heat than temperature rise alone. That's the physics behind every breakthrough in the system.
+      </p>
+    </div>
+
+    <!-- Key principle visual + explanation -->
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;margin-bottom:64px;" class="reveal">
+      <div class="diagram-wrap">
+        <svg viewBox="0 0 380 260" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="tempGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" style="stop-color:#4A90B8;stop-opacity:1"/>
+              <stop offset="35%" style="stop-color:#4A90B8;stop-opacity:1"/>
+              <stop offset="35%" style="stop-color:var(--accent);stop-opacity:1"/>
+              <stop offset="70%" style="stop-color:var(--accent);stop-opacity:1"/>
+              <stop offset="70%" style="stop-color:#cc4400;stop-opacity:1"/>
+              <stop offset="100%" style="stop-color:#cc4400;stop-opacity:1"/>
+            </linearGradient>
+          </defs>
+          <!-- Axes -->
+          <line x1="50" y1="20" x2="50" y2="200" stroke="var(--muted)" stroke-width="1.5"/>
+          <line x1="50" y1="200" x2="350" y2="200" stroke="var(--muted)" stroke-width="1.5"/>
+          <text x="20" y="115" text-anchor="middle" fill="var(--muted)" class="d-sub" transform="rotate(-90,20,115)">Temperature</text>
+          <text x="200" y="220" text-anchor="middle" fill="var(--muted)" class="d-sub">Time / Heat added</text>
+          <!-- 100°C line -->
+          <line x1="50" y1="100" x2="350" y2="100" stroke="var(--border)" stroke-width="1" stroke-dasharray="4 3"/>
+          <text x="44" y="103" text-anchor="end" fill="var(--muted)" class="d-sub">100°C</text>
+          <!-- Curve: sensible → phase change (flat) → sensible -->
+          <polyline points="60,195 130,100 220,100 290,40" fill="none" stroke="var(--accent)" stroke-width="2.5"/>
+          <!-- Shaded latent heat area -->
+          <rect x="130" y="100" width="90" height="100" fill="var(--accent)" opacity="0.1"/>
+          <!-- Labels -->
+          <text x="85" y="160" fill="var(--muted)" class="d-sub">Sensible</text>
+          <text x="85" y="170" fill="var(--muted)" class="d-sub">Heat</text>
+          <text x="165" y="160" fill="var(--accent)" class="d-sub" text-anchor="middle" font-weight="700">Latent</text>
+          <text x="165" y="172" fill="var(--accent)" class="d-sub" text-anchor="middle" font-weight="700">Heat</text>
+          <text x="310" y="60" fill="var(--muted)" class="d-sub">Sensible</text>
+          <!-- 1000x annotation -->
+          <rect x="80" y="22" width="215" height="38" rx="4" fill="var(--accent-glow)" stroke="var(--border-strong)" stroke-width="1"/>
+          <text x="188" y="38" text-anchor="middle" fill="var(--accent)" class="d-label" font-weight="800">1000× more efficient</text>
+          <text x="188" y="52" text-anchor="middle" fill="var(--muted)" class="d-sub">vs air cooling  ·  20× vs single-phase liquid</text>
+        </svg>
+      </div>
+      <div>
+        <div class="eyebrow" data-en="The Physics" data-zh="物理原理">The Physics</div>
+        <h3 class="display-md" style="margin-bottom:20px;" data-en="Latent Heat is the Advantage" data-zh="潜热是核心优势">Latent Heat is the Advantage</h3>
+        <p style="font-size:0.95rem;font-weight:300;color:var(--muted);line-height:1.8;margin-bottom:16px;"
+          data-en="When a liquid changes to vapour, it absorbs enormous energy at a constant temperature. Our system harnesses this latent heat — refrigerant flows through 0.5mm microchannels directly on the chip surface, boiling and carrying heat away instantly."
+          data-zh="当液体变为蒸汽时，它在恒定温度下吸收大量能量。我们的系统利用这种潜热——制冷剂通过芯片表面0.5毫米微通道流动，瞬间沸腾并带走热量。">
+          When a liquid changes to vapour, it absorbs enormous energy at a constant temperature. Our system harnesses this latent heat — refrigerant flows through 0.5mm microchannels directly on the chip surface, boiling and carrying heat away instantly.
+        </p>
+        <p style="font-size:0.95rem;font-weight:300;color:var(--muted);line-height:1.8;"
+          data-en="By adjusting pump pressure, we dynamically control the boiling point — keeping chip temperatures precisely within the 25°C–85°C operating window, even as compute loads fluctuate from 200W to 600W+ without any flow rate change."
+          data-zh="通过调节泵压，我们动态控制沸点——将芯片温度精确保持在25°C–85°C运行窗口内，即使计算负载从200W波动到600W+，也无需改变流量。">
+          By adjusting pump pressure, we dynamically control the boiling point — keeping chip temperatures precisely within the 25°C–85°C operating window, even as compute loads fluctuate from 200W to 600W+ without any flow rate change.
+        </p>
+      </div>
+    </div>
+
+    <!-- 3-step process -->
+    <div class="phase-steps reveal">
+      <div class="phase-step">
+        <div class="phase-step-num">01</div>
+        <h4 data-en="Liquid enters cold plate" data-zh="液体进入冷板">Liquid enters cold plate</h4>
+        <p data-en="Pump drives liquid refrigerant through 0.5mm microchannels bonded directly to the CPU/GPU surface. Chip heat begins absorbing into the refrigerant." data-zh="泵驱动液态制冷剂通过直接键合在CPU/GPU表面的0.5毫米微通道。芯片热量开始被制冷剂吸收。">Pump drives liquid refrigerant through 0.5mm microchannels bonded directly to the CPU/GPU surface. Chip heat begins absorbing into the refrigerant.</p>
+      </div>
+      <div class="phase-step">
+        <div class="phase-step-num">02</div>
+        <h4 data-en="Phase change occurs" data-zh="相变发生">Phase change occurs</h4>
+        <p data-en="Refrigerant boils within the channels, absorbing latent heat at constant temperature. The vapour content scales automatically with chip load — no flow adjustment needed." data-zh="制冷剂在通道内沸腾，在恒定温度下吸收潜热。蒸汽含量随芯片负载自动调整——无需调整流量。">Refrigerant boils within the channels, absorbing latent heat at constant temperature. The vapour content scales automatically with chip load — no flow adjustment needed.</p>
+      </div>
+      <div class="phase-step">
+        <div class="phase-step-num">03</div>
+        <h4 data-en="Heat rejected outdoors" data-zh="热量排至室外">Heat rejected outdoors</h4>
+        <p data-en="The liquid-vapour mixture flows to the CDU and outdoor dry cooler. CPU/GPU temps (50–75°C) are higher than ambient, so natural air dissipation works year-round — eliminating chiller energy for most of the year." data-zh="液汽混合物流向CDU和室外干冷器。CPU/GPU温度（50-75°C）高于环境温度，因此全年自然空气散热有效——一年中大部分时间无需冷水机耗能。">The liquid-vapour mixture flows to the CDU and outdoor dry cooler. CPU/GPU temps (50–75°C) are higher than ambient, so natural air dissipation works year-round — eliminating chiller energy for most of the year.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── SYSTEM CONFIGURATIONS ── -->
+<section style="background:var(--surface);border-top:1px solid var(--border);border-bottom:1px solid var(--border);">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="eyebrow" data-en="System Configurations" data-zh="系统配置">System Configurations</div>
+      <h2 class="display-lg" data-en="Three Deployment Options" data-zh="三种部署方案"><span data-en-html="Three Deployment<br>Options" data-zh-html="三种<br>部署方案">Three Deployment<br>Options</span></h2>
+    </div>
+
+    <!-- Tabs -->
+    <div class="sys-tabs reveal">
+      <button class="sys-tab active" onclick="showTab('chip')" data-en="Chip-Level  PUE &lt;1.15" data-zh="芯片级  PUE &lt;1.15">Chip-Level &nbsp;PUE &lt;1.15</button>
+      <button class="sys-tab" onclick="showTab('bp')" data-en="Backplane-Level  PUE &lt;1.30" data-zh="背板级  PUE &lt;1.30">Backplane-Level &nbsp;PUE &lt;1.30</button>
+      <button class="sys-tab" onclick="showTab('dual')" data-en="Dual-Loop  PUE &lt;1.10" data-zh="双循环  PUE &lt;1.10">Dual-Loop &nbsp;PUE &lt;1.10</button>
+    </div>
+
+    <!-- Chip-level panel -->
+    <div id="panel-chip" class="sys-panel active reveal">
+      <div>
+        <div class="eyebrow" data-en="Configuration 01" data-zh="配置 01">Configuration 01</div>
+        <h3 class="display-md" style="margin-bottom:16px;" data-en="Chip-Level Cooling" data-zh="芯片级冷却">Chip-Level Cooling</h3>
+        <p style="font-size:0.95rem;font-weight:300;color:var(--muted);line-height:1.8;margin-bottom:20px;"
+          data-en="Two-phase cold plates attach directly to each CPU and GPU. The chip-level CDU connects to an outdoor dry cooler. CPU/GPU operating temperatures (50–75°C) are above ambient year-round, so no chiller is required — only a dry cooler for heat rejection."
+          data-zh="两相冷板直接附着在每个CPU和GPU上。芯片级CDU连接到室外干冷器。CPU/GPU工作温度（50-75°C）全年高于环境温度，因此不需要冷水机——只需干冷器进行热量排放。">
+          Two-phase cold plates attach directly to each CPU and GPU. The chip-level CDU connects to an outdoor dry cooler. CPU/GPU operating temperatures (50–75°C) are above ambient year-round, so no chiller is required — only a dry cooler for heat rejection.
+        </p>
+        <div style="display:flex;gap:24px;flex-wrap:wrap;">
+          <div><div class="stat-big" style="font-size:1.8rem;">PUE&lt;1.15</div><div class="stat-unit" data-en="Annual cabinet PUE" data-zh="全年机柜PUE">Annual cabinet PUE</div></div>
+          <div><div class="stat-big" style="font-size:1.8rem;">0</div><div class="stat-unit" data-en="Chillers required" data-zh="无需冷水机">Chillers required</div></div>
+        </div>
+      </div>
+      <div class="diagram-wrap">
+        <!-- Chip-level system diagram SVG -->
+        <svg viewBox="0 0 360 260" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <marker id="a2" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto">
+              <path d="M0,0 L6,3 L0,6 Z" fill="var(--accent)"/>
+            </marker>
+            <marker id="a3" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto">
+              <path d="M0,0 L6,3 L0,6 Z" fill="#4A90B8"/>
+            </marker>
+          </defs>
+          <!-- Cabinet -->
+          <rect x="20" y="30" width="80" height="200" rx="4" fill="none" stroke="var(--border-strong)" stroke-width="1.5"/>
+          <text x="60" y="22" text-anchor="middle" fill="var(--muted)" class="d-sub">Cabinet</text>
+          <!-- Servers in cabinet -->
+          <rect x="28" y="40" width="64" height="16" rx="2" fill="var(--surface)" stroke="var(--border)" stroke-width="1"/>
+          <rect x="28" y="62" width="64" height="16" rx="2" fill="var(--surface)" stroke="var(--border)" stroke-width="1"/>
+          <rect x="28" y="84" width="64" height="16" rx="2" fill="var(--surface)" stroke="var(--border)" stroke-width="1"/>
+          <rect x="28" y="106" width="64" height="16" rx="2" fill="var(--surface)" stroke="var(--border)" stroke-width="1"/>
+          <rect x="28" y="128" width="64" height="16" rx="2" fill="var(--surface)" stroke="var(--border)" stroke-width="1"/>
+          <!-- Cold plate markers on servers -->
+          <rect x="52" y="42" width="16" height="12" rx="1" fill="var(--accent)" opacity="0.5"/>
+          <rect x="52" y="64" width="16" height="12" rx="1" fill="var(--accent)" opacity="0.5"/>
+          <rect x="52" y="86" width="16" height="12" rx="1" fill="var(--accent)" opacity="0.5"/>
+          <rect x="52" y="108" width="16" height="12" rx="1" fill="var(--accent)" opacity="0.5"/>
+          <rect x="52" y="130" width="16" height="12" rx="1" fill="var(--accent)" opacity="0.5"/>
+
+          <!-- CDU box -->
+          <rect x="140" y="70" width="70" height="80" rx="4" fill="none" stroke="var(--accent)" stroke-width="1.5"/>
+          <text x="175" y="106" text-anchor="middle" fill="var(--accent)" class="d-label">CDU</text>
+          <text x="175" y="118" text-anchor="middle" fill="var(--muted)" class="d-sub">Coolant</text>
+          <text x="175" y="128" text-anchor="middle" fill="var(--muted)" class="d-sub">Distribution</text>
+
+          <!-- Dry cooler -->
+          <rect x="265" y="60" width="75" height="100" rx="4" fill="none" stroke="#4A90B8" stroke-width="1.5"/>
+          <text x="302" y="108" text-anchor="middle" fill="#4A90B8" class="d-label">Outdoor</text>
+          <text x="302" y="120" text-anchor="middle" fill="#4A90B8" class="d-label">Dry Cooler</text>
+          <!-- Fan icon inside -->
+          <circle cx="302" cy="85" r="12" fill="none" stroke="#4A90B8" stroke-width="1" opacity="0.5"/>
+          <path d="M295,85 Q302,78 309,85 Q302,92 295,85" fill="#4A90B8" opacity="0.3"/>
+
+          <!-- Flow lines: vapor out (red) -->
+          <path d="M100,90 L140,90" stroke="var(--accent)" stroke-width="2" marker-end="url(#a2)" fill="none" class="flow-line"/>
+          <path d="M210,90 L265,90" stroke="var(--accent)" stroke-width="2" marker-end="url(#a2)" fill="none" class="flow-line" style="animation-delay:0.5s"/>
+          <!-- Flow lines: liquid back (blue) -->
+          <path d="M265,130 L210,130" stroke="#4A90B8" stroke-width="2" marker-end="url(#a3)" fill="none" class="flow-line" style="animation-delay:1s"/>
+          <path d="M140,130 L100,130" stroke="#4A90B8" stroke-width="2" marker-end="url(#a3)" fill="none" class="flow-line" style="animation-delay:1.5s"/>
+
+          <!-- Labels -->
+          <text x="120" y="86" fill="var(--accent)" class="d-sub" text-anchor="middle">L-V out</text>
+          <text x="120" y="144" fill="#4A90B8" class="d-sub" text-anchor="middle">Liq back</text>
+
+          <!-- PUE badge -->
+          <rect x="20" y="245" width="320" height="22" rx="4" fill="var(--accent-glow)" stroke="var(--border-strong)" stroke-width="1"/>
+          <text x="180" y="260" text-anchor="middle" fill="var(--accent)" class="d-label">Annual PUE &lt; 1.15  ·  Zero chiller required year-round</text>
+        </svg>
+      </div>
+    </div>
+
+    <!-- Backplane panel -->
+    <div id="panel-bp" class="sys-panel" style="display:none;">
+      <div>
+        <div class="eyebrow" data-en="Configuration 02" data-zh="配置 02">Configuration 02</div>
+        <h3 class="display-md" style="margin-bottom:16px;" data-en="Backplane-Level Cooling" data-zh="背板级冷却">Backplane-Level Cooling</h3>
+        <p style="font-size:0.95rem;font-weight:300;color:var(--muted);line-height:1.8;margin-bottom:20px;"
+          data-en="A two-phase liquid-vapour heat exchange backplane is mounted at the rear of each cabinet. Hot exhaust air (30–45°C) from servers passes through the backplane and is cooled back to supply temperature before leaving the rack. Ideal for retrofitting existing air-cooled facilities."
+          data-zh="在每个机柜后部安装两相液汽换热背板。来自服务器的热排气（30-45°C）通过背板，在离开机架前冷却回送风温度。适合改造现有风冷设施。">
+          A two-phase liquid-vapour heat exchange backplane is mounted at the rear of each cabinet. Hot exhaust air (30–45°C) from servers passes through the backplane and is cooled back to supply temperature before leaving the rack. Ideal for retrofitting existing air-cooled facilities.
+        </p>
+        <div style="display:flex;gap:24px;flex-wrap:wrap;">
+          <div><div class="stat-big" style="font-size:1.8rem;">PUE&lt;1.30</div><div class="stat-unit" data-en="Annual cabinet PUE" data-zh="全年机柜PUE">Annual cabinet PUE</div></div>
+          <div><div class="stat-big" style="font-size:1.8rem;">Retrofit</div><div class="stat-unit" data-en="Friendly for existing DCs" data-zh="适合现有数据中心改造">Friendly for existing DCs</div></div>
+        </div>
+      </div>
+      <div class="diagram-wrap">
+        <svg viewBox="0 0 360 260" xmlns="http://www.w3.org/2000/svg">
+          <!-- Cabinet body -->
+          <rect x="20" y="30" width="80" height="180" rx="4" fill="none" stroke="var(--border-strong)" stroke-width="1.5"/>
+          <text x="60" y="22" text-anchor="middle" fill="var(--muted)" class="d-sub">Server Cabinet</text>
+          <!-- Servers -->
+          <rect x="28" y="42" width="64" height="22" rx="2" fill="var(--surface)" stroke="var(--border)" stroke-width="1"/>
+          <rect x="28" y="72" width="64" height="22" rx="2" fill="var(--surface)" stroke="var(--border)" stroke-width="1"/>
+          <rect x="28" y="102" width="64" height="22" rx="2" fill="var(--surface)" stroke="var(--border)" stroke-width="1"/>
+          <rect x="28" y="132" width="64" height="22" rx="2" fill="var(--surface)" stroke="var(--border)" stroke-width="1"/>
+          <text x="60" y="57" text-anchor="middle" fill="var(--muted)" class="d-sub">Server</text>
+          <text x="60" y="87" text-anchor="middle" fill="var(--muted)" class="d-sub">Server</text>
+          <text x="60" y="117" text-anchor="middle" fill="var(--muted)" class="d-sub">Server</text>
+          <text x="60" y="147" text-anchor="middle" fill="var(--muted)" class="d-sub">Server</text>
+          <!-- Hot air arrows (right from servers) -->
+          <line x1="92" y1="53" x2="118" y2="53" stroke="var(--accent)" stroke-width="1.5" marker-end="url(#a2)"/>
+          <line x1="92" y1="83" x2="118" y2="83" stroke="var(--accent)" stroke-width="1.5" marker-end="url(#a2)"/>
+          <line x1="92" y1="113" x2="118" y2="113" stroke="var(--accent)" stroke-width="1.5" marker-end="url(#a2)"/>
+          <line x1="92" y1="143" x2="118" y2="143" stroke="var(--accent)" stroke-width="1.5" marker-end="url(#a2)"/>
+          <!-- Temperature labels -->
+          <text x="96" y="50" fill="var(--accent)" class="d-sub">34°C</text>
+          <text x="96" y="80" fill="var(--accent)" class="d-sub">34°C</text>
+          <!-- Backplane -->
+          <rect x="118" y="30" width="30" height="180" rx="2" fill="var(--accent)" opacity="0.15" stroke="var(--accent)" stroke-width="1.5"/>
+          <text x="133" y="118" text-anchor="middle" fill="var(--accent)" class="d-sub" transform="rotate(-90,133,118)">Backplane Heat Exchange</text>
+          <!-- Cool air out -->
+          <line x1="148" y1="53" x2="175" y2="53" stroke="#4A90B8" stroke-width="1.5" marker-end="url(#a3)"/>
+          <line x1="148" y1="83" x2="175" y2="83" stroke="#4A90B8" stroke-width="1.5" marker-end="url(#a3)"/>
+          <line x1="148" y1="113" x2="175" y2="113" stroke="#4A90B8" stroke-width="1.5" marker-end="url(#a3)"/>
+          <line x1="148" y1="143" x2="175" y2="143" stroke="#4A90B8" stroke-width="1.5" marker-end="url(#a3)"/>
+          <text x="160" y="50" fill="#4A90B8" class="d-sub">27°C</text>
+          <text x="160" y="80" fill="#4A90B8" class="d-sub">27°C</text>
+          <!-- Photo of real backplane -->
+          <rect x="210" y="40" width="130" height="140" rx="6" fill="var(--card)" stroke="var(--border)" stroke-width="1"/>
+          <text x="275" y="108" text-anchor="middle" fill="var(--muted)" class="d-sub">Backplane</text>
+          <text x="275" y="120" text-anchor="middle" fill="var(--muted)" class="d-sub">Heat Exchange</text>
+          <text x="275" y="132" text-anchor="middle" fill="var(--muted)" class="d-sub">Unit Photo</text>
+          <!-- PUE -->
+          <rect x="20" y="225" width="320" height="22" rx="4" fill="var(--accent-glow)" stroke="var(--border-strong)" stroke-width="1"/>
+          <text x="180" y="240" text-anchor="middle" fill="var(--accent)" class="d-label">Annual PUE &lt; 1.30  ·  Retrofit-friendly installation</text>
+        </svg>
+      </div>
+    </div>
+
+    <!-- Dual-loop panel -->
+    <div id="panel-dual" class="sys-panel" style="display:none;">
+      <div>
+        <div class="eyebrow" data-en="Configuration 03 — Best Performance" data-zh="配置 03 — 最佳性能">Configuration 03 — Best Performance</div>
+        <h3 class="display-md" style="margin-bottom:16px;" data-en="Dual-Loop System" data-zh="双循环系统">Dual-Loop System</h3>
+        <p style="font-size:0.95rem;font-weight:300;color:var(--muted);line-height:1.8;margin-bottom:20px;"
+          data-en="Combines chip-level cold plates AND backplane-level heat exchange in one integrated system. The dual-loop configuration achieves the highest efficiency — natural dry cooler works year-round, with a variable-frequency chiller engaged for supplementary cooling only during the hottest periods (less than ¼ of the year)."
+          data-zh="将芯片级冷板和背板级换热集成在一个系统中。双循环配置实现最高效率——室外干冷器全年运行，变频冷水机仅在最热时期（不到全年1/4的时间）提供补充冷却。">
+          Combines chip-level cold plates AND backplane-level heat exchange in one integrated system. The dual-loop configuration achieves the highest efficiency — natural dry cooler works year-round, with a variable-frequency chiller engaged for supplementary cooling only during the hottest periods (less than ¼ of the year).
+        </p>
+        <div style="display:flex;gap:24px;flex-wrap:wrap;">
+          <div><div class="stat-big" style="font-size:1.8rem;">PUE&lt;1.10</div><div class="stat-unit" data-en="Annual cabinet PUE" data-zh="全年机柜PUE">Annual cabinet PUE</div></div>
+          <div><div class="stat-big" style="font-size:1.8rem;">&lt;25%</div><div class="stat-unit" data-en="Year needing chiller" data-zh="需要冷水机的时间比例">Year needing chiller</div></div>
+        </div>
+      </div>
+      <div class="diagram-wrap">
+        <svg viewBox="0 0 360 280" xmlns="http://www.w3.org/2000/svg">
+          <!-- Cabinet + chip CDU + backplane CDU + dry cooler + chiller -->
+          <rect x="10" y="30" width="70" height="180" rx="4" fill="none" stroke="var(--border-strong)" stroke-width="1.5"/>
+          <text x="45" y="22" text-anchor="middle" fill="var(--muted)" class="d-sub">Cabinet</text>
+          <!-- Cold plates on chips (chip loop) -->
+          <rect x="18" y="42" width="54" height="12" rx="1" fill="var(--accent)" opacity="0.2" stroke="var(--accent)" stroke-width="1"/>
+          <rect x="18" y="62" width="54" height="12" rx="1" fill="var(--accent)" opacity="0.2" stroke="var(--accent)" stroke-width="1"/>
+          <rect x="18" y="82" width="54" height="12" rx="1" fill="var(--accent)" opacity="0.2" stroke="var(--accent)" stroke-width="1"/>
+          <!-- Chip CDU -->
+          <rect x="115" y="30" width="60" height="60" rx="4" fill="none" stroke="var(--accent)" stroke-width="1.5"/>
+          <text x="145" y="57" text-anchor="middle" fill="var(--accent)" class="d-sub">Chip</text>
+          <text x="145" y="68" text-anchor="middle" fill="var(--accent)" class="d-sub">CDU</text>
+          <!-- Backplane CDU -->
+          <rect x="115" y="120" width="60" height="60" rx="4" fill="none" stroke="var(--border-strong)" stroke-width="1.5"/>
+          <text x="145" y="147" text-anchor="middle" fill="var(--muted)" class="d-sub">Room</text>
+          <text x="145" y="158" text-anchor="middle" fill="var(--muted)" class="d-sub">CDU</text>
+          <!-- Dry cooler (top) -->
+          <rect x="225" y="20" width="120" height="55" rx="4" fill="none" stroke="#4A90B8" stroke-width="1.5"/>
+          <text x="285" y="44" text-anchor="middle" fill="#4A90B8" class="d-label">Dry Cooler</text>
+          <text x="285" y="56" text-anchor="middle" fill="#4A90B8" class="d-sub">Year-round natural cooling</text>
+          <!-- Chiller (bottom) -->
+          <rect x="225" y="130" width="120" height="55" rx="4" fill="none" stroke="var(--muted)" stroke-width="1.5"/>
+          <text x="285" y="154" text-anchor="middle" fill="var(--muted)" class="d-label">Chiller</text>
+          <text x="285" y="166" text-anchor="middle" fill="var(--muted)" class="d-sub">&lt;25% of year only</text>
+          <!-- Connection lines: chip loop -->
+          <path d="M80,58 L115,58" stroke="var(--accent)" stroke-width="1.5" marker-end="url(#a2)" fill="none" class="flow-line"/>
+          <path d="M175,48 L225,48" stroke="var(--accent)" stroke-width="1.5" marker-end="url(#a2)" fill="none" class="flow-line" style="animation-delay:0.4s"/>
+          <path d="M225,65 L175,65" stroke="#4A90B8" stroke-width="1.5" marker-end="url(#a3)" fill="none" class="flow-line" style="animation-delay:0.8s"/>
+          <path d="M115,70 L80,70" stroke="#4A90B8" stroke-width="1.5" marker-end="url(#a3)" fill="none" class="flow-line" style="animation-delay:1.2s"/>
+          <!-- Connection lines: room loop -->
+          <path d="M80,140 L115,140" stroke="var(--muted)" stroke-width="1.5" marker-end="url(#a2)" fill="none"/>
+          <path d="M175,155 L225,155" stroke="var(--muted)" stroke-width="1.5" marker-end="url(#a2)" fill="none"/>
+          <!-- PUE label -->
+          <rect x="10" y="250" width="340" height="22" rx="4" fill="var(--accent-glow)" stroke="var(--border-strong)" stroke-width="1"/>
+          <text x="180" y="265" text-anchor="middle" fill="var(--accent)" class="d-label">Annual PUE &lt; 1.10  ·  Best overall performance</text>
+        </svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── TECHNOLOGY COMPARISON ── -->
+<section>
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="eyebrow" data-en="Technology Comparison" data-zh="技术对比">Technology Comparison</div>
+      <h2 class="display-lg" data-en="The Best Overall Performance" data-zh="最佳综合性能"><span data-en-html="Best Overall<br>Performance" data-zh-html="最佳<br>综合性能">Best Overall<br>Performance</span></h2>
+    </div>
+    <div class="reveal" style="overflow-x:auto;">
+      <table class="comp-table">
+        <thead>
+          <tr>
+            <th data-en="Technology" data-zh="技术">Technology</th>
+            <th data-en="PUE" data-zh="PUE">PUE</th>
+            <th data-en="Equipment Cost" data-zh="设备成本">Equipment Cost</th>
+            <th data-en="Retrofittable" data-zh="可改造性">Retrofittable</th>
+            <th data-en="Leakage Risk" data-zh="泄漏风险">Leakage Risk</th>
+            <th data-en="Reliability" data-zh="可靠性">Reliability</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td data-en="Immersion Cooling" data-zh="浸没冷却">Immersion Cooling</td>
+            <td><span class="badge badge-good">&lt;1.1</span></td>
+            <td><span class="badge badge-bad" data-en="High" data-zh="高">High</span></td>
+            <td><span class="badge badge-bad" data-en="No" data-zh="否">No</span></td>
+            <td><span class="badge badge-good" data-en="Low" data-zh="低">Low</span></td>
+            <td><span class="badge badge-good" data-en="High" data-zh="高">High</span></td>
+          </tr>
+          <tr>
+            <td data-en="Spray Cooling" data-zh="喷雾冷却">Spray Cooling</td>
+            <td><span class="badge badge-good">1.1</span></td>
+            <td><span class="badge badge-bad" data-en="High" data-zh="高">High</span></td>
+            <td><span class="badge badge-bad" data-en="No" data-zh="否">No</span></td>
+            <td><span class="badge badge-mid" data-en="Medium" data-zh="中">Medium</span></td>
+            <td><span class="badge badge-good" data-en="High" data-zh="高">High</span></td>
+          </tr>
+          <tr>
+            <td data-en="Single-Phase Cold Plate" data-zh="单相冷板">Single-Phase Cold Plate</td>
+            <td><span class="badge badge-mid">1.25</span></td>
+            <td><span class="badge badge-mid" data-en="Medium" data-zh="中">Medium</span></td>
+            <td><span class="badge badge-mid" data-en="Partial" data-zh="部分">Partial</span></td>
+            <td><span class="badge badge-bad" data-en="High" data-zh="高">High</span></td>
+            <td><span class="badge badge-bad" data-en="Low" data-zh="低">Low</span></td>
+          </tr>
+          <tr class="highlight">
+            <td data-en="✦ Two-Phase Cold Plate (Ours)" data-zh="✦ 两相冷板（我们的技术）">✦ Two-Phase Cold Plate (Ours)</td>
+            <td><span class="badge badge-good">&lt;1.10</span></td>
+            <td><span class="badge badge-mid" data-en="Medium" data-zh="中">Medium</span></td>
+            <td><span class="badge badge-good" data-en="Yes" data-zh="是">Yes</span></td>
+            <td><span class="badge badge-good" data-en="None" data-zh="无">None</span></td>
+            <td><span class="badge badge-good" data-en="High" data-zh="高">High</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="font-size:0.8rem;color:var(--muted);margin-top:16px;text-align:center;" data-en="Source: Beijing TransTrue Technology Co., Ltd. product specification deck, 2025" data-zh="来源：北京真视通科技股份有限公司产品规格资料，2025年">Source: Beijing TransTrue Technology Co., Ltd. product specification deck, 2025</p>
+  </div>
+</section>
+
+<!-- ── CREDENTIALS ── -->
+<section style="background:var(--surface);border-top:1px solid var(--border);border-bottom:1px solid var(--border);">
+  <div class="container">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start;" class="reveal">
+      <div>
+        <div class="eyebrow" data-en="Intellectual Property" data-zh="知识产权">Intellectual Property</div>
+        <h2 class="display-md" style="margin-bottom:20px;" data-en="Patented & Standards-Setting Technology" data-zh="专利技术与标准制定">Patented & Standards-Setting Technology</h2>
+        <p style="font-size:0.95rem;font-weight:300;color:var(--muted);line-height:1.8;margin-bottom:24px;"
+          data-en="This technology originated in China's aerospace sector and has been commercially adapted for data centres. The manufacturer holds 8 Chinese invention patents and 1 US patent (via PCT), and has co-authored national cooling standards."
+          data-zh="该技术起源于中国航空航天领域，已商业化应用于数据中心。制造商持有8项中国发明专利和1项美国专利（通过PCT），并参与制定了国家冷却标准。">
+          This technology originated in China's aerospace sector and has been commercially adapted for data centres. The manufacturer holds 8 Chinese invention patents and 1 US patent (via PCT), and has co-authored national cooling standards.
+        </p>
+        <div style="display:flex;gap:24px;margin-bottom:28px;">
+          <div class="card" style="flex:1;padding:20px;text-align:center;">
+            <div class="stat-big" style="font-size:2.2rem;">8</div>
+            <div class="stat-unit" data-en="Chinese Invention Patents" data-zh="中国发明专利">Chinese Invention Patents</div>
+          </div>
+          <div class="card" style="flex:1;padding:20px;text-align:center;">
+            <div class="stat-big" style="font-size:2.2rem;">1</div>
+            <div class="stat-unit" data-en="US Patent (PCT)" data-zh="美国专利（PCT）">US Patent (PCT)</div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="eyebrow" data-en="National Standards" data-zh="国家标准">National Standards</div>
+        <h3 class="display-md" style="margin-bottom:20px;font-size:1.4rem;" data-en="Standards Participation" data-zh="标准制定参与">Standards Participation</h3>
+        <div class="values-list">
+          <div class="value-item" style="padding:16px 0;">
+            <div class="value-num">01</div>
+            <div class="value-text">
+              <p style="font-size:0.875rem;font-weight:400;color:var(--text);" data-en="National Standard for Cold Plate Liquid Cooling" data-zh="冷板液冷国家标准">National Standard for Cold Plate Liquid Cooling</p>
+            </div>
+          </div>
+          <div class="value-item" style="padding:16px 0;">
+            <div class="value-num">02</div>
+            <div class="value-text">
+              <p style="font-size:0.875rem;font-weight:400;color:var(--text);" data-en="National Standard for Liquid Cooling Components for IT Servers" data-zh="IT服务器液冷组件国家标准">National Standard for Liquid Cooling Components for IT Servers</p>
+            </div>
+          </div>
+          <div class="value-item" style="padding:16px 0;">
+            <div class="value-num">03</div>
+            <div class="value-text">
+              <p style="font-size:0.875rem;font-weight:400;color:var(--text);" data-en="Technical Specification for Pump-Driven Two-Phase Cold Plate Liquid Cooling in Data Centres (Chinese Society of Refrigeration)" data-zh="数据中心泵驱两相冷板液冷技术规范（中国制冷学会）">Technical Specification for Pump-Driven Two-Phase Cold Plate Liquid Cooling in Data Centres (Chinese Society of Refrigeration)</p>
+            </div>
+          </div>
+          <div class="value-item" style="padding:16px 0;">
+            <div class="value-num">04</div>
+            <div class="value-text">
+              <p style="font-size:0.875rem;font-weight:400;color:var(--text);" data-en="Beijing Energy-Saving Technology and Product Directory" data-zh="北京市节能技术和产品目录">Beijing Energy-Saving Technology and Product Directory</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CTA ── -->
+<div class="strip">
+  <div class="strip-inner">
+    <div>
+      <h2 data-en="Ready to evaluate this technology?" data-zh="准备好评估这项技术了吗？">Ready to evaluate this technology?</h2>
+      <p data-en="Our engineers will assess your facility's heat loads and recommend the right configuration — chip-level, backplane, or dual-loop." data-zh="我们的工程师将评估您设施的热负荷，并推荐合适的配置——芯片级、背板级或双循环。">Our engineers will assess your facility's heat loads and recommend the right configuration — chip-level, backplane, or dual-loop.</p>
+    </div>
+    <a href="contact.html" class="btn-strip" data-en="Talk to an Engineer" data-zh="与工程师交流">Talk to an Engineer</a>
+  </div>
+</div>
+
+<!-- ── FOOTER ── -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="index.html" class="nav-logo">GLORY<span>.</span>TECH</a>
+        <p data-en="Precision cooling solutions for the world's most demanding data centre environments." data-zh="为全球最苛刻的数据中心环境提供精密冷却解决方案。">Precision cooling solutions for the world's most demanding data centre environments.</p>
+      </div>
+      <div class="footer-col">
+        <h4 data-en="Products" data-zh="产品">Products</h4>
+        <ul>
+          <li><a href="liquid-cooling.html" data-en="Two-Phase Liquid Cooling" data-zh="两相液冷">Two-Phase Liquid Cooling</a></li>
+          <li><a href="products.html" data-en="All Products" data-zh="所有产品">All Products</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 data-en="Company" data-zh="公司">Company</h4>
+        <ul>
+          <li><a href="about.html" data-en="About Us" data-zh="关于我们">About Us</a></li>
+          <li><a href="solutions.html" data-en="Solutions" data-zh="解决方案">Solutions</a></li>
+          <li><a href="contact.html" data-en="Contact" data-zh="联系我们">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 data-en="Contact" data-zh="联系方式">Contact</h4>
+        <ul><li><a href="mailto:contact@glory-technology.com">contact@glory-technology.com</a></li></ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p data-en="© 2025 Glory Technology Pte Ltd. All rights reserved." data-zh="© 2025 荣耀科技私人有限公司。版权所有。">© 2025 Glory Technology Pte Ltd. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<div id="toast" role="status" aria-live="polite"></div>
+<script src="assets/js/main.js"></script>
+<script>
+function showTab(id) {
+  ['chip','bp','dual'].forEach(t => {
+    const panel = document.getElementById('panel-'+t);
+    const tab = document.querySelector(`[onclick="showTab('${t}')"]`);
+    if (panel) panel.style.display = t === id ? 'grid' : 'none';
+    if (panel) panel.className = 'sys-panel' + (t === id ? ' active' : '');
+    if (tab)  tab.classList.toggle('active', t === id);
+  });
+}
+</script>
+</body>
+</html>
