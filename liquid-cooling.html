@@ -23,15 +23,18 @@
       min-height: 92vh; display: flex; align-items: center;
       padding-top: 68px; position: relative; overflow: hidden;
     }
+    .lc-hero-video {
+      position: absolute; inset: 0; width: 100%; height: 100%;
+      object-fit: cover; pointer-events: none; z-index: 0;
+    }
     .lc-hero-bg {
-      position: absolute; inset: 0;
-      background: var(--bg);
+      position: absolute; inset: 0; z-index: 1;
     }
     [data-theme="dark"] .lc-hero-bg {
-      background: radial-gradient(ellipse 80% 60% at 60% 40%, rgba(232,64,0,0.08) 0%, #0D0B09 60%);
+      background: radial-gradient(ellipse 80% 60% at 60% 40%, rgba(232,64,0,0.08) 0%, rgba(13,11,9,0.88) 60%);
     }
     [data-theme="light"] .lc-hero-bg {
-      background: radial-gradient(ellipse 80% 60% at 60% 40%, rgba(26,64,96,0.06) 0%, #FAFCFF 60%);
+      background: radial-gradient(ellipse 80% 60% at 60% 40%, rgba(26,64,96,0.06) 0%, rgba(250,252,255,0.88) 60%);
     }
     .lc-hero-inner {
       position: relative; z-index: 2;
@@ -171,6 +174,9 @@
 
 <!-- ── HERO ── -->
 <section class="lc-hero" aria-label="Product hero">
+  <video class="lc-hero-video" autoplay muted loop playsinline poster="assets/img/cdu-unit.jpg" aria-hidden="true">
+    <source src="assets/video/hero1.mp4" type="video/mp4">
+  </video>
   <div class="lc-hero-bg" aria-hidden="true"></div>
   <div class="lc-hero-inner">
     <div>
