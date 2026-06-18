@@ -371,8 +371,95 @@
   </div>
 </section>
 
-<!-- ── SYSTEM CONFIGURATIONS ── -->
+<!-- ── ELASTIC REFRIGERATION ── -->
 <section style="background:var(--surface);border-top:1px solid var(--border);border-bottom:1px solid var(--border);">
+  <div class="container">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;" class="reveal">
+      <div>
+        <div class="eyebrow" data-en="Adaptive Intelligence" data-zh="自适应特性">Adaptive Intelligence</div>
+        <h2 class="display-md" style="margin-bottom:16px;" data-en="Elastic Refrigeration" data-zh="弹性制冷">Elastic Refrigeration</h2>
+        <p style="font-size:0.95rem;font-weight:300;color:var(--muted);line-height:1.8;margin-bottom:20px;"
+          data-en="As chip load rises from 200W to 600W, the system does not need to pump more coolant. Instead, more refrigerant vaporises inside the cold plate channels — absorbing the extra heat automatically through increased latent heat transfer."
+          data-zh="当芯片负载从200W上升到600W时，系统无需增加泵送的冷却剂量。相反，更多制冷剂在冷板通道内蒸发——通过增加的潜热传输自动吸收额外热量。">
+          As chip load rises from 200W to 600W, the system does not need to pump more coolant. Instead, more refrigerant vaporises inside the cold plate channels — absorbing the extra heat automatically through increased latent heat transfer.
+        </p>
+        <p style="font-size:0.95rem;font-weight:300;color:var(--muted);line-height:1.8;"
+          data-en="This means no complex flow-rate control valves, no sluggish response time, and no overshooting. The system self-regulates at the physics level — chip temperature stays stable even during sudden compute spikes."
+          data-zh="这意味着无需复杂的流量控制阀，无响应延迟，也不会出现过冲。系统在物理层面自我调节——即使在计算负载突然飙升时，芯片温度也保持稳定。">
+          This means no complex flow-rate control valves, no sluggish response time, and no overshooting. The system self-regulates at the physics level — chip temperature stays stable even during sudden compute spikes.
+        </p>
+      </div>
+      <!-- Elastic refrigeration SVG: 3-stage bubble diagram -->
+      <div class="diagram-wrap" aria-label="Elastic refrigeration diagram">
+        <svg viewBox="0 0 380 200" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <style>
+              @keyframes bubbleRise{0%{transform:translateY(0);opacity:0.7}100%{transform:translateY(-28px);opacity:0}}
+              .br{animation:bubbleRise 1.6s ease-in infinite}
+              .br2{animation:bubbleRise 1.6s ease-in 0.4s infinite}
+              .br3{animation:bubbleRise 1.6s ease-in 0.8s infinite}
+              .br4{animation:bubbleRise 1.6s ease-in 1.0s infinite}
+              .br5{animation:bubbleRise 1.6s ease-in 0.2s infinite}
+              .br6{animation:bubbleRise 1.6s ease-in 0.6s infinite}
+            </style>
+          </defs>
+
+          <!-- Stage labels -->
+          <text x="63" y="16" text-anchor="middle" fill="var(--muted)" font-family="Barlow,sans-serif" font-size="9" font-weight="700" letter-spacing="0.08em">200W</text>
+          <text x="190" y="16" text-anchor="middle" fill="var(--muted)" font-family="Barlow,sans-serif" font-size="9" font-weight="700" letter-spacing="0.08em">400W</text>
+          <text x="317" y="16" text-anchor="middle" fill="var(--accent)" font-family="Barlow,sans-serif" font-size="9" font-weight="700" letter-spacing="0.08em">600W</text>
+
+          <!-- Stage 1: 200W — few bubbles -->
+          <rect x="10" y="24" width="106" height="60" rx="4" fill="var(--accent-glow)" stroke="var(--border-strong)" stroke-width="1"/>
+          <text x="63" y="105" text-anchor="middle" fill="var(--muted)" font-family="Barlow,sans-serif" font-size="8">Low vaporisation</text>
+          <!-- bubbles: 2 -->
+          <circle cx="35" cy="68" r="5" fill="var(--accent)" opacity="0.35" class="br"/>
+          <circle cx="85" cy="62" r="6" fill="var(--accent)" opacity="0.4" class="br3"/>
+          <!-- flow arrow left -->
+          <line x1="14" y1="54" x2="40" y2="54" stroke="#4A90B8" stroke-width="1.5"/>
+          <polygon points="40,51 46,54 40,57" fill="#4A90B8"/>
+          <text x="15" y="50" fill="#4A90B8" font-family="Barlow,sans-serif" font-size="7">Liquid in</text>
+
+          <!-- Stage 2: 400W — more bubbles -->
+          <rect x="137" y="24" width="106" height="60" rx="4" fill="var(--accent-glow)" stroke="var(--border-strong)" stroke-width="1"/>
+          <text x="190" y="105" text-anchor="middle" fill="var(--muted)" font-family="Barlow,sans-serif" font-size="8">More vaporisation</text>
+          <!-- bubbles: 4 -->
+          <circle cx="155" cy="70" r="5" fill="var(--accent)" opacity="0.4" class="br2"/>
+          <circle cx="175" cy="58" r="7" fill="var(--accent)" opacity="0.45" class="br"/>
+          <circle cx="200" cy="68" r="5" fill="var(--accent)" opacity="0.35" class="br4"/>
+          <circle cx="220" cy="60" r="6" fill="var(--accent)" opacity="0.4" class="br3"/>
+          <line x1="141" y1="54" x2="167" y2="54" stroke="#4A90B8" stroke-width="1.5"/>
+          <polygon points="167,51 173,54 167,57" fill="#4A90B8"/>
+
+          <!-- Stage 3: 600W — many bubbles -->
+          <rect x="264" y="24" width="106" height="60" rx="4" fill="rgba(232,64,0,0.08)" stroke="var(--accent)" stroke-width="1.5"/>
+          <text x="317" y="105" text-anchor="middle" fill="var(--accent)" font-family="Barlow,sans-serif" font-size="8" font-weight="700">Maximum vaporisation</text>
+          <!-- bubbles: 6 -->
+          <circle cx="278" cy="70" r="5" fill="var(--accent)" opacity="0.5" class="br"/>
+          <circle cx="295" cy="58" r="7" fill="var(--accent)" opacity="0.55" class="br2"/>
+          <circle cx="315" cy="68" r="6" fill="var(--accent)" opacity="0.5" class="br5"/>
+          <circle cx="335" cy="58" r="7" fill="var(--accent)" opacity="0.55" class="br3"/>
+          <circle cx="350" cy="70" r="5" fill="var(--accent)" opacity="0.45" class="br6"/>
+          <circle cx="308" cy="78" r="4" fill="var(--accent)" opacity="0.4" class="br4"/>
+          <line x1="268" y1="54" x2="294" y2="54" stroke="#4A90B8" stroke-width="1.5"/>
+          <polygon points="294,51 300,54 294,57" fill="#4A90B8"/>
+
+          <!-- No-flow-change annotation -->
+          <rect x="10" y="120" width="360" height="34" rx="4" fill="var(--accent-glow)" stroke="var(--border-strong)" stroke-width="1"/>
+          <text x="190" y="135" text-anchor="middle" fill="var(--text)" font-family="Barlow,sans-serif" font-size="10" font-weight="700">Same flow rate throughout — no valve adjustments needed</text>
+          <text x="190" y="148" text-anchor="middle" fill="var(--muted)" font-family="Barlow,sans-serif" font-size="9">Cooling capacity scales automatically with chip heat load via vaporisation ratio</text>
+
+          <!-- Connecting arrows between stages -->
+          <line x1="116" y1="54" x2="137" y2="54" stroke="var(--border-strong)" stroke-width="1.5" stroke-dasharray="3 2"/>
+          <line x1="243" y1="54" x2="264" y2="54" stroke="var(--border-strong)" stroke-width="1.5" stroke-dasharray="3 2"/>
+        </svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── SYSTEM CONFIGURATIONS ── -->
+<section style="background:var(--bg);border-top:1px solid var(--border);border-bottom:1px solid var(--border);">
   <div class="container">
     <div class="section-header reveal">
       <div class="eyebrow" data-en="System Configurations" data-zh="系统配置">System Configurations</div>
