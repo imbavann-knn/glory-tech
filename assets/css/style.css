@@ -93,9 +93,11 @@ a { color: inherit; text-decoration: none; }
   height: 100%; display: flex; align-items: center; gap: 40px;
 }
 .nav-logo {
-  font-size: 1.05rem; font-weight: 800; letter-spacing: 0.08em;
-  text-transform: uppercase; color: var(--text); margin-right: auto;
-  white-space: nowrap;
+  margin-right: auto; display: flex; align-items: center;
+}
+.nav-logo-img {
+  height: 36px; width: auto; display: block;
+  object-fit: contain;
 }
 .nav-logo span { color: var(--accent); }
 .nav-links { display: flex; align-items: center; gap: 32px; list-style: none; }
