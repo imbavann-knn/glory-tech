@@ -4,3 +4,4 @@
 Deck/
 node_modules/
 .env
+.vercel
