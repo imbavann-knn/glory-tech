@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <script>(function(){var t=localStorage.getItem('gt-theme');if(t)document.documentElement.setAttribute('data-theme',t);})()</script>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Green Data Centre Construction — Glory Technology</title>
+  <meta name="description" content="End-to-end EPC general contracting for green data centres. Design, construction, liquid cooling retrofit and operational maintenance for sustainable, energy-efficient facilities."/>
+  <link rel="canonical" href="https://www.glory-technology.com/green-dc"/>
+  <meta property="og:title" content="Green Data Centre Construction — Glory Technology"/>
+  <meta property="og:image" content="https://www.glory-technology.com/assets/img/og-image.jpg"/>
+  <meta name="twitter:card" content="summary_large_image"/>
+  <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;600;800&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="assets/css/style.css"/>
+  <style>
+    .pg-hero {
+      min-height: 86vh; display: flex; align-items: center;
+      padding-top: 68px; position: relative; overflow: hidden;
+    }
+    .pg-hero-img {
+      position: absolute; inset: 0; width: 100%; height: 100%;
+      object-fit: cover; z-index: 0;
+    }
+    .pg-hero-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(135deg, rgba(8,18,32,0.88) 0%, rgba(8,18,32,0.55) 100%);
+      z-index: 1;
+    }
+    .pg-hero-inner {
+      position: relative; z-index: 2; width: 100%;
+      max-width: 860px; margin: 0 auto; padding: 80px 24px;
+    }
+    .lc-tag {
+      display: inline-block; font-size: 0.72rem; font-weight: 600; letter-spacing: .14em;
+      text-transform: uppercase; color: var(--accent); border: 1px solid var(--accent);
+      border-radius: 4px; padding: 4px 10px; margin-bottom: 20px;
+    }
+    .epc-flow {
+      display: flex; flex-wrap: wrap; gap: 0; align-items: stretch; margin-top: 36px;
+    }
+    .epc-step {
+      flex: 1 1 120px; background: var(--card); border: 1px solid var(--border);
+      padding: 20px 14px; text-align: center; position: relative;
+    }
+    .epc-step:not(:last-child)::after {
+      content: '›'; position: absolute; right: -10px; top: 50%; transform: translateY(-50%);
+      font-size: 1.4rem; color: var(--accent); z-index: 1; font-weight: 700;
+    }
+    .epc-num { font-size: 0.68rem; font-weight: 600; color: var(--accent); letter-spacing:.1em; text-transform:uppercase; margin-bottom:6px; }
+    .epc-label { font-size: 0.82rem; font-weight: 600; color: var(--text); line-height:1.3; }
+    .systems-grid {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 16px; margin-top: 28px;
+    }
+    .sys-card {
+      background: var(--card); border: 1px solid var(--border); border-radius: 10px;
+      padding: 18px 16px; display: flex; align-items: flex-start; gap: 12px;
+    }
+    .sys-icon { font-size: 1.4rem; flex-shrink: 0; }
+    .sys-title { font-size: 0.85rem; font-weight: 600; color: var(--text); line-height: 1.35; }
+    .adv-grid {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 24px; margin-top: 36px;
+    }
+    .adv-card {
+      background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 28px 24px;
+    }
+    .adv-card .adv-label {
+      font-size: 0.72rem; font-weight: 600; letter-spacing: .12em; text-transform: uppercase;
+      color: var(--accent); margin-bottom: 10px;
+    }
+    .adv-card h3 { font-size: 1.05rem; font-weight: 700; margin-bottom: 10px; }
+    .adv-card p { font-size: 0.88rem; color: var(--muted); line-height: 1.6; margin: 0; }
+    .retrofit-flow {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(180px,1fr)); gap: 16px; margin-top:28px;
+    }
+    .retrofit-step {
+      background: var(--card); border: 1px solid var(--border); border-radius: 10px;
+      padding: 20px 16px; text-align: center;
+    }
+    .retrofit-step .rs-num {
+      width: 32px; height: 32px; border-radius: 50%; background: var(--accent); color: #fff;
+      font-size: 0.85rem; font-weight: 700; display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 12px;
+    }
+    .retrofit-step .rs-title { font-size: 0.88rem; font-weight: 600; color: var(--text); line-height:1.3; }
+    .retrofit-step .rs-body { font-size: 0.78rem; color: var(--muted); margin-top: 6px; line-height:1.4; }
+    .cta-strip {
+      background: var(--accent); color: #fff; padding: 72px 24px; text-align: center;
+    }
+    .cta-strip h2 { font-size: clamp(1.5rem,3.5vw,2.2rem); font-weight: 800; margin-bottom: 16px; }
+    .cta-strip p { font-size: 1rem; opacity: 0.88; max-width: 520px; margin: 0 auto 32px; }
+    .cta-strip a.btn-white {
+      display: inline-block; background: #fff; color: var(--accent); font-weight: 700;
+      font-size: 0.9rem; padding: 14px 32px; border-radius: 6px; text-decoration: none;
+      transition: opacity .2s;
+    }
+    .cta-strip a.btn-white:hover { opacity: 0.88; }
+    @media(max-width:640px){
+      .epc-step:not(:last-child)::after { display: none; }
+      .epc-flow { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── NAV ── -->
+<nav class="nav" role="navigation">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo"><img src="assets/img/logo.jpeg" alt="Glory Technology" class="nav-logo-img"></a>
+    <ul class="nav-links">
+      <li><a href="products.html" data-en="Products" data-zh="产品">Products</a></li>
+      <li><a href="solutions.html" data-en="Solutions" data-zh="解决方案">Solutions</a></li>
+      <li><a href="about.html" data-en="About" data-zh="关于我们">About</a></li>
+      <li><a href="contact.html" data-en="Contact" data-zh="联系我们">Contact</a></li>
+    </ul>
+    <div class="nav-controls">
+      <button class="ctrl-btn" id="lang-btn" aria-label="Switch language"><span class="lang-label">中</span></button>
+      <button class="ctrl-btn" id="theme-btn" aria-label="Toggle theme">
+        <span class="theme-icon"><svg viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></span>
+        <span class="theme-label">Dark</span>
+      </button>
+    </div>
+    <button class="nav-toggle" aria-label="Open menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="nav-mobile">
+  <a href="products.html" data-en="Products" data-zh="产品">Products</a>
+  <a href="solutions.html" data-en="Solutions" data-zh="解决方案">Solutions</a>
+  <a href="about.html" data-en="About" data-zh="关于我们">About</a>
+  <a href="contact.html" data-en="Contact" data-zh="联系我们">Contact</a>
+</div>
+
+<!-- ── HERO ── -->
+<section class="pg-hero" aria-label="Product hero">
+  <img src="assets/img/pptx-image117.jpeg" alt="Green data centre rows" class="pg-hero-img"/>
+  <div class="pg-hero-overlay" aria-hidden="true"></div>
+  <div class="pg-hero-inner">
+    <div class="lc-tag reveal" data-en="End-to-End EPC Contracting" data-zh="端到端EPC总承包">End-to-End EPC Contracting</div>
+    <h1 class="display-xl reveal" style="color:#fff;" data-d="60">
+      <span data-en-html="Construction of<br><em>Green Data Centre</em>" data-zh-html="绿色数据中心<br><em>建设方案</em>">Construction of<br><em>Green Data Centre</em></span>
+    </h1>
+    <p class="body-lg reveal" data-d="140" style="max-width:560px; margin:20px 0 36px; color:rgba(255,255,255,0.85);"
+      data-en="Full-scope EPC general contracting from design consultation through operational maintenance — integrating ten engineering subsystems with certified green energy-saving standards."
+      data-zh="从设计咨询到运维管理的全范围EPC总承包——整合十大工程子系统，符合绿色节能认证标准。">
+      Full-scope EPC general contracting from design consultation through operational maintenance — integrating ten engineering subsystems with certified green energy-saving standards.
+    </p>
+    <div class="hero-actions reveal" data-d="200">
+      <a href="contact.html" class="btn btn-primary" data-en="Request a Consultation" data-zh="申请咨询">Request a Consultation</a>
+      <a href="#advantages" class="btn btn-outline" data-en="Key Advantages" data-zh="核心优势">Key Advantages</a>
+    </div>
+  </div>
+</section>
+
+<!-- ── STATS BAR ── -->
+<div class="stats-bar">
+  <div class="stat-cell reveal">
+    <div class="stat-big">&lt;1.15</div>
+    <div class="stat-unit" data-en="PUE with cold-plate liquid cooling" data-zh="冷板液冷PUE">PUE with cold-plate liquid cooling</div>
+  </div>
+  <div class="stat-cell reveal" data-d="80">
+    <div class="stat-big">60%</div>
+    <div class="stat-unit" data-en="Energy savings vs. traditional air cooling" data-zh="相比传统风冷节能">Energy savings vs. traditional air cooling</div>
+  </div>
+  <div class="stat-cell reveal" data-d="160">
+    <div class="stat-big">10</div>
+    <div class="stat-unit" data-en="Integrated engineering subsystems" data-zh="集成工程子系统">Integrated engineering subsystems</div>
+  </div>
+  <div class="stat-cell reveal" data-d="240">
+    <div class="stat-big">15–60kW</div>
+    <div class="stat-unit" data-en="Cabinet cooling capacity range" data-zh="机柜冷却容量范围">Cabinet cooling capacity range</div>
+  </div>
+</div>
+
+<!-- ── EPC CONTRACTING FLOW ── -->
+<section style="padding: 80px 0;">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="eyebrow" data-en="Our Methodology" data-zh="我们的方法">Our Methodology</div>
+      <h2 class="display-md" data-en="EPC General Contracting Process" data-zh="EPC总承包流程">EPC General Contracting Process</h2>
+      <p class="body-lg reveal" data-d="80" style="max-width:580px; margin-top:14px;"
+        data-en="We manage the full project lifecycle — from initial design consultation through green energy optimisation, construction, and long-term operational support."
+        data-zh="我们管理完整的项目生命周期——从初始设计咨询，到绿色节能优化、施工，再到长期运维支持。">
+        We manage the full project lifecycle — from initial design consultation through green energy optimisation, construction, and long-term operational support.
+      </p>
+    </div>
+    <div class="epc-flow reveal" data-d="100">
+      <div class="epc-step">
+        <div class="epc-num">01</div>
+        <div class="epc-label" data-en="Design Consultation" data-zh="设计咨询">Design Consultation</div>
+      </div>
+      <div class="epc-step">
+        <div class="epc-num">02</div>
+        <div class="epc-label" data-en="Original Design" data-zh="原始设计">Original Design</div>
+      </div>
+      <div class="epc-step">
+        <div class="epc-num">03</div>
+        <div class="epc-label" data-en="Green Energy Saving" data-zh="绿色节能">Green Energy Saving</div>
+      </div>
+      <div class="epc-step">
+        <div class="epc-num">04</div>
+        <div class="epc-label" data-en="Detail Design" data-zh="详细设计">Detail Design</div>
+      </div>
+      <div class="epc-step">
+        <div class="epc-num">05</div>
+        <div class="epc-label" data-en="Engineering Construction" data-zh="工程施工">Engineering Construction</div>
+      </div>
+      <div class="epc-step">
+        <div class="epc-num">06</div>
+        <div class="epc-label" data-en="Project Completion" data-zh="竣工验收">Project Completion</div>
+      </div>
+      <div class="epc-step">
+        <div class="epc-num">07</div>
+        <div class="epc-label" data-en="Operational Maintenance" data-zh="运营维护">Operational Maintenance</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── SYSTEM ENGINEERING ── -->
+<section style="padding: 0 0 80px; background: var(--surface);">
+  <div class="container">
+    <div class="section-header reveal" style="padding-top:80px;">
+      <div class="eyebrow" data-en="System Engineering" data-zh="系统工程">System Engineering</div>
+      <h2 class="display-md" data-en="Ten Integrated Subsystems" data-zh="十大集成子系统">Ten Integrated Subsystems</h2>
+      <p class="body-lg reveal" data-d="80" style="max-width:560px; margin-top:14px;"
+        data-en="Every data centre we deliver integrates all critical engineering disciplines — coordinated under a single EPC contract for zero interface gaps."
+        data-zh="我们交付的每个数据中心都整合了所有关键工程学科——在单一EPC合同下协调管理，实现零接口盲区。">
+        Every data centre we deliver integrates all critical engineering disciplines — coordinated under a single EPC contract for zero interface gaps.
+      </p>
+    </div>
+    <div class="systems-grid reveal" data-d="100">
+      <div class="sys-card">
+        <div class="sys-icon">🏗️</div>
+        <div class="sys-title" data-en="Interior Decoration" data-zh="内部装修">Interior Decoration</div>
+      </div>
+      <div class="sys-card">
+        <div class="sys-icon">⚡</div>
+        <div class="sys-title" data-en="Electrical System" data-zh="电气系统">Electrical System</div>
+      </div>
+      <div class="sys-card">
+        <div class="sys-icon">❄️</div>
+        <div class="sys-title" data-en="HVAC &amp; Cooling" data-zh="暖通空调与冷却">HVAC &amp; Cooling</div>
+      </div>
+      <div class="sys-card">
+        <div class="sys-icon">🔒</div>
+        <div class="sys-title" data-en="Security System" data-zh="安防系统">Security System</div>
+      </div>
+      <div class="sys-card">
+        <div class="sys-icon">📊</div>
+        <div class="sys-title" data-en="Dynamic Environment Monitoring" data-zh="动态环境监控">Dynamic Environment Monitoring</div>
+      </div>
+      <div class="sys-card">
+        <div class="sys-icon">🔌</div>
+        <div class="sys-title" data-en="Integrated Cabling" data-zh="综合布线">Integrated Cabling</div>
+      </div>
+      <div class="sys-card">
+        <div class="sys-icon">🔥</div>
+        <div class="sys-title" data-en="Fire Suppression" data-zh="消防系统">Fire Suppression</div>
+      </div>
+      <div class="sys-card">
+        <div class="sys-icon">⛈️</div>
+        <div class="sys-title" data-en="Grounding &amp; Lightning Protection" data-zh="接地防雷">Grounding &amp; Lightning Protection</div>
+      </div>
+      <div class="sys-card">
+        <div class="sys-icon">🛡️</div>
+        <div class="sys-title" data-en="Electromagnetic Shielding" data-zh="电磁屏蔽">Electromagnetic Shielding</div>
+      </div>
+      <div class="sys-card">
+        <div class="sys-icon">🏢</div>
+        <div class="sys-title" data-en="BIM System" data-zh="BIM系统">BIM System</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── THERMAL MANAGEMENT ADVANTAGES ── -->
+<section id="advantages" style="padding: 80px 0;">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="eyebrow" data-en="Thermal Management" data-zh="热管理">Thermal Management</div>
+      <h2 class="display-md" data-en="Five Advantages of Liquid Cooling" data-zh="液冷的五大优势">Five Advantages of Liquid Cooling</h2>
+    </div>
+    <div class="adv-grid">
+      <div class="adv-card reveal">
+        <div class="adv-label" data-en="Energy Efficiency" data-zh="能源效率">Energy Efficiency</div>
+        <h3 data-en="Industry-Leading PUE" data-zh="行业领先PUE">Industry-Leading PUE</h3>
+        <p data-en="Backplane-type liquid cooling achieves PUE &lt;1.30. Cold-plate solutions deliver PUE &lt;1.15 — far below the industry average of 1.5+."
+           data-zh="背板式液冷PUE<1.30。冷板式方案可实现PUE<1.15——远低于行业平均1.5+。">
+          Backplane-type liquid cooling achieves PUE &lt;1.30. Cold-plate solutions deliver PUE &lt;1.15 — far below the industry average of 1.5+.
+        </p>
+      </div>
+      <div class="adv-card reveal" data-d="60">
+        <div class="adv-label" data-en="High Refrigeration Capacity" data-zh="高制冷容量">High Refrigeration Capacity</div>
+        <h3 data-en="600W to 1500W Per Chip" data-zh="单芯片600W至1500W">600W to 1500W Per Chip</h3>
+        <p data-en="Handles 15–60kW per cabinet and supports chips up to 1500W — scaling with the most demanding AI accelerators."
+           data-zh="每机柜处理15–60kW，支持最高1500W的芯片——为最苛刻的AI加速器而设计。">
+          Handles 15–60kW per cabinet and supports chips up to 1500W — scaling with the most demanding AI accelerators.
+        </p>
+      </div>
+      <div class="adv-card reveal" data-d="120">
+        <div class="adv-label" data-en="Easy to Modify" data-zh="易于改造">Easy to Modify</div>
+        <h3 data-en="Non-Stop Retrofit Path" data-zh="无停机改造路径">Non-Stop Retrofit Path</h3>
+        <p data-en="Existing air-cooled data centres can be retrofitted to liquid cooling without shutdown. Achieve up to 60% energy savings while preserving existing infrastructure investment."
+           data-zh="现有风冷数据中心无需停机即可改造为液冷。在保护现有基础设施投资的同时，节能高达60%。">
+          Existing air-cooled data centres can be retrofitted to liquid cooling without shutdown. Achieve up to 60% energy savings while preserving existing infrastructure investment.
+        </p>
+      </div>
+      <div class="adv-card reveal" data-d="60">
+        <div class="adv-label" data-en="Safe &amp; Stable" data-zh="安全稳定">Safe &amp; Stable</div>
+        <h3 data-en="Non-Toxic, Non-Flammable Coolant" data-zh="无毒不可燃冷却液">Non-Toxic, Non-Flammable Coolant</h3>
+        <p data-en="Proprietary dielectric fluid is electrically insulating, non-toxic and non-flammable. Multi-level redundancy across CDUs, pumps, and chillers ensures continuous uptime."
+           data-zh="专有介电液体具有电气绝缘性，无毒且不可燃。CDU、泵和冷水机的多级冗余确保持续运行。">
+          Proprietary dielectric fluid is electrically insulating, non-toxic and non-flammable. Multi-level redundancy across CDUs, pumps, and chillers ensures continuous uptime.
+        </p>
+      </div>
+      <div class="adv-card reveal" data-d="120">
+        <div class="adv-label" data-en="Easy to Maintain" data-zh="易于维护">Easy to Maintain</div>
+        <h3 data-en="Zero Scheduled Fluid Maintenance" data-zh="零定期液体维护">Zero Scheduled Fluid Maintenance</h3>
+        <p data-en="Closed-loop system requires no fluid replacement or degassing under normal operation. Service intervals are driven by component condition, not coolant degradation."
+           data-zh="密闭循环系统在正常运行下无需更换液体或除气。服务间隔由组件状态决定，而非冷却液降解。">
+          Closed-loop system requires no fluid replacement or degassing under normal operation. Service intervals are driven by component condition, not coolant degradation.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── RETROFIT PATH ── -->
+<section style="padding: 0 0 80px; background: var(--surface);">
+  <div class="container">
+    <div class="section-header reveal" style="padding-top:80px;">
+      <div class="eyebrow" data-en="Retrofit Solution" data-zh="改造方案">Retrofit Solution</div>
+      <h2 class="display-md" data-en="From Air Cooling to Liquid Cooling" data-zh="从风冷到液冷">From Air Cooling to Liquid Cooling</h2>
+      <p class="body-lg reveal" data-d="80" style="max-width:580px; margin-top:14px;"
+        data-en="A proven five-step process to upgrade existing air-cooled data centres to backplane-type two-phase liquid cooling — without any service interruption."
+        data-zh="经过验证的五步流程，将现有风冷数据中心升级为背板式两相液冷——无任何服务中断。">
+        A proven five-step process to upgrade existing air-cooled data centres to backplane-type two-phase liquid cooling — without any service interruption.
+      </p>
+    </div>
+    <div class="retrofit-flow reveal" data-d="100">
+      <div class="retrofit-step">
+        <div class="rs-num">1</div>
+        <div class="rs-title" data-en="Site Assessment" data-zh="现场评估">Site Assessment</div>
+        <div class="rs-body" data-en="Evaluate existing thermal load, rack layout, and power capacity" data-zh="评估现有热负荷、机架布局和电力容量">Evaluate existing thermal load, rack layout, and power capacity</div>
+      </div>
+      <div class="retrofit-step">
+        <div class="rs-num">2</div>
+        <div class="rs-title" data-en="Install New CDU" data-zh="安装新CDU">Install New CDU</div>
+        <div class="rs-body" data-en="Deploy cooling distribution units alongside active infrastructure" data-zh="在运行基础设施旁部署冷却分配单元">Deploy cooling distribution units alongside active infrastructure</div>
+      </div>
+      <div class="retrofit-step">
+        <div class="rs-num">3</div>
+        <div class="rs-title" data-en="Add Integrated Chiller" data-zh="添加集成冷却机">Add Integrated Chiller</div>
+        <div class="rs-body" data-en="Commission outdoor dry coolers or chiller units for warm-climate operation" data-zh="调试户外干冷器或冷水机组，适应暖热气候运行">Commission outdoor dry coolers or chiller units for warm-climate operation</div>
+      </div>
+      <div class="retrofit-step">
+        <div class="rs-num">4</div>
+        <div class="rs-title" data-en="Replace Backplane Cooling" data-zh="替换背板冷却">Replace Backplane Cooling</div>
+        <div class="rs-body" data-en="Swap air-cooled rear-door panels for liquid-cooled backplate heat exchangers, rack by rack" data-zh="逐架将风冷后门面板换装为液冷背板换热器">Swap air-cooled rear-door panels for liquid-cooled backplate heat exchangers, rack by rack</div>
+      </div>
+      <div class="retrofit-step">
+        <div class="rs-num">5</div>
+        <div class="rs-title" data-en="System Switchover" data-zh="系统切换">System Switchover</div>
+        <div class="rs-body" data-en="Migrate thermal load to liquid loop and decommission legacy air conditioning" data-zh="将热负荷迁移至液冷回路并退役传统空调">Migrate thermal load to liquid loop and decommission legacy air conditioning</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── PHOTO SPLIT ── -->
+<section style="padding: 80px 0;">
+  <div class="container">
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:24px; align-items:center;" class="reveal">
+      <img src="assets/img/dc-install-racks.jpg" alt="Data centre installation" style="border-radius:12px; width:100%; object-fit:cover; height:340px;"/>
+      <div>
+        <div class="eyebrow" data-en="Standards &amp; Certification" data-zh="标准与认证">Standards &amp; Certification</div>
+        <h2 class="display-md" style="margin:12px 0 20px;" data-en="Built to the Highest Standards" data-zh="按最高标准建造">Built to the Highest Standards</h2>
+        <p class="body-lg" style="color:var(--muted);"
+          data-en="Our green data centre solutions are designed in accordance with the Green Data Centre Evaluation Criteria, listed in the Beijing Energy-saving Product Catalogue, and compliant with the Technical Specification for Pump-Driven Two-Phase Cooling Systems."
+          data-zh="我们的绿色数据中心解决方案依据绿色数据中心评估标准设计，列入北京节能产品目录，并符合泵驱两相冷却系统技术规范。">
+          Our green data centre solutions are designed in accordance with the Green Data Centre Evaluation Criteria, listed in the Beijing Energy-saving Product Catalogue, and compliant with the Technical Specification for Pump-Driven Two-Phase Cooling Systems.
+        </p>
+        <ul style="list-style:none; padding:0; margin:20px 0 0; display:flex; flex-direction:column; gap:10px;">
+          <li style="display:flex; align-items:center; gap:10px; font-size:0.88rem; color:var(--muted);">
+            <span style="color:var(--accent); font-weight:700;">✓</span>
+            <span data-en="Green Data Centre Evaluation Criteria" data-zh="绿色数据中心评估标准">Green Data Centre Evaluation Criteria</span>
+          </li>
+          <li style="display:flex; align-items:center; gap:10px; font-size:0.88rem; color:var(--muted);">
+            <span style="color:var(--accent); font-weight:700;">✓</span>
+            <span data-en="Beijing Energy-saving Product Catalogue" data-zh="北京市节能产品目录">Beijing Energy-saving Product Catalogue</span>
+          </li>
+          <li style="display:flex; align-items:center; gap:10px; font-size:0.88rem; color:var(--muted);">
+            <span style="color:var(--accent); font-weight:700;">✓</span>
+            <span data-en="Technical Specification for Pump-Driven Two-Phase Cooling" data-zh="泵驱两相冷却技术规范">Technical Specification for Pump-Driven Two-Phase Cooling</span>
+          </li>
+          <li style="display:flex; align-items:center; gap:10px; font-size:0.88rem; color:var(--muted);">
+            <span style="color:var(--accent); font-weight:700;">✓</span>
+            <span data-en="IDC Energy Conservation: AT+IT+PT+OT+ET Framework" data-zh="IDC节能：AT+IT+PT+OT+ET框架">IDC Energy Conservation: AT+IT+PT+OT+ET Framework</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CTA ── -->
+<div class="cta-strip">
+  <h2 data-en="Ready to Build Your Green Data Centre?" data-zh="准备好建设您的绿色数据中心了吗？">Ready to Build Your Green Data Centre?</h2>
+  <p data-en="Our engineers will assess your requirements and design a solution that meets your capacity, energy, and budget targets." data-zh="我们的工程师将评估您的需求，并设计满足您的容量、能源和预算目标的解决方案。">Our engineers will assess your requirements and design a solution that meets your capacity, energy, and budget targets.</p>
+  <a href="contact.html" class="btn-white" data-en="Talk to an Engineer" data-zh="与工程师交流">Talk to an Engineer</a>
+</div>
+
+<!-- ── FOOTER ── -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="index.html" class="nav-logo"><img src="assets/img/logo.jpeg" alt="Glory Technology" class="nav-logo-img"></a>
+        <p data-en="Precision cooling solutions for the world's most demanding data centre environments." data-zh="为全球最苛刻的数据中心环境提供精密冷却解决方案。">Precision cooling solutions for the world's most demanding data centre environments.</p>
+      </div>
+      <div class="footer-col">
+        <h4 data-en="Products" data-zh="产品">Products</h4>
+        <ul>
+          <li><a href="liquid-cooling.html" data-en="Two-Phase Liquid Cooling" data-zh="两相液冷">Two-Phase Liquid Cooling</a></li>
+          <li><a href="green-dc.html" data-en="Green Data Centre" data-zh="绿色数据中心">Green Data Centre</a></li>
+          <li><a href="computing-power.html" data-en="Computing Power Cooling" data-zh="算力冷却">Computing Power Cooling</a></li>
+          <li><a href="products.html" data-en="All Products" data-zh="所有产品">All Products</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 data-en="Company" data-zh="公司">Company</h4>
+        <ul>
+          <li><a href="about.html" data-en="About Us" data-zh="关于我们">About Us</a></li>
+          <li><a href="solutions.html" data-en="Solutions" data-zh="解决方案">Solutions</a></li>
+          <li><a href="contact.html" data-en="Contact" data-zh="联系我们">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 data-en="Contact" data-zh="联系方式">Contact</h4>
+        <ul><li><a href="mailto:info@glory-technology.com">info@glory-technology.com</a></li></ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p data-en="© 2025 Glory Technology Pte Ltd. All rights reserved." data-zh="© 2025 荣耀科技私人有限公司。版权所有。">© 2025 Glory Technology Pte Ltd. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<div id="toast" role="status" aria-live="polite"></div>
+<script src="assets/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <script>(function(){var t=localStorage.getItem('gt-theme');if(t)document.documentElement.setAttribute('data-theme',t);})()</script>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Prefabricated Data Centre Solution — Glory Technology</title>
+  <meta name="description" content="Factory-integrated prefabricated data centre modules. Deploy in under 40 days. Container-based and modular configurations. IP55/IP65 rated. Uptime Tier-IV available."/>
+  <link rel="canonical" href="https://www.glory-technology.com/prefab"/>
+  <meta property="og:title" content="Prefabricated Data Centre Solution — Glory Technology"/>
+  <meta property="og:image" content="https://www.glory-technology.com/assets/img/og-image.jpg"/>
+  <meta name="twitter:card" content="summary_large_image"/>
+  <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;600;800&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="assets/css/style.css"/>
+  <style>
+    .pg-hero {
+      min-height: 86vh; display: flex; align-items: center;
+      padding-top: 68px; position: relative; overflow: hidden;
+    }
+    .pg-hero-img {
+      position: absolute; inset: 0; width: 100%; height: 100%;
+      object-fit: cover; z-index: 0;
+    }
+    .pg-hero-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(135deg, rgba(8,18,32,0.90) 0%, rgba(8,18,32,0.52) 100%);
+      z-index: 1;
+    }
+    .pg-hero-inner {
+      position: relative; z-index: 2; width: 100%;
+      max-width: 860px; margin: 0 auto; padding: 80px 24px;
+    }
+    .lc-tag {
+      display: inline-block; font-size: 0.72rem; font-weight: 600; letter-spacing: .14em;
+      text-transform: uppercase; color: var(--accent); border: 1px solid var(--accent);
+      border-radius: 4px; padding: 4px 10px; margin-bottom: 20px;
+    }
+    /* Advantages */
+    .adv-grid-6 {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(260px,1fr)); gap: 22px; margin-top: 32px;
+    }
+    .adv6-card {
+      background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 28px 22px;
+      display: flex; gap: 16px; align-items: flex-start;
+    }
+    .adv6-icon {
+      width: 44px; height: 44px; flex-shrink:0; border-radius: 12px;
+      background: var(--accent); color:#fff; font-size: 1.2rem;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .adv6-title { font-size: 0.95rem; font-weight: 700; margin-bottom: 6px; }
+    .adv6-body { font-size: 0.82rem; color: var(--muted); margin:0; line-height:1.55; }
+    /* Container grid */
+    .container-grid {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(180px,1fr)); gap: 16px; margin-top:28px;
+    }
+    .container-card {
+      background: var(--card); border: 2px solid var(--border); border-radius: 12px;
+      padding: 24px 16px; text-align: center; transition: border-color .2s;
+    }
+    .container-card:hover { border-color: var(--accent); }
+    .container-size { font-size: 2rem; font-weight: 800; color: var(--accent); line-height:1; }
+    .container-unit { font-size: 0.75rem; font-weight: 600; color: var(--muted); text-transform:uppercase; letter-spacing:.08em; }
+    .container-label { font-size: 0.85rem; font-weight: 600; margin-top: 8px; color: var(--text); }
+    /* Systems inside container */
+    .system-chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 20px; }
+    .system-chip {
+      background: var(--surface); border: 1px solid var(--border); border-radius: 20px;
+      padding: 6px 14px; font-size: 0.78rem; font-weight: 600; color: var(--text);
+    }
+    /* Feature pillars for container */
+    .feature-grid-4 {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(220px,1fr)); gap: 20px; margin-top: 28px;
+    }
+    .feat4-card {
+      background: var(--card); border: 1px solid var(--border); border-radius: 12px;
+      padding: 24px 20px; border-top: 3px solid var(--accent);
+    }
+    .feat4-icon { font-size: 1.8rem; margin-bottom: 12px; }
+    .feat4-title { font-size: 0.95rem; font-weight: 700; margin-bottom: 8px; }
+    .feat4-body { font-size: 0.82rem; color: var(--muted); margin:0; line-height:1.55; }
+    /* Modular scenario diagram */
+    .scenario-wrap {
+      background: var(--card); border: 1px solid var(--border); border-radius: 14px;
+      padding: 32px; margin-top: 28px;
+    }
+    .scenario-title { font-size: 1rem; font-weight: 700; margin-bottom: 20px; }
+    .component-row { display: flex; flex-wrap: wrap; gap: 10px; align-items: stretch; }
+    .component-block {
+      flex: 1 1 130px; background: var(--surface); border: 1px solid var(--border);
+      border-radius: 8px; padding: 12px; text-align: center;
+    }
+    .component-block .cb-icon { font-size: 1.2rem; margin-bottom: 6px; }
+    .component-block .cb-name { font-size: 0.75rem; font-weight: 600; color: var(--text); line-height:1.3; }
+    /* CTA */
+    .cta-strip {
+      background: var(--accent); color: #fff; padding: 72px 24px; text-align: center;
+    }
+    .cta-strip h2 { font-size: clamp(1.5rem,3.5vw,2.2rem); font-weight: 800; margin-bottom: 16px; }
+    .cta-strip p { font-size: 1rem; opacity: 0.88; max-width: 520px; margin: 0 auto 32px; }
+    .cta-strip a.btn-white {
+      display: inline-block; background: #fff; color: var(--accent); font-weight: 700;
+      font-size: 0.9rem; padding: 14px 32px; border-radius: 6px; text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── NAV ── -->
+<nav class="nav" role="navigation">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo"><img src="assets/img/logo.jpeg" alt="Glory Technology" class="nav-logo-img"></a>
+    <ul class="nav-links">
+      <li><a href="products.html" data-en="Products" data-zh="产品">Products</a></li>
+      <li><a href="solutions.html" data-en="Solutions" data-zh="解决方案">Solutions</a></li>
+      <li><a href="about.html" data-en="About" data-zh="关于我们">About</a></li>
+      <li><a href="contact.html" data-en="Contact" data-zh="联系我们">Contact</a></li>
+    </ul>
+    <div class="nav-controls">
+      <button class="ctrl-btn" id="lang-btn" aria-label="Switch language"><span class="lang-label">中</span></button>
+      <button class="ctrl-btn" id="theme-btn" aria-label="Toggle theme">
+        <span class="theme-icon"><svg viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></span>
+        <span class="theme-label">Dark</span>
+      </button>
+    </div>
+    <button class="nav-toggle" aria-label="Open menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="nav-mobile">
+  <a href="products.html" data-en="Products" data-zh="产品">Products</a>
+  <a href="solutions.html" data-en="Solutions" data-zh="解决方案">Solutions</a>
+  <a href="about.html" data-en="About" data-zh="关于我们">About</a>
+  <a href="contact.html" data-en="Contact" data-zh="联系我们">Contact</a>
+</div>
+
+<!-- ── HERO ── -->
+<section class="pg-hero" aria-label="Product hero">
+  <img src="assets/img/pptx-image129.jpeg" alt="Long aisle of data centre racks" class="pg-hero-img"/>
+  <div class="pg-hero-overlay" aria-hidden="true"></div>
+  <div class="pg-hero-inner">
+    <div class="lc-tag reveal" data-en="Rapid Deployment Solution" data-zh="快速部署解决方案">Rapid Deployment Solution</div>
+    <h1 class="display-xl reveal" style="color:#fff;" data-d="60">
+      <span data-en-html="Prefabricated<br><em>Data Centre Solution</em>" data-zh-html="预制化<br><em>数据中心解决方案</em>">Prefabricated<br><em>Data Centre Solution</em></span>
+    </h1>
+    <p class="body-lg reveal" data-d="140" style="max-width:560px; margin:20px 0 36px; color:rgba(255,255,255,0.85);"
+      data-en="Factory-integrated, pre-tested data centre modules that deploy in under 40 days. Modular aisle configurations and container-based solutions for permanent or temporary deployments."
+      data-zh="工厂集成、预先测试的数据中心模块，40天内完成部署。模块化通道配置和基于集装箱的解决方案，适用于永久或临时部署。">
+      Factory-integrated, pre-tested data centre modules that deploy in under 40 days. Modular aisle configurations and container-based solutions for permanent or temporary deployments.
+    </p>
+    <div class="hero-actions reveal" data-d="200">
+      <a href="contact.html" class="btn btn-primary" data-en="Request a Consultation" data-zh="申请咨询">Request a Consultation</a>
+      <a href="#container" class="btn btn-outline" data-en="Container Solution" data-zh="集装箱解决方案">Container Solution</a>
+    </div>
+  </div>
+</section>
+
+<!-- ── STATS BAR ── -->
+<div class="stats-bar">
+  <div class="stat-cell reveal">
+    <div class="stat-big">&lt;40</div>
+    <div class="stat-unit" data-en="Days to operational (container solution)" data-zh="天投入运营（集装箱方案）">Days to operational (container solution)</div>
+  </div>
+  <div class="stat-cell reveal" data-d="80">
+    <div class="stat-big">IP65</div>
+    <div class="stat-unit" data-en="Optional ingress protection rating" data-zh="可选防护等级">Optional ingress protection rating</div>
+  </div>
+  <div class="stat-cell reveal" data-d="160">
+    <div class="stat-big">Tier IV</div>
+    <div class="stat-unit" data-en="Uptime Institute availability" data-zh="运行时间研究所可用性">Uptime Institute availability</div>
+  </div>
+  <div class="stat-cell reveal" data-d="240">
+    <div class="stat-big">N+X</div>
+    <div class="stat-unit" data-en="Flexible capacity scaling strategy" data-zh="灵活容量扩展策略">Flexible capacity scaling strategy</div>
+  </div>
+</div>
+
+<!-- ── SIX ADVANTAGES ── -->
+<section style="padding: 80px 0;">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="eyebrow" data-en="Technical Advantages" data-zh="技术优势">Technical Advantages</div>
+      <h2 class="display-md" data-en="Six Reasons to Prefabricate" data-zh="预制化的六大理由">Six Reasons to Prefabricate</h2>
+    </div>
+    <div class="adv-grid-6">
+      <div class="adv6-card reveal">
+        <div class="adv6-icon">⚡</div>
+        <div>
+          <div class="adv6-title" data-en="Rapid Deployment" data-zh="快速部署">Rapid Deployment</div>
+          <p class="adv6-body" data-en="On-site installation in under 1.5 months. Factory integration and pre-commissioning eliminates the longest phases of traditional construction." data-zh="现场安装不超过1.5个月。工厂集成和预调试消除了传统建设的最长阶段。">On-site installation in under 1.5 months. Factory integration and pre-commissioning eliminates the longest phases of traditional construction.</p>
+        </div>
+      </div>
+      <div class="adv6-card reveal" data-d="60">
+        <div class="adv6-icon">🔄</div>
+        <div>
+          <div class="adv6-title" data-en="Standardisation &amp; Replicability" data-zh="标准化与可复制性">Standardisation &amp; Replicability</div>
+          <p class="adv6-body" data-en="Modular designs can be batch-replicated across multiple sites. Consistent build quality and performance regardless of location." data-zh="模块化设计可在多个站点批量复制。无论地点如何，建造质量和性能保持一致。">Modular designs can be batch-replicated across multiple sites. Consistent build quality and performance regardless of location.</p>
+        </div>
+      </div>
+      <div class="adv6-card reveal" data-d="120">
+        <div class="adv6-icon">✅</div>
+        <div>
+          <div class="adv6-title" data-en="Factory Quality Assurance" data-zh="工厂质量保证">Factory Quality Assurance</div>
+          <p class="adv6-body" data-en="Every module is factory-tested under controlled conditions before shipping. Zero surprises during on-site commissioning." data-zh="每个模块在出货前均在受控条件下进行工厂测试。现场调试过程中零意外。">Every module is factory-tested under controlled conditions before shipping. Zero surprises during on-site commissioning.</p>
+        </div>
+      </div>
+      <div class="adv6-card reveal">
+        <div class="adv6-icon">📐</div>
+        <div>
+          <div class="adv6-title" data-en="Flexible Scalability" data-zh="灵活可扩展性">Flexible Scalability</div>
+          <p class="adv6-body" data-en="Add capacity incrementally using N+X module strategy. Start with minimum viable capacity and scale as demand grows — no stranded investment." data-zh="使用N+X模块策略逐步增加容量。从最小可行容量开始，随需求增长扩展——无搁浅投资。">Add capacity incrementally using N+X module strategy. Start with minimum viable capacity and scale as demand grows — no stranded investment.</p>
+        </div>
+      </div>
+      <div class="adv6-card reveal" data-d="60">
+        <div class="adv6-icon">💰</div>
+        <div>
+          <div class="adv6-title" data-en="Lower TCO" data-zh="更低总拥有成本">Lower TCO</div>
+          <p class="adv6-body" data-en="Reduced civil construction, shorter project timeline and lower operating costs from efficient cooling combine for substantially lower total cost of ownership." data-zh="减少土建施工、缩短项目周期和高效冷却带来的更低运营成本相结合，显著降低总拥有成本。">Reduced civil construction, shorter project timeline and lower operating costs from efficient cooling combine for substantially lower total cost of ownership.</p>
+        </div>
+      </div>
+      <div class="adv6-card reveal" data-d="120">
+        <div class="adv6-icon">🌿</div>
+        <div>
+          <div class="adv6-title" data-en="Green &amp; Energy-Saving" data-zh="绿色节能">Green &amp; Energy-Saving</div>
+          <p class="adv6-body" data-en="Intelligent energy management with optimised cooling. PUE far below traditional data centre averages — meeting and exceeding green building certification requirements." data-zh="优化冷却的智能能源管理。PUE远低于传统数据中心平均值——满足并超越绿色建筑认证要求。">Intelligent energy management with optimised cooling. PUE far below traditional data centre averages — meeting and exceeding green building certification requirements.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── MODULAR AISLE SOLUTION ── -->
+<section style="padding: 0 0 80px; background: var(--surface);">
+  <div class="container">
+    <div class="section-header reveal" style="padding-top:80px;">
+      <div class="eyebrow" data-en="Modular Configuration" data-zh="模块化配置">Modular Configuration</div>
+      <h2 class="display-md" data-en="Fully Prefabricated Aisle Solution" data-zh="全预制通道解决方案">Fully Prefabricated Aisle Solution</h2>
+      <p class="body-lg reveal" data-d="80" style="max-width:600px; margin-top:14px;"
+        data-en="Based on standard container modules, the aisle solution ships as a complete, factory-integrated unit — cabinets, cooling, power, containment, and cabling all pre-installed."
+        data-zh="基于标准集装箱模块，通道解决方案作为完整的工厂集成单元出货——机柜、冷却、电源、密封通道和布线均已预装。">
+        Based on standard container modules, the aisle solution ships as a complete, factory-integrated unit — cabinets, cooling, power, containment, and cabling all pre-installed.
+      </p>
+    </div>
+    <div class="scenario-wrap reveal" data-d="80">
+      <div class="scenario-title" data-en="Pre-integrated aisle components" data-zh="预集成通道组件">Pre-integrated aisle components</div>
+      <div class="component-row">
+        <div class="component-block">
+          <div class="cb-icon">🗄️</div>
+          <div class="cb-name" data-en="IT Cabinets" data-zh="IT机柜">IT Cabinets</div>
+        </div>
+        <div class="component-block">
+          <div class="cb-icon">❄️</div>
+          <div class="cb-name" data-en="Thin-Plate Air-Wall AC" data-zh="薄板气墙空调">Thin-Plate Air-Wall AC</div>
+        </div>
+        <div class="component-block">
+          <div class="cb-icon">⚡</div>
+          <div class="cb-name" data-en="Rack PDUs" data-zh="机架式PDU">Rack PDUs</div>
+        </div>
+        <div class="component-block">
+          <div class="cb-icon">🚪</div>
+          <div class="cb-name" data-en="Aisle Containment &amp; Doors" data-zh="密封通道与门">Aisle Containment &amp; Doors</div>
+        </div>
+        <div class="component-block">
+          <div class="cb-icon">🔧</div>
+          <div class="cb-name" data-en="Support Brackets &amp; Base" data-zh="支撑托架与底座">Support Brackets &amp; Base</div>
+        </div>
+        <div class="component-block">
+          <div class="cb-icon">💧</div>
+          <div class="cb-name" data-en="Chilled Water Pipework" data-zh="冷冻水管道">Chilled Water Pipework</div>
+        </div>
+        <div class="component-block">
+          <div class="cb-icon">🔩</div>
+          <div class="cb-name" data-en="Filters &amp; Valves" data-zh="过滤器与阀门">Filters &amp; Valves</div>
+        </div>
+        <div class="component-block">
+          <div class="cb-icon">💡</div>
+          <div class="cb-name" data-en="Aisle LED Lighting" data-zh="通道LED照明">Aisle LED Lighting</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CONTAINER SOLUTION ── -->
+<section id="container" style="padding: 80px 0;">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="eyebrow" data-en="Container Solution" data-zh="集装箱解决方案">Container Solution</div>
+      <h2 class="display-md" data-en="Turnkey Data Centre in a Container" data-zh="集装箱内的交钥匙数据中心">Turnkey Data Centre in a Container</h2>
+      <p class="body-lg reveal" data-d="80" style="max-width:600px; margin-top:14px;"
+        data-en="All IT, power, cooling, monitoring and cabling systems factory-assembled inside a weatherproof container. Site preparation is the only on-site work required."
+        data-zh="所有IT、电源、冷却、监控和布线系统在防风雨集装箱内工厂组装。现场准备是唯一需要在现场进行的工作。">
+        All IT, power, cooling, monitoring and cabling systems factory-assembled inside a weatherproof container. Site preparation is the only on-site work required.
+      </p>
+    </div>
+
+    <!-- Container sizes -->
+    <div class="container-grid reveal" data-d="80">
+      <div class="container-card">
+        <div class="container-size">10</div>
+        <div class="container-unit" data-en="ft" data-zh="英尺">ft</div>
+        <div class="container-label" data-en="Edge / Remote" data-zh="边缘/远程">Edge / Remote</div>
+      </div>
+      <div class="container-card">
+        <div class="container-size">20</div>
+        <div class="container-unit" data-en="ft" data-zh="英尺">ft</div>
+        <div class="container-label" data-en="Standard" data-zh="标准">Standard</div>
+      </div>
+      <div class="container-card">
+        <div class="container-size">30</div>
+        <div class="container-unit" data-en="ft" data-zh="英尺">ft</div>
+        <div class="container-label" data-en="High Capacity" data-zh="大容量">High Capacity</div>
+      </div>
+      <div class="container-card">
+        <div class="container-size">∞</div>
+        <div class="container-unit" data-en="Custom" data-zh="定制">Custom</div>
+        <div class="container-label" data-en="Non-Standard Assembled" data-zh="非标准组装">Non-Standard Assembled</div>
+      </div>
+    </div>
+
+    <!-- Systems inside -->
+    <div style="margin-top:28px;" class="reveal" data-d="100">
+      <p style="font-size:0.85rem; color:var(--muted); margin-bottom:12px;" data-en="Systems pre-integrated in every container unit:" data-zh="每个集装箱单元内预集成的系统：">Systems pre-integrated in every container unit:</p>
+      <div class="system-chips">
+        <span class="system-chip" data-en="UPS 20kVA–600kVA" data-zh="UPS 20kVA–600kVA">UPS 20kVA–600kVA</span>
+        <span class="system-chip" data-en="Cooling 12.8–90kW" data-zh="冷却 12.8–90kW">Cooling 12.8–90kW</span>
+        <span class="system-chip" data-en="Power Distribution (Rack PDU)" data-zh="配电（机架PDU）">Power Distribution (Rack PDU)</span>
+        <span class="system-chip" data-en="Standard 19&quot; Rack System" data-zh="标准19英寸机架系统">Standard 19&quot; Rack System</span>
+        <span class="system-chip" data-en="3-in-1 Security (Fingerprint / PIN / Card)" data-zh="三合一安防（指纹/密码/门禁卡）">3-in-1 Security</span>
+        <span class="system-chip" data-en="Natural Cooling Support" data-zh="自然冷却支持">Natural Cooling Support</span>
+        <span class="system-chip" data-en="Integrated Cabling" data-zh="综合布线">Integrated Cabling</span>
+        <span class="system-chip" data-en="Environmental Monitoring" data-zh="环境监控">Environmental Monitoring</span>
+      </div>
+    </div>
+
+    <!-- Four container qualities -->
+    <div class="feature-grid-4" style="margin-top:48px;">
+      <div class="feat4-card reveal">
+        <div class="feat4-icon">🛠️</div>
+        <div class="feat4-title" data-en="Customised" data-zh="定制化">Customised</div>
+        <p class="feat4-body" data-en="Specialised R&amp;D for each deployment. Configuration options for capacity, cooling type, protection level and form factor." data-zh="每个部署的专业研发。容量、冷却类型、防护等级和外形规格的配置选项。">Specialised R&amp;D for each deployment. Configuration options for capacity, cooling type, protection level and form factor.</p>
+      </div>
+      <div class="feat4-card reveal" data-d="60">
+        <div class="feat4-icon">🚀</div>
+        <div class="feat4-title" data-en="Quick Deployment" data-zh="快速部署">Quick Deployment</div>
+        <p class="feat4-body" data-en="40 days from order to operational. Factory assembly and testing completes before the site is ready — the critical path is site preparation, not construction." data-zh="从订单到运营仅需40天。工厂组装和测试在场地准备好之前完成——关键路径是场地准备，而非建设。">40 days from order to operational. Factory assembly and testing completes before the site is ready — the critical path is site preparation, not construction.</p>
+      </div>
+      <div class="feat4-card reveal" data-d="120">
+        <div class="feat4-icon">🛡️</div>
+        <div class="feat4-title" data-en="Hardened Protection" data-zh="加固防护">Hardened Protection</div>
+        <p class="feat4-body" data-en="IP55 standard, IP65 optional. Corrosion, fire, blast and bulletproof protection available. Built-in fire suppression and access control as standard." data-zh="IP55标准，IP65可选。可提供防腐蚀、防火、防爆和防弹保护。标配内置消防和门禁控制。">IP55 standard, IP65 optional. Corrosion, fire, blast and bulletproof protection available. Built-in fire suppression and access control as standard.</p>
+      </div>
+      <div class="feat4-card reveal" data-d="180">
+        <div class="feat4-icon">🔁</div>
+        <div class="feat4-title" data-en="Always Online" data-zh="持续在线">Always Online</div>
+        <p class="feat4-body" data-en="Designed to GB50174 Class A. Certified to Uptime Institute Tier IV. 99.9999% availability for mission-critical workloads." data-zh="按GB50174 A类设计。通过运行时间研究所Tier IV认证。任务关键工作负载99.9999%可用性。">Designed to GB50174 Class A. Certified to Uptime Institute Tier IV. 99.9999% availability for mission-critical workloads.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── PHOTO SECTION ── -->
+<section style="padding: 0 0 80px;">
+  <div class="container">
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:20px;" class="reveal">
+      <img src="assets/img/dc-room.jpg" alt="Data centre room installation" style="border-radius:12px; width:100%; height:280px; object-fit:cover;"/>
+      <img src="assets/img/dc-aisle.jpg" alt="Data centre aisle" style="border-radius:12px; width:100%; height:280px; object-fit:cover;"/>
+    </div>
+    <div style="margin-top:20px; background:var(--card); border:1px solid var(--border); border-radius:14px; padding:28px 24px;" class="reveal" data-d="60">
+      <h3 style="font-size:1rem; font-weight:700; margin-bottom:12px;" data-en="Global Project References" data-zh="全球项目参考">Global Project References</h3>
+      <p style="font-size:0.88rem; color:var(--muted); margin:0;" data-en="Prefabricated data centre solutions have been successfully deployed for clients including financial institutions, government bodies and telecommunications operators across Asia, South America and beyond." data-zh="预制化数据中心解决方案已成功为亚洲、南美洲及其他地区的金融机构、政府机构和电信运营商部署。">Prefabricated data centre solutions have been successfully deployed for clients including financial institutions, government bodies and telecommunications operators across Asia, South America and beyond.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ── CTA ── -->
+<div class="cta-strip">
+  <h2 data-en="Need Capacity in 40 Days?" data-zh="40天内需要容量？">Need Capacity in 40 Days?</h2>
+  <p data-en="Tell us your power, cooling and availability requirements and we'll design a prefabricated solution sized for your exact needs." data-zh="告诉我们您的电源、冷却和可用性要求，我们将设计满足您确切需求的预制化解决方案。">Tell us your power, cooling and availability requirements and we'll design a prefabricated solution sized for your exact needs.</p>
+  <a href="contact.html" class="btn-white" data-en="Start the Conversation" data-zh="开始对话">Start the Conversation</a>
+</div>
+
+<!-- ── FOOTER ── -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="index.html" class="nav-logo"><img src="assets/img/logo.jpeg" alt="Glory Technology" class="nav-logo-img"></a>
+        <p data-en="Precision cooling solutions for the world's most demanding data centre environments." data-zh="为全球最苛刻的数据中心环境提供精密冷却解决方案。">Precision cooling solutions for the world's most demanding data centre environments.</p>
+      </div>
+      <div class="footer-col">
+        <h4 data-en="Products" data-zh="产品">Products</h4>
+        <ul>
+          <li><a href="liquid-cooling.html" data-en="Two-Phase Liquid Cooling" data-zh="两相液冷">Two-Phase Liquid Cooling</a></li>
+          <li><a href="green-dc.html" data-en="Green Data Centre" data-zh="绿色数据中心">Green Data Centre</a></li>
+          <li><a href="prefab.html" data-en="Prefabricated Solution" data-zh="预制化解决方案">Prefabricated Solution</a></li>
+          <li><a href="products.html" data-en="All Products" data-zh="所有产品">All Products</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 data-en="Company" data-zh="公司">Company</h4>
+        <ul>
+          <li><a href="about.html" data-en="About Us" data-zh="关于我们">About Us</a></li>
+          <li><a href="solutions.html" data-en="Solutions" data-zh="解决方案">Solutions</a></li>
+          <li><a href="contact.html" data-en="Contact" data-zh="联系我们">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 data-en="Contact" data-zh="联系方式">Contact</h4>
+        <ul><li><a href="mailto:info@glory-technology.com">info@glory-technology.com</a></li></ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p data-en="© 2025 Glory Technology Pte Ltd. All rights reserved." data-zh="© 2025 荣耀科技私人有限公司。版权所有。">© 2025 Glory Technology Pte Ltd. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<div id="toast" role="status" aria-live="polite"></div>
+<script src="assets/js/main.js"></script>
+</body>
+</html>

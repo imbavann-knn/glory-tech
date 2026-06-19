@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <script>(function(){var t=localStorage.getItem('gt-theme');if(t)document.documentElement.setAttribute('data-theme',t);})()</script>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Data Centre Related Products — Glory Technology</title>
+  <meta name="description" content="Full range of data centre cooling products: backplane heat dissipation systems, chip-level cold plates, CDUs, integrated chillers, UPS and power supply products."/>
+  <link rel="canonical" href="https://www.glory-technology.com/dc-products"/>
+  <meta property="og:title" content="Data Centre Related Products — Glory Technology"/>
+  <meta property="og:image" content="https://www.glory-technology.com/assets/img/og-image.jpg"/>
+  <meta name="twitter:card" content="summary_large_image"/>
+  <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;600;800&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="assets/css/style.css"/>
+  <style>
+    .pg-hero {
+      min-height: 72vh; display: flex; align-items: center;
+      padding-top: 68px; position: relative; overflow: hidden;
+    }
+    .pg-hero-img {
+      position: absolute; inset: 0; width: 100%; height: 100%;
+      object-fit: cover; z-index: 0;
+    }
+    .pg-hero-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(135deg, rgba(8,18,32,0.92) 0%, rgba(8,18,32,0.55) 100%);
+      z-index: 1;
+    }
+    .pg-hero-inner {
+      position: relative; z-index: 2; width: 100%;
+      max-width: 860px; margin: 0 auto; padding: 80px 24px;
+    }
+    .lc-tag {
+      display: inline-block; font-size: 0.72rem; font-weight: 600; letter-spacing: .14em;
+      text-transform: uppercase; color: var(--accent); border: 1px solid var(--accent);
+      border-radius: 4px; padding: 4px 10px; margin-bottom: 20px;
+    }
+    /* Category nav */
+    .cat-nav {
+      display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 40px;
+    }
+    .cat-btn {
+      padding: 8px 16px; border-radius: 20px; border: 1px solid var(--border);
+      background: var(--card); font-size: 0.82rem; font-weight: 600;
+      cursor: pointer; color: var(--muted); transition: all .2s; text-decoration: none;
+    }
+    .cat-btn:hover, .cat-btn.active {
+      background: var(--accent); color: #fff; border-color: var(--accent);
+    }
+    /* Product family */
+    .prod-family {
+      margin-bottom: 72px;
+    }
+    .prod-family-header {
+      display: flex; align-items: center; gap: 14px; margin-bottom: 28px;
+      padding-bottom: 16px; border-bottom: 2px solid var(--accent);
+    }
+    .prod-family-icon { font-size: 1.6rem; }
+    .prod-family-title { font-size: 1.2rem; font-weight: 700; }
+    .prod-family-sub { font-size: 0.85rem; color: var(--muted); margin-top: 2px; }
+    /* Product cards */
+    .prod-row { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px,1fr)); gap: 16px; }
+    .prod-card {
+      background: var(--card); border: 1px solid var(--border); border-radius: 12px;
+      padding: 20px; transition: box-shadow .2s;
+    }
+    .prod-card:hover { box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
+    .prod-kw { font-size: 1.5rem; font-weight: 800; color: var(--accent); line-height:1; }
+    .prod-kw-unit { font-size: 0.7rem; font-weight: 600; color: var(--muted); }
+    .prod-name { font-size: 0.88rem; font-weight: 700; margin: 8px 0 4px; }
+    .prod-desc { font-size: 0.78rem; color: var(--muted); margin: 0; line-height: 1.5; }
+    /* Spec table */
+    .spec-tbl { width: 100%; border-collapse: collapse; margin-top: 20px; font-size: 0.85rem; }
+    .spec-tbl th { background: var(--accent); color: #fff; padding: 10px 14px; text-align:left; font-size:0.8rem; }
+    .spec-tbl td { padding: 10px 14px; border-bottom: 1px solid var(--border); }
+    .spec-tbl tr:nth-child(even) td { background: var(--surface); }
+    /* How it works */
+    .hiw-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 36px; align-items: center; margin-top: 24px; }
+    .hiw-step { display: flex; gap: 16px; margin-bottom: 20px; }
+    .hiw-num {
+      width: 32px; height: 32px; flex-shrink:0; border-radius: 50%;
+      background: var(--accent); color: #fff; font-weight: 700; font-size: 0.85rem;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .hiw-body h4 { font-size: 0.92rem; font-weight: 700; margin-bottom: 4px; }
+    .hiw-body p { font-size: 0.82rem; color: var(--muted); margin: 0; line-height: 1.5; }
+    /* CTA */
+    .cta-strip {
+      background: var(--accent); color: #fff; padding: 72px 24px; text-align: center;
+    }
+    .cta-strip h2 { font-size: clamp(1.5rem,3.5vw,2.2rem); font-weight: 800; margin-bottom: 16px; }
+    .cta-strip p { font-size: 1rem; opacity: 0.88; max-width: 520px; margin: 0 auto 32px; }
+    .cta-strip a.btn-white {
+      display: inline-block; background: #fff; color: var(--accent); font-weight: 700;
+      font-size: 0.9rem; padding: 14px 32px; border-radius: 6px; text-decoration: none;
+    }
+    @media(max-width:640px){
+      .hiw-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── NAV ── -->
+<nav class="nav" role="navigation">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo"><img src="assets/img/logo.jpeg" alt="Glory Technology" class="nav-logo-img"></a>
+    <ul class="nav-links">
+      <li><a href="products.html" data-en="Products" data-zh="产品">Products</a></li>
+      <li><a href="solutions.html" data-en="Solutions" data-zh="解决方案">Solutions</a></li>
+      <li><a href="about.html" data-en="About" data-zh="关于我们">About</a></li>
+      <li><a href="contact.html" data-en="Contact" data-zh="联系我们">Contact</a></li>
+    </ul>
+    <div class="nav-controls">
+      <button class="ctrl-btn" id="lang-btn" aria-label="Switch language"><span class="lang-label">中</span></button>
+      <button class="ctrl-btn" id="theme-btn" aria-label="Toggle theme">
+        <span class="theme-icon"><svg viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></span>
+        <span class="theme-label">Dark</span>
+      </button>
+    </div>
+    <button class="nav-toggle" aria-label="Open menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="nav-mobile">
+  <a href="products.html" data-en="Products" data-zh="产品">Products</a>
+  <a href="solutions.html" data-en="Solutions" data-zh="解决方案">Solutions</a>
+  <a href="about.html" data-en="About" data-zh="关于我们">About</a>
+  <a href="contact.html" data-en="Contact" data-zh="联系我们">Contact</a>
+</div>
+
+<!-- ── HERO ── -->
+<section class="pg-hero" aria-label="Product hero">
+  <img src="assets/img/rdhx-install.jpg" alt="Rear-door heat exchanger installation" class="pg-hero-img"/>
+  <div class="pg-hero-overlay" aria-hidden="true"></div>
+  <div class="pg-hero-inner">
+    <div class="lc-tag reveal" data-en="Complete Product Range" data-zh="完整产品系列">Complete Product Range</div>
+    <h1 class="display-xl reveal" style="color:#fff;" data-d="60">
+      <span data-en-html="Data Centre<br><em>Related Products</em>" data-zh-html="数据中心<br><em>相关产品</em>">Data Centre<br><em>Related Products</em></span>
+    </h1>
+    <p class="body-lg reveal" data-d="140" style="max-width:560px; margin:20px 0 36px; color:rgba(255,255,255,0.85);"
+      data-en="Six product families covering every layer of data centre thermal management — from chip-level cold plates to room-level integrated chillers, UPS and power distribution."
+      data-zh="六大产品系列覆盖数据中心热管理的每一层——从芯片级冷板到机房级集成冷水机、UPS和配电。">
+      Six product families covering every layer of data centre thermal management — from chip-level cold plates to room-level integrated chillers, UPS and power distribution.
+    </p>
+    <div class="hero-actions reveal" data-d="200">
+      <a href="contact.html" class="btn btn-primary" data-en="Request a Quote" data-zh="申请报价">Request a Quote</a>
+      <a href="#products" class="btn btn-outline" data-en="Browse Products" data-zh="浏览产品">Browse Products</a>
+    </div>
+  </div>
+</section>
+
+<!-- ── STATS BAR ── -->
+<div class="stats-bar">
+  <div class="stat-cell reveal">
+    <div class="stat-big">6</div>
+    <div class="stat-unit" data-en="Product families" data-zh="产品系列">Product families</div>
+  </div>
+  <div class="stat-cell reveal" data-d="80">
+    <div class="stat-big">5–40kW</div>
+    <div class="stat-unit" data-en="Backplane HX capacity range" data-zh="背板换热器容量范围">Backplane HX capacity range</div>
+  </div>
+  <div class="stat-cell reveal" data-d="160">
+    <div class="stat-big">100%</div>
+    <div class="stat-unit" data-en="Sensible heat ratio (no dehumidification loss)" data-zh="显热比（无除湿损耗）">Sensible heat ratio (no dehumidification loss)</div>
+  </div>
+  <div class="stat-cell reveal" data-d="240">
+    <div class="stat-big">500kW</div>
+    <div class="stat-unit" data-en="Maximum integrated chiller capacity" data-zh="集成冷水机最大容量">Maximum integrated chiller capacity</div>
+  </div>
+</div>
+
+<!-- ── PRODUCTS ── -->
+<section id="products" style="padding: 80px 0;">
+  <div class="container">
+
+    <!-- Cat nav -->
+    <div class="cat-nav reveal">
+      <span class="cat-btn active" data-en="All Products" data-zh="所有产品">All Products</span>
+      <span class="cat-btn" data-en="Backplane Systems" data-zh="背板系统">Backplane Systems</span>
+      <span class="cat-btn" data-en="Chip-Level" data-zh="芯片级">Chip-Level</span>
+      <span class="cat-btn" data-en="UPS &amp; Power" data-zh="UPS与电源">UPS &amp; Power</span>
+    </div>
+
+    <!-- Family 1: Backplane HX Assembly -->
+    <div class="prod-family reveal">
+      <div class="prod-family-header">
+        <div class="prod-family-icon">🔷</div>
+        <div>
+          <div class="prod-family-title" data-en="Backplane-Level Heat Dissipation System" data-zh="背板级散热系统">Backplane-Level Heat Dissipation System</div>
+          <div class="prod-family-sub" data-en="Rear-door liquid-cooled heat exchangers — no server modification required" data-zh="后门液冷换热器——无需服务器改造">Rear-door liquid-cooled heat exchangers — no server modification required</div>
+        </div>
+      </div>
+      <div class="prod-row">
+        <div class="prod-card">
+          <div class="prod-kw">5<span class="prod-kw-unit">kW</span></div>
+          <div class="prod-name" data-en="Backplane HX Assembly" data-zh="背板换热器组件">Backplane HX Assembly</div>
+          <p class="prod-desc" data-en="Model BB-5H5F280. 100% sensible heat ratio. 1kW rated power. AC 220V 50Hz. 85kg." data-zh="型号 BB-5H5F280。100%显热比。额定功率1kW。AC 220V 50Hz。85kg。">Model BB-5H5F280. 100% sensible heat ratio. 1kW rated power. AC 220V 50Hz. 85kg.</p>
+        </div>
+        <div class="prod-card">
+          <div class="prod-kw">10<span class="prod-kw-unit">kW</span></div>
+          <div class="prod-name" data-en="Backplane HX Assembly" data-zh="背板换热器组件">Backplane HX Assembly</div>
+          <p class="prod-desc" data-en="Medium-density rack cooling. Online hot-swap. Tool-free door removal. Compatible with standard 19&quot; racks." data-zh="中密度机架冷却。在线热插拔。免工具门拆卸。兼容标准19英寸机架。">Medium-density rack cooling. Online hot-swap. Tool-free door removal. Compatible with standard 19&quot; racks.</p>
+        </div>
+        <div class="prod-card">
+          <div class="prod-kw">15<span class="prod-kw-unit">kW</span></div>
+          <div class="prod-name" data-en="Backplane HX Assembly" data-zh="背板换热器组件">Backplane HX Assembly</div>
+          <p class="prod-desc" data-en="High-density storage and network room cooling. Parallel-flow heat exchanger. Low water-side pressure drop." data-zh="高密度存储和网络机房冷却。并流换热器。水侧压降低。">High-density storage and network room cooling. Parallel-flow heat exchanger. Low water-side pressure drop.</p>
+        </div>
+        <div class="prod-card">
+          <div class="prod-kw">25<span class="prod-kw-unit">kW</span></div>
+          <div class="prod-name" data-en="Backplane HX Assembly" data-zh="背板换热器组件">Backplane HX Assembly</div>
+          <p class="prod-desc" data-en="AI inference rack cooling. Handles mixed CPU/GPU rack configurations. Dual-circuit inlet manifold." data-zh="AI推理机架冷却。处理CPU/GPU混合机架配置。双路进水歧管。">AI inference rack cooling. Handles mixed CPU/GPU rack configurations. Dual-circuit inlet manifold.</p>
+        </div>
+        <div class="prod-card">
+          <div class="prod-kw">32<span class="prod-kw-unit">kW</span></div>
+          <div class="prod-name" data-en="Backplane HX Assembly" data-zh="背板换热器组件">Backplane HX Assembly</div>
+          <p class="prod-desc" data-en="High-power GPU cluster cooling. Stainless steel headers. Brazed aluminium core. IP54 rated." data-zh="高功率GPU集群冷却。不锈钢集管。钎焊铝芯。IP54防护等级。">High-power GPU cluster cooling. Stainless steel headers. Brazed aluminium core. IP54 rated.</p>
+        </div>
+        <div class="prod-card">
+          <div class="prod-kw">40<span class="prod-kw-unit">kW</span></div>
+          <div class="prod-name" data-en="Backplane HX Assembly" data-zh="背板换热器组件">Backplane HX Assembly</div>
+          <p class="prod-desc" data-en="Maximum-density backplane solution. Supports next-generation AI accelerator racks up to 40kW per cabinet." data-zh="最大密度背板解决方案。支持下一代AI加速器机架，每机柜最高40kW。">Maximum-density backplane solution. Supports next-generation AI accelerator racks up to 40kW per cabinet.</p>
+        </div>
+      </div>
+
+      <!-- Spec table for 5kW reference -->
+      <div style="margin-top:24px; overflow-x:auto;">
+        <p style="font-size:0.78rem; color:var(--muted); margin-bottom:8px;" data-en="Reference specification (5kW model):" data-zh="参考规格（5kW型号）：">Reference specification (5kW model):</p>
+        <table class="spec-tbl">
+          <thead>
+            <tr>
+              <th data-en="Model" data-zh="型号">Model</th>
+              <th data-en="Cooling Capacity" data-zh="制冷量">Cooling Capacity</th>
+              <th data-en="Sensible Heat Ratio" data-zh="显热比">Sensible Heat Ratio</th>
+              <th data-en="Rated Power" data-zh="额定功率">Rated Power</th>
+              <th data-en="Supply" data-zh="供电">Supply</th>
+              <th data-en="Weight" data-zh="重量">Weight</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>BB-5H5F280</td>
+              <td>5kW</td>
+              <td>100%</td>
+              <td>1kW</td>
+              <td>AC 220V 50Hz</td>
+              <td>85kg</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Family 2: CDU and Chiller -->
+    <div class="prod-family reveal">
+      <div class="prod-family-header">
+        <div class="prod-family-icon">💧</div>
+        <div>
+          <div class="prod-family-title" data-en="Cooling Distribution &amp; Chiller Units" data-zh="冷却分配与冷水机组">Cooling Distribution &amp; Chiller Units</div>
+          <div class="prod-family-sub" data-en="CDUs, integrated chillers and dry coolers for full-facility liquid cooling infrastructure" data-zh="CDU、集成冷水机和干冷器，用于全设施液冷基础设施">CDUs, integrated chillers and dry coolers for full-facility liquid cooling infrastructure</div>
+        </div>
+      </div>
+      <div class="prod-row">
+        <div class="prod-card">
+          <div class="prod-kw">CDU</div>
+          <div class="prod-name" data-en="Cabinet-Mounted Cooling Distribution Unit" data-zh="机柜式冷却分配单元">Cabinet-Mounted Cooling Distribution Unit</div>
+          <p class="prod-desc" data-en="Dual-pump 1+1 redundant CDU. Integrates pump, cooler, valves, sensors, controllers and piping in a single 2U chassis. 10–60kW." data-zh="双泵1+1冗余CDU。单个2U机箱集成泵、冷却器、阀门、传感器、控制器和管道。10–60kW。">Dual-pump 1+1 redundant CDU. Integrates pump, cooler, valves, sensors, controllers and piping in a single 2U chassis. 10–60kW.</p>
+        </div>
+        <div class="prod-card">
+          <div class="prod-kw">Chiller</div>
+          <div class="prod-name" data-en="Integrated Refrigerator" data-zh="集成冷水机">Integrated Refrigerator</div>
+          <p class="prod-desc" data-en="100–500kW integrated chiller for high-density deployments. Provides supplemental cooling in summer months. N+Y chiller redundancy." data-zh="100–500kW集成冷水机，用于高密度部署。夏季提供补充冷却。N+Y冷水机冗余。">100–500kW integrated chiller for high-density deployments. Provides supplemental cooling in summer months. N+Y chiller redundancy.</p>
+        </div>
+        <div class="prod-card">
+          <div class="prod-kw">Dry<br><span style="font-size:1rem;">Cooler</span></div>
+          <div class="prod-name" data-en="Integrated Dry Cooler" data-zh="集成干冷器">Integrated Dry Cooler</div>
+          <p class="prod-desc" data-en="Outdoor adiabatic dry cooler. Uses ambient air for free cooling when outdoor temperature permits. Eliminates compressor use for most of the year." data-zh="户外绝热干冷器。当室外温度允许时，利用环境空气进行自然冷却。全年大部分时间无需压缩机。">Outdoor adiabatic dry cooler. Uses ambient air for free cooling when outdoor temperature permits. Eliminates compressor use for most of the year.</p>
+        </div>
+        <div class="prod-card">
+          <div class="prod-kw">Drive</div>
+          <div class="prod-name" data-en="Hydraulic Drive Unit" data-zh="液压驱动单元">Hydraulic Drive Unit</div>
+          <p class="prod-desc" data-en="Precision flow control unit providing stable coolant pressure and flow rate to backplane HX assemblies. Automatic flow balancing." data-zh="精密流量控制单元，为背板换热器组件提供稳定的冷却液压力和流量。自动流量平衡。">Precision flow control unit providing stable coolant pressure and flow rate to backplane HX assemblies. Automatic flow balancing.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Family 3: Chip-Level -->
+    <div class="prod-family reveal">
+      <div class="prod-family-header">
+        <div class="prod-family-icon">🔬</div>
+        <div>
+          <div class="prod-family-title" data-en="Chip-Level Heat Dissipation System" data-zh="芯片级散热系统">Chip-Level Heat Dissipation System</div>
+          <div class="prod-family-sub" data-en="Cold plates and manifolds for direct CPU/GPU cooling" data-zh="直接CPU/GPU冷却的冷板和歧管">Cold plates and manifolds for direct CPU/GPU cooling</div>
+        </div>
+      </div>
+      <div class="prod-row">
+        <div class="prod-card">
+          <div class="prod-kw">1500<span class="prod-kw-unit">W</span></div>
+          <div class="prod-name" data-en="Cold Plate Heat Exchanger" data-zh="冷板换热器">Cold Plate Heat Exchanger</div>
+          <p class="prod-desc" data-en="Aerospace-grade copper cold plate. 0.5mm microchannel geometry. Handles up to 1500W per chip. ±1.5°C temperature uniformity." data-zh="航空航天级铜制冷板。0.5mm微通道几何结构。每芯片最高1500W。±1.5°C温度均匀性。">Aerospace-grade copper cold plate. 0.5mm microchannel geometry. Handles up to 1500W per chip. ±1.5°C temperature uniformity.</p>
+        </div>
+        <div class="prod-card">
+          <div class="prod-kw">CDU</div>
+          <div class="prod-name" data-en="Chip Cooling CDU" data-zh="芯片冷却CDU">Chip Cooling CDU</div>
+          <p class="prod-desc" data-en="Dedicated CDU for chip-level two-phase cooling. Boiling point adjustable 25–85°C via pump pressure. Dual pump 1+1 redundancy." data-zh="专用于芯片级两相冷却的CDU。通过泵压可调沸点25–85°C。双泵1+1冗余。">Dedicated CDU for chip-level two-phase cooling. Boiling point adjustable 25–85°C via pump pressure. Dual pump 1+1 redundancy.</p>
+        </div>
+        <div class="prod-card">
+          <div class="prod-kw">Mani<br><span style="font-size:1rem;">fold</span></div>
+          <div class="prod-name" data-en="Coolant Manifold" data-zh="冷却液歧管">Coolant Manifold</div>
+          <p class="prod-desc" data-en="Distributes and regulates coolant flow and pressure to multiple cold plate assemblies. Modular design for flexible rack configurations." data-zh="向多个冷板组件分配和调节冷却液流量和压力。模块化设计，适合灵活的机架配置。">Distributes and regulates coolant flow and pressure to multiple cold plate assemblies. Modular design for flexible rack configurations.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Family 4: Other -->
+    <div class="prod-family reveal">
+      <div class="prod-family-header">
+        <div class="prod-family-icon">⚡</div>
+        <div>
+          <div class="prod-family-title" data-en="UPS &amp; Power Supply Products" data-zh="UPS与电源产品">UPS &amp; Power Supply Products</div>
+          <div class="prod-family-sub" data-en="Uninterruptible power and intelligent power distribution for data centre resilience" data-zh="不间断电源和智能配电，确保数据中心韧性">Uninterruptible power and intelligent power distribution for data centre resilience</div>
+        </div>
+      </div>
+      <div class="prod-row">
+        <div class="prod-card">
+          <div class="prod-kw">UPS</div>
+          <div class="prod-name" data-en="Online UPS System" data-zh="在线UPS系统">Online UPS System</div>
+          <p class="prod-desc" data-en="Zero-transfer-time online UPS. Scalable capacity. Double-conversion topology ensures clean, uninterrupted power regardless of utility quality." data-zh="零切换时间在线UPS。容量可扩展。双变换拓扑确保不受电网质量影响的稳定不间断电源。">Zero-transfer-time online UPS. Scalable capacity. Double-conversion topology ensures clean, uninterrupted power regardless of utility quality.</p>
+        </div>
+        <div class="prod-card">
+          <div class="prod-kw">PDU</div>
+          <div class="prod-name" data-en="Intelligent Power Distribution Unit" data-zh="智能配电单元">Intelligent Power Distribution Unit</div>
+          <p class="prod-desc" data-en="Rack-mounted PDU with per-outlet metering. Remote switching, overcurrent protection, and real-time energy monitoring via web interface." data-zh="机架式PDU，每插口计量。远程切换、过流保护，通过Web界面实时能耗监控。">Rack-mounted PDU with per-outlet metering. Remote switching, overcurrent protection, and real-time energy monitoring via web interface.</p>
+        </div>
+        <div class="prod-card">
+          <div class="prod-kw">Skid</div>
+          <div class="prod-name" data-en="Computing Power Skid-Mounted Products" data-zh="算力撬装产品">Computing Power Skid-Mounted Products</div>
+          <p class="prod-desc" data-en="Pre-integrated computing and cooling infrastructure on a single skid. Factory-tested and pre-commissioned for rapid site deployment." data-zh="单一撬装上预集成的计算和冷却基础设施。工厂测试和预调试，可快速现场部署。">Pre-integrated computing and cooling infrastructure on a single skid. Factory-tested and pre-commissioned for rapid site deployment.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ── HOW IT WORKS ── -->
+<section style="padding: 0 0 80px; background: var(--surface);">
+  <div class="container">
+    <div class="section-header reveal" style="padding-top:80px;">
+      <div class="eyebrow" data-en="Working Principle" data-zh="工作原理">Working Principle</div>
+      <h2 class="display-md" data-en="How Backplane Liquid Cooling Works" data-zh="背板液冷工作原理">How Backplane Liquid Cooling Works</h2>
+    </div>
+    <div class="hiw-grid reveal" data-d="80">
+      <div>
+        <div class="hiw-step">
+          <div class="hiw-num">1</div>
+          <div class="hiw-body">
+            <h4 data-en="Server exhaust enters heat exchanger" data-zh="服务器排气进入换热器">Server exhaust enters heat exchanger</h4>
+            <p data-en="Hot exhaust air (30–45°C) from servers flows into the rear-door liquid-cooled heat exchanger, transferring heat to the coolant circuit." data-zh="来自服务器的热排气（30–45°C）流入后门液冷换热器，将热量传递给冷却液回路。">Hot exhaust air (30–45°C) from servers flows into the rear-door liquid-cooled heat exchanger, transferring heat to the coolant circuit.</p>
+          </div>
+        </div>
+        <div class="hiw-step">
+          <div class="hiw-num">2</div>
+          <div class="hiw-body">
+            <h4 data-en="Cooled air returns to the cold aisle" data-zh="冷却后的空气返回冷通道">Cooled air returns to the cold aisle</h4>
+            <p data-en="Air exits the HX at near-room temperature and recirculates. No air conditioning is needed for the heat load carried by the liquid loop." data-zh="空气以接近室温离开换热器并循环。液冷回路承载的热负荷无需空调处理。">Air exits the HX at near-room temperature and recirculates. No air conditioning is needed for the heat load carried by the liquid loop.</p>
+          </div>
+        </div>
+        <div class="hiw-step">
+          <div class="hiw-num">3</div>
+          <div class="hiw-body">
+            <h4 data-en="Outdoor dry coolers handle the rest of the year" data-zh="户外干冷器处理其余时间">Outdoor dry coolers handle the rest of the year</h4>
+            <p data-en="Except during peak summer heat, the warm coolant is rejected directly to outdoor dry coolers — no chiller, no compressor, no refrigerant." data-zh="除夏季高峰热期外，温热冷却液直接通过户外干冷器散热——无冷水机、无压缩机、无制冷剂。">Except during peak summer heat, the warm coolant is rejected directly to outdoor dry coolers — no chiller, no compressor, no refrigerant.</p>
+          </div>
+        </div>
+        <div class="hiw-step">
+          <div class="hiw-num">4</div>
+          <div class="hiw-body">
+            <h4 data-en="Summer supplement from integrated chiller" data-zh="夏季由集成冷水机补充">Summer supplement from integrated chiller</h4>
+            <p data-en="In hot weather, the integrated chiller provides supplemental cooling capacity — automatically staged on and off by the building management system." data-zh="在炎热天气下，集成冷水机提供补充冷却容量——由楼宇管理系统自动分阶段开关。">In hot weather, the integrated chiller provides supplemental cooling capacity — automatically staged on and off by the building management system.</p>
+          </div>
+        </div>
+      </div>
+      <img src="assets/img/dlc-rack-interior.jpg" alt="Data centre rack interior with liquid cooling" style="border-radius:14px; width:100%; height:420px; object-fit:cover;"/>
+    </div>
+  </div>
+</section>
+
+<!-- ── CTA ── -->
+<div class="cta-strip">
+  <h2 data-en="Need a Product Recommendation?" data-zh="需要产品建议？">Need a Product Recommendation?</h2>
+  <p data-en="Tell us your rack power density and we'll specify the right combination of heat exchangers, CDUs and chillers for your facility." data-zh="告诉我们您的机架功率密度，我们将为您的设施指定正确的换热器、CDU和冷水机组合。">Tell us your rack power density and we'll specify the right combination of heat exchangers, CDUs and chillers for your facility.</p>
+  <a href="contact.html" class="btn-white" data-en="Get a Specification" data-zh="获取规格建议">Get a Specification</a>
+</div>
+
+<!-- ── FOOTER ── -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="index.html" class="nav-logo"><img src="assets/img/logo.jpeg" alt="Glory Technology" class="nav-logo-img"></a>
+        <p data-en="Precision cooling solutions for the world's most demanding data centre environments." data-zh="为全球最苛刻的数据中心环境提供精密冷却解决方案。">Precision cooling solutions for the world's most demanding data centre environments.</p>
+      </div>
+      <div class="footer-col">
+        <h4 data-en="Products" data-zh="产品">Products</h4>
+        <ul>
+          <li><a href="liquid-cooling.html" data-en="Two-Phase Liquid Cooling" data-zh="两相液冷">Two-Phase Liquid Cooling</a></li>
+          <li><a href="dc-products.html" data-en="DC Related Products" data-zh="数据中心相关产品">DC Related Products</a></li>
+          <li><a href="smart-cabinet.html" data-en="Intelligent Cabinet" data-zh="智能机柜">Intelligent Cabinet</a></li>
+          <li><a href="products.html" data-en="All Products" data-zh="所有产品">All Products</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 data-en="Company" data-zh="公司">Company</h4>
+        <ul>
+          <li><a href="about.html" data-en="About Us" data-zh="关于我们">About Us</a></li>
+          <li><a href="solutions.html" data-en="Solutions" data-zh="解决方案">Solutions</a></li>
+          <li><a href="contact.html" data-en="Contact" data-zh="联系我们">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 data-en="Contact" data-zh="联系方式">Contact</h4>
+        <ul><li><a href="mailto:info@glory-technology.com">info@glory-technology.com</a></li></ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p data-en="© 2025 Glory Technology Pte Ltd. All rights reserved." data-zh="© 2025 荣耀科技私人有限公司。版权所有。">© 2025 Glory Technology Pte Ltd. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<div id="toast" role="status" aria-live="polite"></div>
+<script src="assets/js/main.js"></script>
+</body>
+</html>
