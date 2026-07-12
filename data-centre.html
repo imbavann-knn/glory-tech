@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <script>(function(){var t=localStorage.getItem('gt-theme');if(t)document.documentElement.setAttribute('data-theme',t);})()</script>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Data Centre Cooling Solutions — Glory Technology</title>
+  <meta name="description" content="Comprehensive data centre cooling solutions — from two-phase liquid cooling and intelligent cabinets to prefabricated modular data centres. Enterprise-grade thermal management for Singapore."/>
+  <link rel="canonical" href="https://www.glory-technology.com/data-centre"/>
+  <meta property="og:title" content="Data Centre Cooling Solutions — Glory Technology"/>
+  <meta property="og:image" content="https://www.glory-technology.com/assets/img/og-image.jpg"/>
+  <meta name="twitter:card" content="summary_large_image"/>
+  <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;600;800&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="assets/css/style.css"/>
+  <style>
+    .pg-hero {
+      min-height: 80vh; display: flex; align-items: center;
+      padding-top: 68px; position: relative; overflow: hidden;
+    }
+    .pg-hero-img {
+      position: absolute; inset: 0; width: 100%; height: 100%;
+      object-fit: cover; z-index: 0;
+    }
+    .pg-hero-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(135deg, rgba(6,14,26,0.92) 0%, rgba(6,14,26,0.60) 100%);
+      z-index: 1;
+    }
+    .pg-hero-inner {
+      position: relative; z-index: 2; width: 100%;
+      max-width: 900px; margin: 0 auto; padding: 80px 24px;
+    }
+    .lc-tag {
+      display: inline-block; font-size: 0.72rem; font-weight: 600; letter-spacing: .14em;
+      text-transform: uppercase; color: var(--accent); border: 1px solid var(--accent);
+      border-radius: 4px; padding: 4px 10px; margin-bottom: 20px;
+    }
+    .stats-bar {
+      display: grid; grid-template-columns: repeat(4,1fr);
+      border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
+      background: var(--surface);
+    }
+    .stat-cell {
+      padding: 32px 28px; border-right: 1px solid var(--border); text-align: center;
+    }
+    .stat-cell:last-child { border-right: none; }
+    .stat-num { font-size: 2.2rem; font-weight: 800; color: var(--accent); line-height: 1; }
+    .stat-label { font-size: 0.72rem; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); margin-top: 6px; }
+
+    /* Solution cards */
+    .solutions-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px;
+    }
+    .sol-card {
+      background: var(--card); border: 1px solid var(--border); border-radius: 16px;
+      overflow: hidden; transition: transform 0.22s, box-shadow 0.22s; display: flex; flex-direction: column;
+    }
+    .sol-card:hover { transform: translateY(-4px); box-shadow: 0 16px 40px rgba(0,0,0,0.12); }
+    .sol-card-img {
+      width: 100%; height: 220px; object-fit: cover;
+    }
+    .sol-card-body {
+      padding: 28px 24px 32px; flex: 1; display: flex; flex-direction: column;
+    }
+    .sol-card-tag {
+      font-size: 0.65rem; font-weight: 700; letter-spacing: .2em; text-transform: uppercase;
+      color: var(--accent); margin-bottom: 10px;
+    }
+    .sol-card-title {
+      font-size: 1.2rem; font-weight: 700; line-height: 1.3; color: var(--fg);
+      margin-bottom: 12px;
+    }
+    .sol-card-desc {
+      font-size: 0.88rem; color: var(--muted); line-height: 1.7; flex: 1;
+    }
+    .sol-card-link {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-size: 0.8rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase;
+      color: var(--accent); margin-top: 20px; text-decoration: none;
+      transition: gap 0.2s;
+    }
+    .sol-card-link:hover { gap: 14px; }
+    .sol-card-link::after { content: '→'; }
+
+    /* Intro */
+    .intro-split {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center;
+    }
+    .intro-img {
+      width: 100%; height: 400px; object-fit: cover; border-radius: 16px;
+    }
+
+    @media (max-width: 900px) {
+      .stats-bar { grid-template-columns: repeat(2,1fr); }
+      .stat-cell { border-right: none; border-bottom: 1px solid var(--border); }
+      .solutions-grid { grid-template-columns: 1fr 1fr; }
+      .intro-split { grid-template-columns: 1fr; gap: 36px; }
+    }
+    @media (max-width: 600px) {
+      .solutions-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── NAV ─────────────────────────────────────────────────── -->
+<nav class="nav" role="navigation" aria-label="Main navigation">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo"><img src="assets/img/logo.jpeg" alt="Glory Technology" class="nav-logo-img"></a>
+    <ul class="nav-links">
+      <li class="nav-item-dropdown">
+        <a href="data-centre.html" data-en="Data Centre" data-zh="数据中心">Data Centre <svg class="dropdown-arrow" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></a>
+        <ul class="nav-dropdown">
+          <li><a href="liquid-cooling.html" data-en="Two-Phase Liquid Cooling" data-zh="两相液冷">Two-Phase Liquid Cooling</a></li>
+          <li><a href="green-dc.html" data-en="Green Data Centre" data-zh="绿色数据中心">Green Data Centre</a></li>
+          <li><a href="computing-power.html" data-en="Computing Power Cooling" data-zh="算力冷却">Computing Power Cooling</a></li>
+          <li><a href="dc-products.html" data-en="DC Related Products" data-zh="数据中心相关产品">DC Related Products</a></li>
+          <li><a href="smart-cabinet.html" data-en="Intelligent Cabinet" data-zh="智能机柜">Intelligent Cabinet</a></li>
+          <li><a href="prefab.html" data-en="Prefabricated Solution" data-zh="预制化解决方案">Prefabricated Solution</a></li>
+        </ul>
+      </li>
+      <li><a href="smart-building.html" data-en="Smart Building" data-zh="智慧建筑">Smart Building</a></li>
+      <li><a href="about.html" data-en="About" data-zh="关于我们">About</a></li>
+      <li><a href="contact.html" data-en="Contact" data-zh="联系我们">Contact</a></li>
+    </ul>
+    <div class="nav-controls">
+      <button class="ctrl-btn" id="lang-btn" aria-label="Switch language">
+        <span class="lang-label">中</span>
+      </button>
+      <button class="ctrl-btn" id="theme-btn" aria-label="Toggle theme">
+        <span class="theme-icon"><svg viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></span>
+        <span class="theme-label">Dark</span>
+      </button>
+    </div>
+    <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- Mobile menu -->
+<div class="nav-mobile" role="dialog" aria-label="Mobile navigation">
+  <a href="data-centre.html" data-en="Data Centre" data-zh="数据中心">Data Centre</a>
+  <div class="nav-mobile-sub">
+    <a href="liquid-cooling.html" data-en="Two-Phase Liquid Cooling" data-zh="两相液冷">Two-Phase Liquid Cooling</a>
+    <a href="green-dc.html" data-en="Green Data Centre" data-zh="绿色数据中心">Green Data Centre</a>
+    <a href="computing-power.html" data-en="Computing Power Cooling" data-zh="算力冷却">Computing Power Cooling</a>
+    <a href="dc-products.html" data-en="DC Related Products" data-zh="数据中心相关产品">DC Related Products</a>
+    <a href="smart-cabinet.html" data-en="Intelligent Cabinet" data-zh="智能机柜">Intelligent Cabinet</a>
+    <a href="prefab.html" data-en="Prefabricated Solution" data-zh="预制化解决方案">Prefabricated Solution</a>
+  </div>
+  <a href="smart-building.html" data-en="Smart Building" data-zh="智慧建筑">Smart Building</a>
+  <a href="about.html" data-en="About" data-zh="关于我们">About</a>
+  <a href="contact.html" data-en="Contact" data-zh="联系我们">Contact</a>
+  <div class="nav-controls" style="margin-top:16px; justify-content:flex-start;">
+    <button class="ctrl-btn" id="lang-btn-m" aria-label="Switch language">
+      <span class="lang-label">中</span>
+    </button>
+  </div>
+</div>
+
+<!-- ── HERO ─────────────────────────────────────────────────── -->
+<section class="pg-hero" aria-label="Data Centre Solutions">
+  <img src="assets/img/dc-aisle.jpg" alt="Data centre cooling aisle" class="pg-hero-img"/>
+  <div class="pg-hero-overlay"></div>
+  <div class="pg-hero-inner">
+    <div class="lc-tag" data-en="Data Centre" data-zh="数据中心">Data Centre</div>
+    <h1 class="display-xl" style="color:#fff; margin-bottom:20px;">
+      <span data-en-html="Cooling Solutions for<br><em>Every Scale</em>" data-zh-html="适合各种规模的<br><em>冷却解决方案</em>">Cooling Solutions for<br><em>Every Scale</em></span>
+    </h1>
+    <p class="body-lg" style="color:rgba(255,255,255,0.8); max-width:620px; margin-bottom:36px;"
+      data-en="From high-density AI clusters to prefabricated edge data centres — Glory Technology delivers precision thermal management engineered for reliability and efficiency."
+      data-zh="从高密度AI集群到预制化边缘数据中心，荣耀科技提供为可靠性和效率而设计的精密热管理解决方案。">
+      From high-density AI clusters to prefabricated edge data centres — Glory Technology delivers precision thermal management engineered for reliability and efficiency.
+    </p>
+    <div style="display:flex; gap:16px; flex-wrap:wrap;">
+      <a href="contact.html" class="btn btn-primary" data-en="Talk to an Engineer" data-zh="与工程师交流">Talk to an Engineer</a>
+      <a href="liquid-cooling.html" class="btn btn-outline" style="color:#fff; border-color:rgba(255,255,255,0.4);" data-en="Our Flagship Solution" data-zh="我们的旗舰产品">Our Flagship Solution</a>
+    </div>
+  </div>
+</section>
+
+<!-- ── STATS BAR ─────────────────────────────────────────────── -->
+<div class="stats-bar">
+  <div class="stat-cell">
+    <div class="stat-num" data-en="&lt;1.10" data-zh="&lt;1.10">&lt;1.10</div>
+    <div class="stat-label" data-en="PUE Achievable" data-zh="可达PUE">PUE Achievable</div>
+  </div>
+  <div class="stat-cell">
+    <div class="stat-num">6</div>
+    <div class="stat-label" data-en="Solution Categories" data-zh="解决方案类别">Solution Categories</div>
+  </div>
+  <div class="stat-cell">
+    <div class="stat-num" data-en="20×" data-zh="20×">20×</div>
+    <div class="stat-label" data-en="Cooling Efficiency vs Air" data-zh="相比风冷效率">Cooling Efficiency vs Air</div>
+  </div>
+  <div class="stat-cell">
+    <div class="stat-num">24/7</div>
+    <div class="stat-label" data-en="Technical Support" data-zh="技术支持">Technical Support</div>
+  </div>
+</div>
+
+<!-- ── INTRO ─────────────────────────────────────────────────── -->
+<section class="section">
+  <div class="container">
+    <div class="intro-split reveal">
+      <div>
+        <div class="eyebrow" data-en="What We Offer" data-zh="我们的产品">What We Offer</div>
+        <h2 class="display-md" style="margin:12px 0 20px;"
+          data-en="End-to-End Data Centre Thermal Management"
+          data-zh="端到端数据中心热管理">End-to-End Data Centre Thermal Management</h2>
+        <p class="body-lg" style="color:var(--muted); margin-bottom:24px;"
+          data-en="Modern data centres face escalating heat densities driven by AI workloads, GPU clusters, and high-performance computing. Conventional air cooling is no longer sufficient. Glory Technology provides a complete portfolio of advanced cooling technologies — from cutting-edge two-phase liquid cooling to prefabricated modular facilities — enabling operators to future-proof their infrastructure."
+          data-zh="现代数据中心面临着由AI工作负载、GPU集群和高性能计算驱动的不断升级的热密度挑战。传统风冷已不再足够。荣耀科技提供完整的先进冷却技术组合——从前沿的两相液冷到预制化模块化设施——使运营商能够为其基础设施的未来做好准备。">
+          Modern data centres face escalating heat densities driven by AI workloads, GPU clusters, and high-performance computing. Conventional air cooling is no longer sufficient. Glory Technology provides a complete portfolio of advanced cooling technologies — from cutting-edge two-phase liquid cooling to prefabricated modular facilities — enabling operators to future-proof their infrastructure.
+        </p>
+        <ul style="list-style:none; padding:0; display:flex; flex-direction:column; gap:10px;">
+          <li style="display:flex; align-items:center; gap:10px; font-size:0.88rem; color:var(--muted);">
+            <span style="color:var(--accent); font-weight:700;">✓</span>
+            <span data-en="Suitable for rack densities from 5 kW to 100+ kW" data-zh="适用于5kW至100kW以上机架密度">Suitable for rack densities from 5 kW to 100+ kW</span>
+          </li>
+          <li style="display:flex; align-items:center; gap:10px; font-size:0.88rem; color:var(--muted);">
+            <span style="color:var(--accent); font-weight:700;">✓</span>
+            <span data-en="Retrofit-ready for existing facilities" data-zh="适用于现有设施的改造">Retrofit-ready for existing facilities</span>
+          </li>
+          <li style="display:flex; align-items:center; gap:10px; font-size:0.88rem; color:var(--muted);">
+            <span style="color:var(--accent); font-weight:700;">✓</span>
+            <span data-en="New build to full EPC general contracting" data-zh="新建至EPC总承包">New build to full EPC general contracting</span>
+          </li>
+          <li style="display:flex; align-items:center; gap:10px; font-size:0.88rem; color:var(--muted);">
+            <span style="color:var(--accent); font-weight:700;">✓</span>
+            <span data-en="Rapid deployment with modular prefabricated options" data-zh="模块化预制选项快速部署">Rapid deployment with modular prefabricated options</span>
+          </li>
+        </ul>
+      </div>
+      <img src="assets/img/dc-engineers.jpg" alt="Engineers working in data centre" class="intro-img"/>
+    </div>
+  </div>
+</section>
+
+<!-- ── SOLUTIONS GRID ────────────────────────────────────────── -->
+<section class="section" style="background:var(--surface);">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="eyebrow" data-en="Our Solutions" data-zh="我们的解决方案">Our Solutions</div>
+      <h2 class="display-md" data-en="Six Categories. One Partner." data-zh="六大类别，一个合作伙伴。">Six Categories. One Partner.</h2>
+      <p class="body-lg" style="color:var(--muted);"
+        data-en="Each solution addresses a specific data centre challenge — select the one that matches your environment."
+        data-zh="每种解决方案针对特定的数据中心挑战——选择适合您环境的方案。">
+        Each solution addresses a specific data centre challenge — select the one that matches your environment.
+      </p>
+    </div>
+
+    <div class="solutions-grid reveal">
+
+      <div class="sol-card">
+        <img src="assets/img/dlc-cold-plates.jpg" alt="Two-Phase Liquid Cooling" class="sol-card-img"/>
+        <div class="sol-card-body">
+          <div class="sol-card-tag" data-en="Flagship" data-zh="旗舰产品">Flagship</div>
+          <div class="sol-card-title" data-en="Two-Phase Liquid Cooling" data-zh="两相液冷">Two-Phase Liquid Cooling</div>
+          <div class="sol-card-desc"
+            data-en="Aerospace-derived pump-driven technology achieving PUE below 1.10. Up to 20× more efficient than air cooling. Ideal for AI clusters, HPC, and ultra-high density racks."
+            data-zh="航天级泵驱两相技术，PUE低于1.10。效率比风冷提高20倍。适用于AI集群、HPC和超高密度机架。">
+            Aerospace-derived pump-driven technology achieving PUE below 1.10. Up to 20× more efficient than air cooling. Ideal for AI clusters, HPC, and ultra-high density racks.
+          </div>
+          <a href="liquid-cooling.html" class="sol-card-link" data-en="Learn More" data-zh="了解更多">Learn More</a>
+        </div>
+      </div>
+
+      <div class="sol-card">
+        <img src="assets/img/pptx-image117.jpeg" alt="Green Data Centre" class="sol-card-img"/>
+        <div class="sol-card-body">
+          <div class="sol-card-tag" data-en="Construction" data-zh="建设">Construction</div>
+          <div class="sol-card-title" data-en="Green Data Centre" data-zh="绿色数据中心">Green Data Centre</div>
+          <div class="sol-card-desc"
+            data-en="Full EPC general contracting — design, build, and operate sustainable data centres with integrated liquid cooling from day one. Includes retrofit programmes for existing facilities."
+            data-zh="完整的EPC总承包——设计、建造和运营可持续数据中心，从第一天起就集成液冷。包括现有设施的改造计划。">
+            Full EPC general contracting — design, build, and operate sustainable data centres with integrated liquid cooling from day one. Includes retrofit programmes for existing facilities.
+          </div>
+          <a href="green-dc.html" class="sol-card-link" data-en="Learn More" data-zh="了解更多">Learn More</a>
+        </div>
+      </div>
+
+      <div class="sol-card">
+        <img src="assets/img/dc-room.jpg" alt="Computing Power Cooling" class="sol-card-img"/>
+        <div class="sol-card-body">
+          <div class="sol-card-tag" data-en="AI &amp; HPC" data-zh="AI与HPC">AI &amp; HPC</div>
+          <div class="sol-card-title" data-en="Computing Power Cooling" data-zh="算力冷却">Computing Power Cooling</div>
+          <div class="sol-card-desc"
+            data-en="Purpose-built cooling for AI computing rooms, GPU servers, and training clusters. Three-tier architecture covering backplane, chip, and rack-level thermal management."
+            data-zh="专为AI计算机房、GPU服务器和训练集群设计的冷却系统。三层架构涵盖背板、芯片和机架级热管理。">
+            Purpose-built cooling for AI computing rooms, GPU servers, and training clusters. Three-tier architecture covering backplane, chip, and rack-level thermal management.
+          </div>
+          <a href="computing-power.html" class="sol-card-link" data-en="Learn More" data-zh="了解更多">Learn More</a>
+        </div>
+      </div>
+
+      <div class="sol-card">
+        <img src="assets/img/rdhx-install.jpg" alt="DC Related Products" class="sol-card-img"/>
+        <div class="sol-card-body">
+          <div class="sol-card-tag" data-en="Products" data-zh="产品">Products</div>
+          <div class="sol-card-title" data-en="DC Related Products" data-zh="数据中心相关产品">DC Related Products</div>
+          <div class="sol-card-desc"
+            data-en="Rear-door heat exchangers, in-row coolers, cooling distribution units, and cold plates — discrete components for targeted thermal upgrades within existing infrastructure."
+            data-zh="背门热交换器、行间冷却器、冷量分配单元和冷板——针对现有基础设施内定向热升级的独立组件。">
+            Rear-door heat exchangers, in-row coolers, cooling distribution units, and cold plates — discrete components for targeted thermal upgrades within existing infrastructure.
+          </div>
+          <a href="dc-products.html" class="sol-card-link" data-en="Learn More" data-zh="了解更多">Learn More</a>
+        </div>
+      </div>
+
+      <div class="sol-card">
+        <img src="assets/img/pptx-image107.jpeg" alt="Intelligent Cabinet" class="sol-card-img"/>
+        <div class="sol-card-body">
+          <div class="sol-card-tag" data-en="Smart" data-zh="智能">Smart</div>
+          <div class="sol-card-title" data-en="Intelligent Cabinet" data-zh="智能机柜">Intelligent Cabinet</div>
+          <div class="sol-card-desc"
+            data-en="IoT-enabled Ultra Smart Cabinets with integrated power, cooling, and environmental monitoring. Full visibility and control of each rack from a centralised management platform."
+            data-zh="支持物联网的Ultra智能机柜，集成电源、冷却和环境监控。通过集中管理平台对每个机架实现完整的可见性和控制。">
+            IoT-enabled Ultra Smart Cabinets with integrated power, cooling, and environmental monitoring. Full visibility and control of each rack from a centralised management platform.
+          </div>
+          <a href="smart-cabinet.html" class="sol-card-link" data-en="Learn More" data-zh="了解更多">Learn More</a>
+        </div>
+      </div>
+
+      <div class="sol-card">
+        <img src="assets/img/pptx-image129.jpeg" alt="Prefabricated Solution" class="sol-card-img"/>
+        <div class="sol-card-body">
+          <div class="sol-card-tag" data-en="Modular" data-zh="模块化">Modular</div>
+          <div class="sol-card-title" data-en="Prefabricated Solution" data-zh="预制化解决方案">Prefabricated Solution</div>
+          <div class="sol-card-desc"
+            data-en="Factory-built modular data centres in 10, 20, or 30-foot containers. Rapid deployment in weeks, not months. Ideal for edge computing, temporary capacity, and remote sites."
+            data-zh="工厂制造的模块化数据中心，提供10、20或30英尺集装箱。数周内快速部署，而非数月。适用于边缘计算、临时容量和偏远地点。">
+            Factory-built modular data centres in 10, 20, or 30-foot containers. Rapid deployment in weeks, not months. Ideal for edge computing, temporary capacity, and remote sites.
+          </div>
+          <a href="prefab.html" class="sol-card-link" data-en="Learn More" data-zh="了解更多">Learn More</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── HOW TO CHOOSE ─────────────────────────────────────────── -->
+<section class="section">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="eyebrow" data-en="How to Choose" data-zh="如何选择">How to Choose</div>
+      <h2 class="display-md" data-en="Match the Solution to Your Environment" data-zh="根据您的环境匹配解决方案">Match the Solution to Your Environment</h2>
+    </div>
+    <div class="reveal" style="overflow-x:auto;">
+      <table style="width:100%; border-collapse:collapse; font-size:0.88rem;">
+        <thead>
+          <tr style="background:var(--surface);">
+            <th style="padding:14px 18px; text-align:left; border-bottom:2px solid var(--border); color:var(--muted); font-weight:600; text-transform:uppercase; font-size:0.72rem; letter-spacing:.1em;" data-en="Environment / Use Case" data-zh="环境/用途">Environment / Use Case</th>
+            <th style="padding:14px 18px; text-align:center; border-bottom:2px solid var(--border); color:var(--muted); font-weight:600; text-transform:uppercase; font-size:0.72rem; letter-spacing:.1em;" data-en="Recommended Solution" data-zh="推荐解决方案">Recommended Solution</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="border-bottom:1px solid var(--border);">
+            <td style="padding:14px 18px; color:var(--fg);" data-en="AI / GPU training cluster, 30–100+ kW per rack" data-zh="AI/GPU训练集群，每机架30–100+kW">AI / GPU training cluster, 30–100+ kW per rack</td>
+            <td style="padding:14px 18px; text-align:center; color:var(--accent); font-weight:600;" data-en="Two-Phase Liquid Cooling" data-zh="两相液冷">Two-Phase Liquid Cooling</td>
+          </tr>
+          <tr style="border-bottom:1px solid var(--border); background:var(--surface);">
+            <td style="padding:14px 18px; color:var(--fg);" data-en="New data centre build or major renovation" data-zh="新数据中心建设或重大翻新">New data centre build or major renovation</td>
+            <td style="padding:14px 18px; text-align:center; color:var(--accent); font-weight:600;" data-en="Green Data Centre (EPC)" data-zh="绿色数据中心（EPC）">Green Data Centre (EPC)</td>
+          </tr>
+          <tr style="border-bottom:1px solid var(--border);">
+            <td style="padding:14px 18px; color:var(--fg);" data-en="Mixed compute room with varied rack densities" data-zh="具有不同机架密度的混合计算机房">Mixed compute room with varied rack densities</td>
+            <td style="padding:14px 18px; text-align:center; color:var(--accent); font-weight:600;" data-en="Computing Power Cooling" data-zh="算力冷却">Computing Power Cooling</td>
+          </tr>
+          <tr style="border-bottom:1px solid var(--border); background:var(--surface);">
+            <td style="padding:14px 18px; color:var(--fg);" data-en="Targeted upgrade within existing air-cooled DC" data-zh="在现有风冷数据中心内进行定向升级">Targeted upgrade within existing air-cooled DC</td>
+            <td style="padding:14px 18px; text-align:center; color:var(--accent); font-weight:600;" data-en="DC Related Products" data-zh="数据中心相关产品">DC Related Products</td>
+          </tr>
+          <tr style="border-bottom:1px solid var(--border);">
+            <td style="padding:14px 18px; color:var(--fg);" data-en="Colocation or managed hosting with per-rack visibility" data-zh="需要每机架可见性的托管或代管托管">Colocation or managed hosting with per-rack visibility</td>
+            <td style="padding:14px 18px; text-align:center; color:var(--accent); font-weight:600;" data-en="Intelligent Cabinet" data-zh="智能机柜">Intelligent Cabinet</td>
+          </tr>
+          <tr>
+            <td style="padding:14px 18px; color:var(--fg);" data-en="Edge site, remote location, or rapid capacity expansion" data-zh="边缘站点、偏远位置或快速容量扩展">Edge site, remote location, or rapid capacity expansion</td>
+            <td style="padding:14px 18px; text-align:center; color:var(--accent); font-weight:600;" data-en="Prefabricated Solution" data-zh="预制化解决方案">Prefabricated Solution</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ── CTA ── -->
+<div class="cta-strip">
+  <h2 data-en="Not Sure Which Solution Fits?" data-zh="不确定哪种解决方案适合您？">Not Sure Which Solution Fits?</h2>
+  <p data-en="Our engineers will assess your current environment, rack density, and growth plans — then recommend the right approach." data-zh="我们的工程师将评估您当前的环境、机架密度和增长计划，然后推荐合适的方法。">Our engineers will assess your current environment, rack density, and growth plans — then recommend the right approach.</p>
+  <a href="contact.html" class="btn-white" data-en="Talk to an Engineer" data-zh="与工程师交流">Talk to an Engineer</a>
+</div>
+
+<!-- ── FOOTER ── -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="index.html" class="nav-logo"><img src="assets/img/logo.jpeg" alt="Glory Technology" class="nav-logo-img"></a>
+        <p data-en="Precision cooling solutions for the world's most demanding data centre environments." data-zh="为全球最苛刻的数据中心环境提供精密冷却解决方案。">Precision cooling solutions for the world's most demanding data centre environments.</p>
+      </div>
+      <div class="footer-col">
+        <h4 data-en="Data Centre" data-zh="数据中心">Data Centre</h4>
+        <ul>
+          <li><a href="liquid-cooling.html" data-en="Two-Phase Liquid Cooling" data-zh="两相液冷">Two-Phase Liquid Cooling</a></li>
+          <li><a href="green-dc.html" data-en="Green Data Centre" data-zh="绿色数据中心">Green Data Centre</a></li>
+          <li><a href="computing-power.html" data-en="Computing Power Cooling" data-zh="算力冷却">Computing Power Cooling</a></li>
+          <li><a href="dc-products.html" data-en="DC Related Products" data-zh="数据中心相关产品">DC Related Products</a></li>
+          <li><a href="smart-cabinet.html" data-en="Intelligent Cabinet" data-zh="智能机柜">Intelligent Cabinet</a></li>
+          <li><a href="prefab.html" data-en="Prefabricated Solution" data-zh="预制化解决方案">Prefabricated Solution</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 data-en="Company" data-zh="公司">Company</h4>
+        <ul>
+          <li><a href="about.html" data-en="About Us" data-zh="关于我们">About Us</a></li>
+          <li><a href="smart-building.html" data-en="Smart Building" data-zh="智慧建筑">Smart Building</a></li>
+          <li><a href="contact.html" data-en="Contact" data-zh="联系我们">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 data-en="Contact" data-zh="联系方式">Contact</h4>
+        <ul><li><a href="mailto:info@glory-technology.com">info@glory-technology.com</a></li></ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p data-en="© 2025 Glory Technology Pte Ltd. All rights reserved." data-zh="© 2025 荣耀科技私人有限公司。版权所有。">© 2025 Glory Technology Pte Ltd. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<div id="toast" role="status" aria-live="polite"></div>
+<script src="assets/js/main.js"></script>
+</body>
+</html>

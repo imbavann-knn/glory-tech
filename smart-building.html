@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <script>(function(){var t=localStorage.getItem('gt-theme');if(t)document.documentElement.setAttribute('data-theme',t);})()</script>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Smart Building Solutions — Glory Technology</title>
+  <meta name="description" content="Intelligent building management, smart conference systems, LED displays, and video collaboration solutions for Singapore enterprises."/>
+  <link rel="canonical" href="https://www.glory-technology.com/smart-building"/>
+  <meta property="og:title" content="Smart Building Solutions — Glory Technology"/>
+  <meta property="og:image" content="https://www.glory-technology.com/assets/img/og-image.jpg"/>
+  <meta name="twitter:card" content="summary_large_image"/>
+  <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;600;800&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="assets/css/style.css"/>
+  <style>
+    .pg-hero {
+      min-height: 80vh; display: flex; align-items: center;
+      padding-top: 68px; position: relative; overflow: hidden;
+    }
+    .pg-hero-img {
+      position: absolute; inset: 0; width: 100%; height: 100%;
+      object-fit: cover; z-index: 0;
+    }
+    .pg-hero-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(135deg, rgba(6,14,26,0.90) 0%, rgba(6,14,26,0.50) 100%);
+      z-index: 1;
+    }
+    .pg-hero-inner {
+      position: relative; z-index: 2; width: 100%;
+      max-width: 900px; margin: 0 auto; padding: 80px 24px;
+    }
+    .lc-tag {
+      display: inline-block; font-size: 0.72rem; font-weight: 600; letter-spacing: .14em;
+      text-transform: uppercase; color: var(--accent); border: 1px solid var(--accent);
+      border-radius: 4px; padding: 4px 10px; margin-bottom: 20px;
+    }
+
+    /* Stats bar */
+    .stats-bar {
+      display: grid; grid-template-columns: repeat(4,1fr);
+      border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
+      background: var(--surface);
+    }
+    .stat-cell {
+      padding: 32px 28px; border-right: 1px solid var(--border); text-align: center;
+    }
+    .stat-cell:last-child { border-right: none; }
+    .stat-num { font-size: 2.2rem; font-weight: 800; color: var(--accent); line-height: 1; }
+    .stat-label { font-size: 0.72rem; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); margin-top: 6px; }
+
+    /* Solution pillars */
+    .pillar-grid {
+      display: grid; grid-template-columns: repeat(2, 1fr); gap: 32px;
+    }
+    .pillar-card {
+      background: var(--card); border: 1px solid var(--border); border-radius: 16px;
+      overflow: hidden; display: flex; flex-direction: column;
+    }
+    .pillar-img {
+      width: 100%; height: 260px; object-fit: cover;
+    }
+    .pillar-body { padding: 32px; flex: 1; }
+    .pillar-num {
+      font-size: 0.65rem; font-weight: 700; letter-spacing: .25em; text-transform: uppercase;
+      color: var(--accent); margin-bottom: 10px;
+    }
+    .pillar-title {
+      font-size: 1.4rem; font-weight: 700; color: var(--fg); margin-bottom: 14px;
+    }
+    .pillar-desc {
+      font-size: 0.9rem; color: var(--muted); line-height: 1.75; margin-bottom: 20px;
+    }
+    .pillar-features {
+      list-style: none; padding: 0; display: flex; flex-direction: column; gap: 8px;
+    }
+    .pillar-features li {
+      display: flex; align-items: flex-start; gap: 10px;
+      font-size: 0.85rem; color: var(--muted); line-height: 1.5;
+    }
+    .pillar-features li::before {
+      content: '→'; color: var(--accent); font-weight: 700; flex-shrink: 0; margin-top: 1px;
+    }
+
+    /* SBMS subsystems */
+    .sbms-grid {
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px;
+    }
+    .sbms-card {
+      background: var(--card); border: 1px solid var(--border); border-radius: 12px;
+      padding: 24px 20px; text-align: center;
+    }
+    .sbms-icon {
+      font-size: 2rem; margin-bottom: 12px; display: block;
+    }
+    .sbms-title {
+      font-size: 0.88rem; font-weight: 700; color: var(--fg); margin-bottom: 6px;
+    }
+    .sbms-desc {
+      font-size: 0.78rem; color: var(--muted); line-height: 1.6;
+    }
+
+    /* Feature strip */
+    .feature-strip {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 0; border: 1px solid var(--border); border-radius: 16px; overflow: hidden;
+    }
+    .feature-cell {
+      padding: 36px 32px; border-right: 1px solid var(--border); border-bottom: 1px solid var(--border);
+    }
+    .feature-cell:nth-child(3n) { border-right: none; }
+    .feature-cell:nth-last-child(-n+3) { border-bottom: none; }
+    .feature-cell-icon { font-size: 1.8rem; margin-bottom: 14px; display: block; }
+    .feature-cell-title { font-size: 1rem; font-weight: 700; color: var(--fg); margin-bottom: 8px; }
+    .feature-cell-desc { font-size: 0.85rem; color: var(--muted); line-height: 1.65; }
+
+    /* Intro split */
+    .intro-split {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center;
+    }
+    .intro-img {
+      width: 100%; height: 420px; object-fit: cover; border-radius: 16px;
+    }
+
+    @media (max-width: 900px) {
+      .stats-bar { grid-template-columns: repeat(2,1fr); }
+      .stat-cell { border-right: none; border-bottom: 1px solid var(--border); }
+      .pillar-grid { grid-template-columns: 1fr; }
+      .sbms-grid { grid-template-columns: repeat(2,1fr); }
+      .feature-strip { grid-template-columns: 1fr 1fr; }
+      .feature-cell:nth-child(2n) { border-right: none; }
+      .feature-cell:nth-child(3n) { border-right: 1px solid var(--border); }
+      .intro-split { grid-template-columns: 1fr; gap: 36px; }
+    }
+    @media (max-width: 600px) {
+      .sbms-grid { grid-template-columns: 1fr 1fr; }
+      .feature-strip { grid-template-columns: 1fr; }
+      .feature-cell { border-right: none !important; }
+      .feature-cell:last-child { border-bottom: none; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── NAV ─────────────────────────────────────────────────── -->
+<nav class="nav" role="navigation" aria-label="Main navigation">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo"><img src="assets/img/logo.jpeg" alt="Glory Technology" class="nav-logo-img"></a>
+    <ul class="nav-links">
+      <li class="nav-item-dropdown">
+        <a href="data-centre.html" data-en="Data Centre" data-zh="数据中心">Data Centre <svg class="dropdown-arrow" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></a>
+        <ul class="nav-dropdown">
+          <li><a href="liquid-cooling.html" data-en="Two-Phase Liquid Cooling" data-zh="两相液冷">Two-Phase Liquid Cooling</a></li>
+          <li><a href="green-dc.html" data-en="Green Data Centre" data-zh="绿色数据中心">Green Data Centre</a></li>
+          <li><a href="computing-power.html" data-en="Computing Power Cooling" data-zh="算力冷却">Computing Power Cooling</a></li>
+          <li><a href="dc-products.html" data-en="DC Related Products" data-zh="数据中心相关产品">DC Related Products</a></li>
+          <li><a href="smart-cabinet.html" data-en="Intelligent Cabinet" data-zh="智能机柜">Intelligent Cabinet</a></li>
+          <li><a href="prefab.html" data-en="Prefabricated Solution" data-zh="预制化解决方案">Prefabricated Solution</a></li>
+        </ul>
+      </li>
+      <li><a href="smart-building.html" data-en="Smart Building" data-zh="智慧建筑">Smart Building</a></li>
+      <li><a href="about.html" data-en="About" data-zh="关于我们">About</a></li>
+      <li><a href="contact.html" data-en="Contact" data-zh="联系我们">Contact</a></li>
+    </ul>
+    <div class="nav-controls">
+      <button class="ctrl-btn" id="lang-btn" aria-label="Switch language">
+        <span class="lang-label">中</span>
+      </button>
+      <button class="ctrl-btn" id="theme-btn" aria-label="Toggle theme">
+        <span class="theme-icon"><svg viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></span>
+        <span class="theme-label">Dark</span>
+      </button>
+    </div>
+    <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- Mobile menu -->
+<div class="nav-mobile" role="dialog" aria-label="Mobile navigation">
+  <a href="data-centre.html" data-en="Data Centre" data-zh="数据中心">Data Centre</a>
+  <div class="nav-mobile-sub">
+    <a href="liquid-cooling.html" data-en="Two-Phase Liquid Cooling" data-zh="两相液冷">Two-Phase Liquid Cooling</a>
+    <a href="green-dc.html" data-en="Green Data Centre" data-zh="绿色数据中心">Green Data Centre</a>
+    <a href="computing-power.html" data-en="Computing Power Cooling" data-zh="算力冷却">Computing Power Cooling</a>
+    <a href="dc-products.html" data-en="DC Related Products" data-zh="数据中心相关产品">DC Related Products</a>
+    <a href="smart-cabinet.html" data-en="Intelligent Cabinet" data-zh="智能机柜">Intelligent Cabinet</a>
+    <a href="prefab.html" data-en="Prefabricated Solution" data-zh="预制化解决方案">Prefabricated Solution</a>
+  </div>
+  <a href="smart-building.html" data-en="Smart Building" data-zh="智慧建筑">Smart Building</a>
+  <a href="about.html" data-en="About" data-zh="关于我们">About</a>
+  <a href="contact.html" data-en="Contact" data-zh="联系我们">Contact</a>
+  <div class="nav-controls" style="margin-top:16px; justify-content:flex-start;">
+    <button class="ctrl-btn" id="lang-btn-m" aria-label="Switch language">
+      <span class="lang-label">中</span>
+    </button>
+  </div>
+</div>
+
+<!-- ── HERO ─────────────────────────────────────────────────── -->
+<section class="pg-hero" aria-label="Smart Building">
+  <img src="assets/img/tech-blue.jpg" alt="Smart building technology" class="pg-hero-img"/>
+  <div class="pg-hero-overlay"></div>
+  <div class="pg-hero-inner">
+    <div class="lc-tag" data-en="Smart Building" data-zh="智慧建筑">Smart Building</div>
+    <h1 class="display-xl" style="color:#fff; margin-bottom:20px;">
+      <span data-en-html="Intelligent Spaces.<br><em>Seamless Operations.</em>" data-zh-html="智能空间。<br><em>无缝运营。</em>">Intelligent Spaces.<br><em>Seamless Operations.</em></span>
+    </h1>
+    <p class="body-lg" style="color:rgba(255,255,255,0.8); max-width:640px; margin-bottom:36px;"
+      data-en="From smart building management to immersive conference experiences and LED visual displays — we integrate the technology that makes modern facilities work intelligently."
+      data-zh="从智慧楼宇管理到沉浸式会议体验和LED视觉显示——我们整合让现代设施智能运营的技术。">
+      From smart building management to immersive conference experiences and LED visual displays — we integrate the technology that makes modern facilities work intelligently.
+    </p>
+    <div style="display:flex; gap:16px; flex-wrap:wrap;">
+      <a href="contact.html" class="btn btn-primary" data-en="Enquire Now" data-zh="立即咨询">Enquire Now</a>
+      <a href="#solutions" class="btn btn-outline" style="color:#fff; border-color:rgba(255,255,255,0.4);" data-en="View Solutions" data-zh="查看解决方案">View Solutions</a>
+    </div>
+  </div>
+</section>
+
+<!-- ── STATS BAR ─────────────────────────────────────────────── -->
+<div class="stats-bar">
+  <div class="stat-cell">
+    <div class="stat-num">4</div>
+    <div class="stat-label" data-en="Solution Areas" data-zh="解决方案领域">Solution Areas</div>
+  </div>
+  <div class="stat-cell">
+    <div class="stat-num">360°</div>
+    <div class="stat-label" data-en="Building Intelligence" data-zh="建筑智能">Building Intelligence</div>
+  </div>
+  <div class="stat-cell">
+    <div class="stat-num">30%</div>
+    <div class="stat-label" data-en="Avg. Energy Savings" data-zh="平均能耗节省">Avg. Energy Savings</div>
+  </div>
+  <div class="stat-cell">
+    <div class="stat-num">1</div>
+    <div class="stat-label" data-en="Integrated Platform" data-zh="集成平台">Integrated Platform</div>
+  </div>
+</div>
+
+<!-- ── INTRO ─────────────────────────────────────────────────── -->
+<section class="section">
+  <div class="container">
+    <div class="intro-split reveal">
+      <div>
+        <div class="eyebrow" data-en="Our Approach" data-zh="我们的方法">Our Approach</div>
+        <h2 class="display-md" style="margin:12px 0 20px;"
+          data-en="One Partner for the Entire Building"
+          data-zh="整栋建筑的一个合作伙伴">One Partner for the Entire Building</h2>
+        <p class="body-lg" style="color:var(--muted); margin-bottom:24px;"
+          data-en="Modern commercial buildings, campuses, and public facilities demand more than basic automation. They need systems that talk to each other — security feeds informing access control, occupancy sensors adjusting HVAC, meeting room bookings triggering AV setups. Glory Technology designs and integrates these systems as a coherent whole, not a collection of disconnected vendors."
+          data-zh="现代商业建筑、校园和公共设施需要的不仅仅是基本自动化。它们需要相互通信的系统——安防视频通知门禁控制、占用传感器调节空调、会议室预订触发AV设置。荣耀科技将这些系统作为一个连贯的整体来设计和集成，而不是一系列互不连接的供应商。">
+          Modern commercial buildings, campuses, and public facilities demand more than basic automation. They need systems that talk to each other — security feeds informing access control, occupancy sensors adjusting HVAC, meeting room bookings triggering AV setups. Glory Technology designs and integrates these systems as a coherent whole, not a collection of disconnected vendors.
+        </p>
+        <ul style="list-style:none; padding:0; display:flex; flex-direction:column; gap:10px;">
+          <li style="display:flex; align-items:center; gap:10px; font-size:0.88rem; color:var(--muted);">
+            <span style="color:var(--accent); font-weight:700;">✓</span>
+            <span data-en="IoT sensor networks and data analytics" data-zh="物联网传感器网络和数据分析">IoT sensor networks and data analytics</span>
+          </li>
+          <li style="display:flex; align-items:center; gap:10px; font-size:0.88rem; color:var(--muted);">
+            <span style="color:var(--accent); font-weight:700;">✓</span>
+            <span data-en="System integration across security, HVAC, lighting, and AV" data-zh="安防、暖通空调、照明和AV系统集成">System integration across security, HVAC, lighting, and AV</span>
+          </li>
+          <li style="display:flex; align-items:center; gap:10px; font-size:0.88rem; color:var(--muted);">
+            <span style="color:var(--accent); font-weight:700;">✓</span>
+            <span data-en="Centralised management dashboard and mobile app" data-zh="集中管理仪表板和移动应用">Centralised management dashboard and mobile app</span>
+          </li>
+          <li style="display:flex; align-items:center; gap:10px; font-size:0.88rem; color:var(--muted);">
+            <span style="color:var(--accent); font-weight:700;">✓</span>
+            <span data-en="Post-installation support and maintenance" data-zh="安装后支持和维护">Post-installation support and maintenance</span>
+          </li>
+        </ul>
+      </div>
+      <img src="assets/img/dc-install-aisle.jpg" alt="Smart building integration" class="intro-img"/>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOUR SOLUTION PILLARS ─────────────────────────────────── -->
+<section class="section" id="solutions" style="background:var(--surface);">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="eyebrow" data-en="Solution Areas" data-zh="解决方案领域">Solution Areas</div>
+      <h2 class="display-md" data-en="What We Deliver" data-zh="我们提供什么">What We Deliver</h2>
+      <p class="body-lg" style="color:var(--muted);"
+        data-en="Four integrated capabilities that together transform how a building operates."
+        data-zh="四项集成能力，共同改变建筑的运营方式。">
+        Four integrated capabilities that together transform how a building operates.
+      </p>
+    </div>
+
+    <div class="pillar-grid reveal">
+
+      <!-- Smart Building Management -->
+      <div class="pillar-card">
+        <img src="assets/img/dc-room.jpg" alt="Smart Building Management System" class="pillar-img"/>
+        <div class="pillar-body">
+          <div class="pillar-num" data-en="01 — Management" data-zh="01 — 管理">01 — Management</div>
+          <div class="pillar-title" data-en="Smart Building Management System" data-zh="智慧楼宇管理系统">Smart Building Management System</div>
+          <div class="pillar-desc"
+            data-en="An AI-powered platform that unifies every building system into a single pane of glass. Real-time monitoring, predictive maintenance, and automated response — across security, environment, energy, and facilities."
+            data-zh="一个AI驱动的平台，将每个建筑系统统一到单一界面。跨安防、环境、能源和设施的实时监控、预测性维护和自动响应。">
+            An AI-powered platform that unifies every building system into a single pane of glass. Real-time monitoring, predictive maintenance, and automated response — across security, environment, energy, and facilities.
+          </div>
+          <ul class="pillar-features">
+            <li data-en="Intelligent security: AI facial recognition, intrusion detection, RFID access control" data-zh="智能安防：AI人脸识别、入侵检测、RFID门禁控制">Intelligent security: AI facial recognition, intrusion detection, RFID access control</li>
+            <li data-en="Environmental control: occupancy-based lighting, HVAC, air quality (PM2.5, CO₂)" data-zh="环境控制：基于占用率的照明、暖通空调、空气质量（PM2.5、CO₂）">Environmental control: occupancy-based lighting, HVAC, air quality (PM2.5, CO₂)</li>
+            <li data-en="Energy management: smart metering, renewable integration, anomaly detection" data-zh="能源管理：智能计量、可再生能源集成、异常检测">Energy management: smart metering, renewable integration, anomaly detection</li>
+            <li data-en="Facility operations: meeting room booking, parking management, work order tracking" data-zh="设施运营：会议室预订、停车管理、工单跟踪">Facility operations: meeting room booking, parking management, work order tracking</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Smart Conference -->
+      <div class="pillar-card">
+        <img src="assets/img/pptx-image121.jpeg" alt="Smart Conference System" class="pillar-img"/>
+        <div class="pillar-body">
+          <div class="pillar-num" data-en="02 — Conference" data-zh="02 — 会议">02 — Conference</div>
+          <div class="pillar-title" data-en="Smart Conference Systems" data-zh="智慧会议系统">Smart Conference Systems</div>
+          <div class="pillar-desc"
+            data-en="End-to-end audio-visual conference solutions that enable seamless in-room and hybrid collaboration. From boardrooms to auditoriums — engineered for clarity, reliability, and ease of use."
+            data-zh="端到端的视听会议解决方案，实现无缝的室内和混合协作。从董事会室到礼堂——以清晰度、可靠性和易用性为工程目标。">
+            End-to-end audio-visual conference solutions that enable seamless in-room and hybrid collaboration. From boardrooms to auditoriums — engineered for clarity, reliability, and ease of use.
+          </div>
+          <ul class="pillar-features">
+            <li data-en="Professional display systems: interactive panels, projection, video walls" data-zh="专业显示系统：交互面板、投影、视频墙">Professional display systems: interactive panels, projection, video walls</li>
+            <li data-en="Audio: ceiling microphones, speaker arrays, noise cancellation" data-zh="音频：天花板麦克风、扬声器阵列、噪声消除">Audio: ceiling microphones, speaker arrays, noise cancellation</li>
+            <li data-en="One-touch meeting start with room booking integration" data-zh="一键启动会议，与会议室预订集成">One-touch meeting start with room booking integration</li>
+            <li data-en="Works with Microsoft Teams, Zoom, and other UC platforms" data-zh="与Microsoft Teams、Zoom等UC平台兼容">Works with Microsoft Teams, Zoom, and other UC platforms</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- LED Systems -->
+      <div class="pillar-card">
+        <img src="assets/img/pptx-image43.jpeg" alt="LED Display Systems" class="pillar-img"/>
+        <div class="pillar-body">
+          <div class="pillar-num" data-en="03 — Display" data-zh="03 — 显示">03 — Display</div>
+          <div class="pillar-title" data-en="LED Display Systems" data-zh="LED显示系统">LED Display Systems</div>
+          <div class="pillar-desc"
+            data-en="High-impact LED display solutions for lobbies, retail concourses, command centres, and outdoor façades. Scalable from small indoor panels to large-format curved and fine-pitch displays."
+            data-zh="适用于大堂、零售区、指挥中心和室外立面的高冲击力LED显示解决方案。可扩展从小型室内面板到大型曲面和小间距显示器。">
+            High-impact LED display solutions for lobbies, retail concourses, command centres, and outdoor façades. Scalable from small indoor panels to large-format curved and fine-pitch displays.
+          </div>
+          <ul class="pillar-features">
+            <li data-en="Fine-pitch indoor LED: P1.2 to P2.5, suitable for control rooms and broadcast" data-zh="小间距室内LED：P1.2至P2.5，适用于控制室和广播">Fine-pitch indoor LED: P1.2 to P2.5, suitable for control rooms and broadcast</li>
+            <li data-en="Outdoor waterproof LED: P3 to P10, high-brightness façade and signage" data-zh="室外防水LED：P3至P10，高亮度立面和标牌">Outdoor waterproof LED: P3 to P10, high-brightness façade and signage</li>
+            <li data-en="Transparent and creative-form LED panels for architectural integration" data-zh="透明和创意形态LED面板，适用于建筑集成">Transparent and creative-form LED panels for architectural integration</li>
+            <li data-en="Centralised content management and scheduling software" data-zh="集中内容管理和排程软件">Centralised content management and scheduling software</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Smart Campus / Video Conferencing -->
+      <div class="pillar-card">
+        <img src="assets/img/pptx-image122.jpeg" alt="Smart Campus and Video Conferencing" class="pillar-img" onerror="this.src='assets/img/dc-engineers.jpg'"/>
+        <div class="pillar-body">
+          <div class="pillar-num" data-en="04 — Campus" data-zh="04 — 园区">04 — Campus</div>
+          <div class="pillar-title" data-en="Smart Campus &amp; Video Collaboration" data-zh="智慧园区与视频协作">Smart Campus &amp; Video Collaboration</div>
+          <div class="pillar-desc"
+            data-en="Integrated campus-wide management combining security, communications, and facility systems under one unified platform. Extend collaboration beyond meeting rooms with enterprise-grade video conferencing across sites."
+            data-zh="集成的全园区管理，将安防、通信和设施系统统一在一个平台下。通过企业级跨站点视频会议，将协作延伸到会议室之外。">
+            Integrated campus-wide management combining security, communications, and facility systems under one unified platform. Extend collaboration beyond meeting rooms with enterprise-grade video conferencing across sites.
+          </div>
+          <ul class="pillar-features">
+            <li data-en="Multi-building unified access control and visitor management" data-zh="多楼栋统一门禁控制和访客管理">Multi-building unified access control and visitor management</li>
+            <li data-en="Intercampus HD video conferencing with low-latency codec" data-zh="园区间高清视频会议，低延迟编解码器">Intercampus HD video conferencing with low-latency codec</li>
+            <li data-en="Campus-wide announcement and PA integration" data-zh="全园区广播和公共广播集成">Campus-wide announcement and PA integration</li>
+            <li data-en="GIS-based 3D building map for operations teams" data-zh="基于GIS的3D建筑地图，供运营团队使用">GIS-based 3D building map for operations teams</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── SBMS SUBSYSTEMS ───────────────────────────────────────── -->
+<section class="section">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="eyebrow" data-en="SBMS Subsystems" data-zh="SBMS子系统">SBMS Subsystems</div>
+      <h2 class="display-md" data-en="Every System, Integrated" data-zh="每个系统，全部集成">Every System, Integrated</h2>
+      <p class="body-lg" style="color:var(--muted);"
+        data-en="The Smart Building Management System connects all operational domains into one unified intelligence layer."
+        data-zh="智慧楼宇管理系统将所有运营领域连接到一个统一的智能层。">
+        The Smart Building Management System connects all operational domains into one unified intelligence layer.
+      </p>
+    </div>
+    <div class="sbms-grid reveal">
+      <div class="sbms-card">
+        <span class="sbms-icon">🔒</span>
+        <div class="sbms-title" data-en="Security & Access" data-zh="安防与门禁">Security & Access</div>
+        <div class="sbms-desc" data-en="AI surveillance, facial recognition, RFID/fingerprint access control, intrusion detection" data-zh="AI视频监控、人脸识别、RFID/指纹门禁、入侵检测">AI surveillance, facial recognition, RFID/fingerprint access control, intrusion detection</div>
+      </div>
+      <div class="sbms-card">
+        <span class="sbms-icon">🌡️</span>
+        <div class="sbms-title" data-en="Environment" data-zh="环境">Environment</div>
+        <div class="sbms-desc" data-en="Temperature, humidity, PM2.5, CO₂ monitoring with automated HVAC control" data-zh="温度、湿度、PM2.5、CO₂监测，自动化暖通空调控制">Temperature, humidity, PM2.5, CO₂ monitoring with automated HVAC control</div>
+      </div>
+      <div class="sbms-card">
+        <span class="sbms-icon">💡</span>
+        <div class="sbms-title" data-en="Smart Lighting" data-zh="智能照明">Smart Lighting</div>
+        <div class="sbms-desc" data-en="Occupancy-triggered, daylight-adaptive lighting that reduces energy by up to 40%" data-zh="占用触发、日光自适应照明，降低能耗最高40%">Occupancy-triggered, daylight-adaptive lighting that reduces energy by up to 40%</div>
+      </div>
+      <div class="sbms-card">
+        <span class="sbms-icon">⚡</span>
+        <div class="sbms-title" data-en="Energy Management" data-zh="能源管理">Energy Management</div>
+        <div class="sbms-desc" data-en="Smart metering, consumption analytics, renewable integration, dynamic load distribution" data-zh="智能计量、能耗分析、可再生能源集成、动态负荷分配">Smart metering, consumption analytics, renewable integration, dynamic load distribution</div>
+      </div>
+      <div class="sbms-card">
+        <span class="sbms-icon">📅</span>
+        <div class="sbms-title" data-en="Facility Operations" data-zh="设施运营">Facility Operations</div>
+        <div class="sbms-desc" data-en="Meeting room reservation, automated setup, parking management, service request platform" data-zh="会议室预订、自动化设置、停车管理、服务请求平台">Meeting room reservation, automated setup, parking management, service request platform</div>
+      </div>
+      <div class="sbms-card">
+        <span class="sbms-icon">🔧</span>
+        <div class="sbms-title" data-en="Maintenance" data-zh="维护">Maintenance</div>
+        <div class="sbms-desc" data-en="Predictive maintenance alerts, work order lifecycle management, equipment health tracking" data-zh="预测性维护告警、工单生命周期管理、设备健康跟踪">Predictive maintenance alerts, work order lifecycle management, equipment health tracking</div>
+      </div>
+      <div class="sbms-card">
+        <span class="sbms-icon">📊</span>
+        <div class="sbms-title" data-en="Analytics" data-zh="分析">Analytics</div>
+        <div class="sbms-desc" data-en="Big data analytics dashboard with occupancy heatmaps, cost benchmarking, and KPI reporting" data-zh="大数据分析仪表板，含占用热图、成本基准和KPI报告">Big data analytics dashboard with occupancy heatmaps, cost benchmarking, and KPI reporting</div>
+      </div>
+      <div class="sbms-card">
+        <span class="sbms-icon">📱</span>
+        <div class="sbms-title" data-en="Mobile Control" data-zh="移动控制">Mobile Control</div>
+        <div class="sbms-desc" data-en="Staff-facing mobile app for real-time alerts, remote control, and incident response" data-zh="面向员工的移动应用，用于实时告警、远程控制和事件响应">Staff-facing mobile app for real-time alerts, remote control, and incident response</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── WHY GLORY TECH ────────────────────────────────────────── -->
+<section class="section" style="background:var(--surface);">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="eyebrow" data-en="Why Choose Us" data-zh="为什么选择我们">Why Choose Us</div>
+      <h2 class="display-md" data-en="The Glory Technology Difference" data-zh="荣耀科技的差异">The Glory Technology Difference</h2>
+    </div>
+    <div class="feature-strip reveal">
+      <div class="feature-cell">
+        <span class="feature-cell-icon">🏗️</span>
+        <div class="feature-cell-title" data-en="End-to-End Delivery" data-zh="端到端交付">End-to-End Delivery</div>
+        <div class="feature-cell-desc" data-en="From consultation and system design through to installation, commissioning, and ongoing support — one accountable partner from start to finish." data-zh="从咨询和系统设计到安装、调试和持续支持——从头到尾一个负责任的合作伙伴。">From consultation and system design through to installation, commissioning, and ongoing support — one accountable partner from start to finish.</div>
+      </div>
+      <div class="feature-cell">
+        <span class="feature-cell-icon">🔗</span>
+        <div class="feature-cell-title" data-en="Open Integration" data-zh="开放集成">Open Integration</div>
+        <div class="feature-cell-desc" data-en="Our solutions integrate with your existing building infrastructure and leading UC platforms, avoiding vendor lock-in and preserving past investment." data-zh="我们的解决方案与您现有的建筑基础设施和领先的UC平台集成，避免供应商锁定并保护过去的投资。">Our solutions integrate with your existing building infrastructure and leading UC platforms, avoiding vendor lock-in and preserving past investment.</div>
+      </div>
+      <div class="feature-cell">
+        <span class="feature-cell-icon">🌏</span>
+        <div class="feature-cell-title" data-en="Singapore-Based Support" data-zh="新加坡本地支持">Singapore-Based Support</div>
+        <div class="feature-cell-desc" data-en="Local engineering team for fast on-site response. We understand Singapore's regulatory environment and enterprise expectations." data-zh="本地工程团队，快速现场响应。我们了解新加坡的监管环境和企业期望。">Local engineering team for fast on-site response. We understand Singapore's regulatory environment and enterprise expectations.</div>
+      </div>
+      <div class="feature-cell">
+        <span class="feature-cell-icon">📈</span>
+        <div class="feature-cell-title" data-en="Scalable Architecture" data-zh="可扩展架构">Scalable Architecture</div>
+        <div class="feature-cell-desc" data-en="Start with one building, expand to an entire campus. Our platform scales without requiring a system overhaul at each growth stage." data-zh="从一栋建筑开始，扩展到整个园区。我们的平台在每个增长阶段无需系统改造即可扩展。">Start with one building, expand to an entire campus. Our platform scales without requiring a system overhaul at each growth stage.</div>
+      </div>
+      <div class="feature-cell">
+        <span class="feature-cell-icon">🛡️</span>
+        <div class="feature-cell-title" data-en="Cybersecurity Built In" data-zh="内置网络安全">Cybersecurity Built In</div>
+        <div class="feature-cell-desc" data-en="All IoT devices and control systems are deployed with network segmentation, encrypted communications, and access audit trails." data-zh="所有物联网设备和控制系统均采用网络分段、加密通信和访问审计跟踪部署。">All IoT devices and control systems are deployed with network segmentation, encrypted communications, and access audit trails.</div>
+      </div>
+      <div class="feature-cell">
+        <span class="feature-cell-icon">♻️</span>
+        <div class="feature-cell-title" data-en="Sustainability Focus" data-zh="可持续发展重点">Sustainability Focus</div>
+        <div class="feature-cell-desc" data-en="Smart building automation typically delivers 20–35% energy savings. We help you meet Green Mark requirements and ESG reporting targets." data-zh="智慧楼宇自动化通常可节省20-35%的能源。我们帮助您满足Green Mark要求和ESG报告目标。">Smart building automation typically delivers 20–35% energy savings. We help you meet Green Mark requirements and ESG reporting targets.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CTA ── -->
+<div class="cta-strip">
+  <h2 data-en="Ready to Upgrade Your Building?" data-zh="准备好升级您的建筑了吗？">Ready to Upgrade Your Building?</h2>
+  <p data-en="Tell us about your facility and we'll recommend the right combination of systems to meet your operational and sustainability goals." data-zh="告诉我们您的设施情况，我们将推荐合适的系统组合以满足您的运营和可持续发展目标。">Tell us about your facility and we'll recommend the right combination of systems to meet your operational and sustainability goals.</p>
+  <a href="contact.html" class="btn-white" data-en="Talk to Us" data-zh="联系我们">Talk to Us</a>
+</div>
+
+<!-- ── FOOTER ── -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="index.html" class="nav-logo"><img src="assets/img/logo.jpeg" alt="Glory Technology" class="nav-logo-img"></a>
+        <p data-en="Precision cooling solutions for data centres, and intelligent systems for smart buildings." data-zh="为数据中心提供精密冷却解决方案，为智慧建筑提供智能系统。">Precision cooling solutions for data centres, and intelligent systems for smart buildings.</p>
+      </div>
+      <div class="footer-col">
+        <h4 data-en="Data Centre" data-zh="数据中心">Data Centre</h4>
+        <ul>
+          <li><a href="liquid-cooling.html" data-en="Two-Phase Liquid Cooling" data-zh="两相液冷">Two-Phase Liquid Cooling</a></li>
+          <li><a href="green-dc.html" data-en="Green Data Centre" data-zh="绿色数据中心">Green Data Centre</a></li>
+          <li><a href="computing-power.html" data-en="Computing Power Cooling" data-zh="算力冷却">Computing Power Cooling</a></li>
+          <li><a href="data-centre.html" data-en="All DC Solutions" data-zh="所有DC解决方案">All DC Solutions</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 data-en="Smart Building" data-zh="智慧建筑">Smart Building</h4>
+        <ul>
+          <li><a href="smart-building.html#solutions" data-en="Building Management" data-zh="楼宇管理">Building Management</a></li>
+          <li><a href="smart-building.html#solutions" data-en="Smart Conference" data-zh="智慧会议">Smart Conference</a></li>
+          <li><a href="smart-building.html#solutions" data-en="LED Display" data-zh="LED显示">LED Display</a></li>
+          <li><a href="smart-building.html#solutions" data-en="Smart Campus" data-zh="智慧园区">Smart Campus</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 data-en="Contact" data-zh="联系方式">Contact</h4>
+        <ul><li><a href="mailto:info@glory-technology.com">info@glory-technology.com</a></li></ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p data-en="© 2025 Glory Technology Pte Ltd. All rights reserved." data-zh="© 2025 荣耀科技私人有限公司。版权所有。">© 2025 Glory Technology Pte Ltd. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<div id="toast" role="status" aria-live="polite"></div>
+<script src="assets/js/main.js"></script>
+</body>
+</html>
