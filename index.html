@@ -29,6 +29,16 @@
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"Organization","name":"Glory Technology","url":"https://www.glory-technology.com","description":"Data centre cooling systems specialist","address":{"@type":"PostalAddress","addressCountry":"SG"}}
   </script>
+  <style>
+    .it-split { display:grid; grid-template-columns: 1fr 1fr; gap:64px; align-items:center; }
+    .it-logos { display:grid; grid-template-columns: 1fr 1fr; gap:16px; }
+    .it-logo { background:#fff; border:1px solid var(--border); border-radius:14px; height:120px;
+      display:flex; align-items:center; justify-content:center; padding:24px 28px; }
+    .it-logo img { max-width:100%; max-height:100%; object-fit:contain; }
+    .it-logo img.wide { max-height:24px; }
+    .it-logo img.mid { max-height:38px; }
+    @media (max-width: 900px) { .it-split { grid-template-columns:1fr; gap:36px; } }
+  </style>
 </head>
 <body>
 
@@ -44,6 +54,7 @@
           <li><a href="green-dc.html" data-en="Green Data Centre" data-zh="绿色数据中心">Green Data Centre</a></li>
           <li><a href="computing-power.html" data-en="Computing Power Cooling" data-zh="算力冷却">Computing Power Cooling</a></li>
           <li><a href="dc-products.html" data-en="DC Related Products" data-zh="数据中心相关产品">DC Related Products</a></li>
+          <li><a href="it-equipment.html" data-en="IT Equipment" data-zh="IT设备">IT Equipment</a></li>
           <li><a href="smart-cabinet.html" data-en="Intelligent Cabinet" data-zh="智能机柜">Intelligent Cabinet</a></li>
           <li><a href="prefab.html" data-en="Prefabricated Solution" data-zh="预制化解决方案">Prefabricated Solution</a></li>
         </ul>
@@ -75,6 +86,7 @@
     <a href="green-dc.html" data-en="Green Data Centre" data-zh="绿色数据中心">Green Data Centre</a>
     <a href="computing-power.html" data-en="Computing Power Cooling" data-zh="算力冷却">Computing Power Cooling</a>
     <a href="dc-products.html" data-en="DC Related Products" data-zh="数据中心相关产品">DC Related Products</a>
+    <a href="it-equipment.html" data-en="IT Equipment" data-zh="IT设备">IT Equipment</a>
     <a href="smart-cabinet.html" data-en="Intelligent Cabinet" data-zh="智能机柜">Intelligent Cabinet</a>
     <a href="prefab.html" data-en="Prefabricated Solution" data-zh="预制化解决方案">Prefabricated Solution</a>
   </div>
@@ -168,7 +180,7 @@
         <div class="product-body">
           <h3 data-en="Liquid Cooling Systems" data-zh="液冷系统">Liquid Cooling Systems</h3>
           <p data-en="High-density server cooling via direct liquid contact, rear-door heat exchangers, and immersion tank solutions." data-zh="通过直接液体接触、背门换热器和浸没槽解决方案实现高密度服务器冷却。">High-density server cooling via direct liquid contact, rear-door heat exchangers, and immersion tank solutions.</p>
-          <a href="products.html" class="product-link" data-en="Learn More →" data-zh="了解更多 →">Learn More →</a>
+          <a href="liquid-cooling.html" class="product-link" data-en="Learn More →" data-zh="了解更多 →">Learn More →</a>
         </div>
       </div>
       <div class="product-card reveal" data-d="120">
@@ -178,7 +190,7 @@
         <div class="product-body">
           <h3 data-en="Precision Air Conditioning" data-zh="精密空调">Precision Air Conditioning</h3>
           <p data-en="Computer room air handlers (CRAH) and precision air conditioning units engineered for 24/7 data centre environments." data-zh="专为24/7数据中心环境设计的计算机机房空气处理机(CRAH)和精密空调设备。">Computer room air handlers (CRAH) and precision air conditioning units engineered for 24/7 data centre environments.</p>
-          <a href="products.html" class="product-link" data-en="Learn More →" data-zh="了解更多 →">Learn More →</a>
+          <a href="dc-products.html" class="product-link" data-en="Learn More →" data-zh="了解更多 →">Learn More →</a>
         </div>
       </div>
       <div class="product-card reveal" data-d="240">
@@ -188,12 +200,36 @@
         <div class="product-body">
           <h3 data-en="Thermal Monitoring & BMS" data-zh="热监控与楼宇管理系统">Thermal Monitoring & BMS</h3>
           <p data-en="Real-time temperature, humidity, and airflow monitoring integrated with building management systems for full visibility." data-zh="实时温度、湿度和气流监控，与楼宇管理系统集成，提供全面可视性。">Real-time temperature, humidity, and airflow monitoring integrated with building management systems for full visibility.</p>
-          <a href="products.html" class="product-link" data-en="Learn More →" data-zh="了解更多 →">Learn More →</a>
+          <a href="smart-cabinet.html" class="product-link" data-en="Learn More →" data-zh="了解更多 →">Learn More →</a>
         </div>
       </div>
     </div>
     <div style="text-align:center; margin-top:48px;" class="reveal">
-      <a href="products.html" class="btn btn-outline" data-en="View All Products" data-zh="查看所有产品">View All Products</a>
+      <a href="data-centre.html" class="btn btn-outline" data-en="View All Products" data-zh="查看所有产品">View All Products</a>
+    </div>
+  </div>
+</section>
+
+<!-- ── IT EQUIPMENT ──────────────────────────────────────────── -->
+<section style="padding:96px 0; background:var(--surface); border-top:1px solid var(--border);">
+  <div class="container">
+    <div class="it-split">
+      <div class="reveal">
+        <div class="eyebrow" data-en="IT Equipment" data-zh="IT设备">IT Equipment</div>
+        <h2 class="display-md" style="margin:12px 0 20px;" data-en="Servers, Storage, Switches and Firewalls" data-zh="服务器、存储、交换机与防火墙">Servers, Storage, Switches and Firewalls</h2>
+        <p class="body-lg" style="margin-bottom:32px;"
+          data-en="We supply the IT hardware inside your racks from leading brands, then install it and match it to the right cooling. One partner for the whole data centre."
+          data-zh="我们供应来自领先品牌的机柜内IT硬件，并负责安装和匹配合适的冷却方案。整个数据中心，一个合作伙伴。">
+          We supply the IT hardware inside your racks from leading brands, then install it and match it to the right cooling. One partner for the whole data centre.
+        </p>
+        <a href="it-equipment.html" class="btn btn-primary" data-en="Explore IT Equipment" data-zh="了解IT设备">Explore IT Equipment</a>
+      </div>
+      <div class="it-logos reveal" data-d="100">
+        <div class="it-logo"><img src="assets/img/brands/dell-technologies.svg" alt="Dell Technologies" class="wide" loading="lazy"/></div>
+        <div class="it-logo"><img src="assets/img/brands/lenovo.svg" alt="Lenovo" class="mid" loading="lazy"/></div>
+        <div class="it-logo"><img src="assets/img/brands/sangfor.png" alt="Sangfor" loading="lazy"/></div>
+        <div class="it-logo"><img src="assets/img/brands/supermicro.svg" alt="Supermicro" loading="lazy"/></div>
+      </div>
     </div>
   </div>
 </section>
@@ -220,10 +256,10 @@
       <div class="footer-col">
         <h4 data-en="Data Centre" data-zh="数据中心">Data Centre</h4>
         <ul>
-          <li><a href="products.html" data-en="Liquid Cooling" data-zh="液冷系统">Liquid Cooling</a></li>
-          <li><a href="products.html" data-en="Precision AC" data-zh="精密空调">Precision AC</a></li>
-          <li><a href="products.html" data-en="Thermal Monitoring" data-zh="热监控">Thermal Monitoring</a></li>
-          <li><a href="products.html" data-en="Airflow Management" data-zh="气流管理">Airflow Management</a></li>
+          <li><a href="liquid-cooling.html" data-en="Two-Phase Liquid Cooling" data-zh="两相液冷">Two-Phase Liquid Cooling</a></li>
+          <li><a href="dc-products.html" data-en="DC Related Products" data-zh="数据中心相关产品">DC Related Products</a></li>
+          <li><a href="it-equipment.html" data-en="IT Equipment" data-zh="IT设备">IT Equipment</a></li>
+          <li><a href="data-centre.html" data-en="All DC Solutions" data-zh="所有DC解决方案">All DC Solutions</a></li>
         </ul>
       </div>
       <div class="footer-col">

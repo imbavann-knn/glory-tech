@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <script>(function(){var t=localStorage.getItem('gt-theme');if(t)document.documentElement.setAttribute('data-theme',t);})()</script>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>IT Equipment | Glory Technology</title>
+  <meta name="description" content="Servers, storage, network switches and firewalls for data centres from Dell Technologies, Lenovo, Sangfor and Supermicro. Supplied, installed and supported by Glory Technology in Singapore."/>
+  <link rel="canonical" href="https://www.glory-technology.com/it-equipment"/>
+  <meta property="og:title" content="IT Equipment | Glory Technology"/>
+  <meta property="og:description" content="Servers, storage, switches and firewalls from leading brands, supplied, installed and cooled by one team."/>
+  <meta property="og:image" content="https://www.glory-technology.com/assets/img/og-image.jpg"/>
+  <meta name="twitter:card" content="summary_large_image"/>
+  <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;600;800&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="assets/css/style.css"/>
+  <style>
+    .pg-hero {
+      min-height: 72vh; display: flex; align-items: center;
+      padding-top: 68px; position: relative; overflow: hidden;
+    }
+    .pg-hero-img {
+      position: absolute; inset: 0; width: 100%; height: 100%;
+      object-fit: cover; z-index: 0;
+    }
+    .pg-hero-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(135deg, rgba(8,18,32,0.92) 0%, rgba(8,18,32,0.55) 100%);
+      z-index: 1;
+    }
+    .pg-hero-inner {
+      position: relative; z-index: 2; width: 100%;
+      max-width: 860px; margin: 0 auto; padding: 80px 24px;
+    }
+    .lc-tag {
+      display: inline-block; font-size: 0.72rem; font-weight: 600; letter-spacing: .14em;
+      text-transform: uppercase; color: #7FB4DA; border: 1px solid #7FB4DA;
+      border-radius: 4px; padding: 4px 10px; margin-bottom: 20px;
+    }
+    .pg-hero .btn-outline { color: #fff; border-color: rgba(255,255,255,0.4); }
+
+    /* Stats */
+    .stats-bar {
+      display: grid; grid-template-columns: repeat(4,1fr);
+      border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
+      background: var(--surface);
+    }
+    .stat-cell { padding: 32px 28px; border-right: 1px solid var(--border); text-align: center; }
+    .stat-cell:last-child { border-right: none; }
+    .stat-num { font-size: 2.2rem; font-weight: 800; color: var(--accent); line-height: 1; }
+    .stat-label { font-size: 0.72rem; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); margin-top: 8px; }
+
+    .section { padding: 96px 0; }
+
+    /* Equipment categories */
+    .eq-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 28px; }
+    .eq-card {
+      background: var(--card); border: 1px solid var(--border); border-radius: 16px;
+      overflow: hidden; display: flex; flex-direction: column;
+      transition: transform 0.22s, box-shadow 0.22s;
+    }
+    @media (hover: hover) and (pointer: fine) {
+      .eq-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
+    }
+    .eq-visual { height: 220px; overflow: hidden; background: var(--surface); }
+    .eq-visual img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .eq-body { padding: 28px 28px 32px; flex: 1; display: flex; flex-direction: column; }
+    .eq-tag {
+      font-size: 0.65rem; font-weight: 700; letter-spacing: .2em; text-transform: uppercase;
+      color: var(--accent-2); margin-bottom: 10px;
+    }
+    .eq-title { font-size: 1.35rem; font-weight: 800; color: var(--text); margin-bottom: 12px; letter-spacing: -0.01em; }
+    .eq-desc { font-size: 0.92rem; font-weight: 300; color: var(--muted); line-height: 1.7; margin-bottom: 18px; }
+    .eq-list { list-style: none; padding: 0; margin: 0 0 20px; display: flex; flex-direction: column; gap: 8px; }
+    .eq-list li { display: flex; gap: 10px; font-size: 0.86rem; color: var(--text-2); line-height: 1.5; }
+    .eq-list li::before { content: '✓'; color: var(--accent); font-weight: 700; flex-shrink: 0; }
+    .eq-brands { display: flex; flex-wrap: wrap; gap: 8px; margin-top: auto; }
+    .eq-chip {
+      font-size: 0.72rem; font-weight: 600; letter-spacing: .04em; color: var(--accent);
+      border: 1px solid var(--border-strong); border-radius: 20px; padding: 4px 12px;
+    }
+
+    /* Brand wall */
+    .brand-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+    .brand-card {
+      background: var(--card); border: 1px solid var(--border); border-radius: 16px;
+      overflow: hidden; display: flex; flex-direction: column;
+    }
+    .brand-logo {
+      height: 150px; background: #fff; display: flex; align-items: center; justify-content: center;
+      padding: 28px 32px; border-bottom: 1px solid var(--border);
+    }
+    .brand-logo img { max-width: 100%; max-height: 100%; object-fit: contain; }
+    .brand-logo img.wide { max-height: 30px; }
+    .brand-logo img.mid { max-height: 44px; }
+    .brand-body { padding: 22px 22px 26px; }
+    .brand-name { font-size: 1rem; font-weight: 800; color: var(--text); margin-bottom: 8px; }
+    .brand-desc { font-size: 0.84rem; font-weight: 300; color: var(--muted); line-height: 1.65; }
+    .brand-more {
+      text-align: center; margin-top: 32px; font-size: 0.9rem; color: var(--muted);
+    }
+    .brand-more a { color: var(--accent); font-weight: 600; }
+
+    /* Why us */
+    .why-split { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
+    .why-img { width: 100%; height: 440px; object-fit: cover; border-radius: 16px; }
+    .why-step { display: flex; gap: 16px; margin-bottom: 24px; }
+    .why-num {
+      width: 34px; height: 34px; flex-shrink: 0; border-radius: 50%;
+      background: var(--accent); color: var(--btn-text); font-weight: 700; font-size: 0.85rem;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .why-step h4 { font-size: 1rem; font-weight: 700; color: var(--text); margin-bottom: 4px; }
+    .why-step p { font-size: 0.88rem; font-weight: 300; color: var(--muted); margin: 0; line-height: 1.65; }
+
+    /* CTA */
+    .cta-strip { background: var(--accent); color: #fff; padding: 72px 24px; text-align: center; }
+    .cta-strip h2 { font-size: clamp(1.5rem,3.5vw,2.2rem); font-weight: 800; margin-bottom: 16px; }
+    .cta-strip p { font-size: 1rem; opacity: 0.88; max-width: 560px; margin: 0 auto 32px; }
+    .cta-strip a.btn-white {
+      display: inline-block; background: #fff; color: var(--accent); font-weight: 700;
+      font-size: 0.9rem; padding: 14px 32px; border-radius: 6px; text-decoration: none;
+    }
+
+    @media (max-width: 1000px) {
+      .brand-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 900px) {
+      .stats-bar { grid-template-columns: repeat(2,1fr); }
+      .stat-cell { border-right: none; border-bottom: 1px solid var(--border); }
+      .eq-grid { grid-template-columns: 1fr; }
+      .why-split { grid-template-columns: 1fr; gap: 36px; }
+      .why-img { height: 300px; }
+    }
+    @media (max-width: 560px) {
+      .brand-grid { grid-template-columns: 1fr; }
+      .section { padding: 72px 0; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── NAV ── -->
+<nav class="nav" role="navigation">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo"><img src="assets/img/logo.jpeg" alt="Glory Technology" class="nav-logo-img"></a>
+    <ul class="nav-links">
+      <li class="nav-item-dropdown">
+        <a href="data-centre.html" data-en="Data Centre" data-zh="数据中心">Data Centre <svg class="dropdown-arrow" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></a>
+        <ul class="nav-dropdown">
+          <li><a href="liquid-cooling.html" data-en="Two-Phase Liquid Cooling" data-zh="两相液冷">Two-Phase Liquid Cooling</a></li>
+          <li><a href="green-dc.html" data-en="Green Data Centre" data-zh="绿色数据中心">Green Data Centre</a></li>
+          <li><a href="computing-power.html" data-en="Computing Power Cooling" data-zh="算力冷却">Computing Power Cooling</a></li>
+          <li><a href="dc-products.html" data-en="DC Related Products" data-zh="数据中心相关产品">DC Related Products</a></li>
+          <li><a href="it-equipment.html" data-en="IT Equipment" data-zh="IT设备">IT Equipment</a></li>
+          <li><a href="smart-cabinet.html" data-en="Intelligent Cabinet" data-zh="智能机柜">Intelligent Cabinet</a></li>
+          <li><a href="prefab.html" data-en="Prefabricated Solution" data-zh="预制化解决方案">Prefabricated Solution</a></li>
+        </ul>
+      </li>
+      <li><a href="smart-building.html" data-en="Smart Building" data-zh="智慧建筑">Smart Building</a></li>
+      <li><a href="about.html" data-en="About" data-zh="关于我们">About</a></li>
+      <li><a href="contact.html" data-en="Contact" data-zh="联系我们">Contact</a></li>
+    </ul>
+    <div class="nav-controls">
+      <button class="ctrl-btn" id="lang-btn" aria-label="Switch language"><span class="lang-label">中</span></button>
+      <button class="ctrl-btn" id="theme-btn" aria-label="Toggle theme">
+        <span class="theme-icon"><svg viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></span>
+        <span class="theme-label">Dark</span>
+      </button>
+    </div>
+    <button class="nav-toggle" aria-label="Open menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="nav-mobile">
+  <a href="data-centre.html" data-en="Data Centre" data-zh="数据中心">Data Centre</a>
+  <div class="nav-mobile-sub">
+    <a href="liquid-cooling.html" data-en="Two-Phase Liquid Cooling" data-zh="两相液冷">Two-Phase Liquid Cooling</a>
+    <a href="green-dc.html" data-en="Green Data Centre" data-zh="绿色数据中心">Green Data Centre</a>
+    <a href="computing-power.html" data-en="Computing Power Cooling" data-zh="算力冷却">Computing Power Cooling</a>
+    <a href="dc-products.html" data-en="DC Related Products" data-zh="数据中心相关产品">DC Related Products</a>
+    <a href="it-equipment.html" data-en="IT Equipment" data-zh="IT设备">IT Equipment</a>
+    <a href="smart-cabinet.html" data-en="Intelligent Cabinet" data-zh="智能机柜">Intelligent Cabinet</a>
+    <a href="prefab.html" data-en="Prefabricated Solution" data-zh="预制化解决方案">Prefabricated Solution</a>
+  </div>
+  <a href="smart-building.html" data-en="Smart Building" data-zh="智慧建筑">Smart Building</a>
+  <a href="about.html" data-en="About" data-zh="关于我们">About</a>
+  <a href="contact.html" data-en="Contact" data-zh="联系我们">Contact</a>
+</div>
+
+<!-- ── HERO ── -->
+<section class="pg-hero" aria-label="IT Equipment">
+  <img src="assets/img/hero-dc.jpg" alt="Server racks with fibre cabling in a data centre" class="pg-hero-img"/>
+  <div class="pg-hero-overlay" aria-hidden="true"></div>
+  <div class="pg-hero-inner">
+    <div class="lc-tag reveal" data-en="IT Equipment Supply" data-zh="IT设备供应">IT Equipment Supply</div>
+    <h1 class="display-xl reveal" style="color:#fff;" data-d="60">
+      <span data-en-html="IT Equipment for<br><em>Data Centres</em>" data-zh-html="数据中心<br><em>IT设备</em>">IT Equipment for<br><em>Data Centres</em></span>
+    </h1>
+    <p class="body-lg reveal" data-d="140" style="max-width:580px; margin:20px 0 36px; color:rgba(255,255,255,0.85);"
+      data-en="Servers, storage, network switches and firewalls from the brands you trust. Supplied, installed and cooled by one team, so your compute and your cooling are planned together from day one."
+      data-zh="服务器、存储、网络交换机和防火墙，均来自值得信赖的品牌。从供货、安装到散热由同一团队负责，让您的算力与冷却从第一天起统一规划。">
+      Servers, storage, network switches and firewalls from the brands you trust. Supplied, installed and cooled by one team, so your compute and your cooling are planned together from day one.
+    </p>
+    <div class="hero-actions reveal" data-d="200">
+      <a href="contact.html" class="btn btn-primary" data-en="Request a Quote" data-zh="申请报价">Request a Quote</a>
+      <a href="#equipment" class="btn btn-outline" data-en="Browse Equipment" data-zh="浏览设备">Browse Equipment</a>
+    </div>
+  </div>
+</section>
+
+<!-- ── STATS BAR ── -->
+<div class="stats-bar">
+  <div class="stat-cell reveal">
+    <div class="stat-num">4+</div>
+    <div class="stat-label" data-en="Partner brands" data-zh="合作品牌">Partner brands</div>
+  </div>
+  <div class="stat-cell reveal" data-d="80">
+    <div class="stat-num">AI</div>
+    <div class="stat-label" data-en="GPU server ready" data-zh="支持GPU服务器">GPU server ready</div>
+  </div>
+  <div class="stat-cell reveal" data-d="160">
+    <div class="stat-num" data-en="1 Team" data-zh="一站式">1 Team</div>
+    <div class="stat-label" data-en="Supply, install and cool" data-zh="供货、安装与散热">Supply, install and cool</div>
+  </div>
+  <div class="stat-cell reveal" data-d="240">
+    <div class="stat-num">24/7</div>
+    <div class="stat-label" data-en="Technical support" data-zh="技术支持">Technical support</div>
+  </div>
+</div>
+
+<!-- ── EQUIPMENT ── -->
+<section class="section" id="equipment">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="eyebrow" data-en="What We Supply" data-zh="供应范围">What We Supply</div>
+      <h2 class="display-md" data-en="Everything Inside the Rack" data-zh="机柜内的一切">Everything Inside the Rack</h2>
+      <p class="body-lg" style="max-width:640px; margin:16px auto 0;"
+        data-en="We source, configure and deliver the IT hardware your data centre runs on, from single servers to complete racks."
+        data-zh="我们为您的数据中心采购、配置并交付所需的IT硬件，从单台服务器到整机柜方案。">
+        We source, configure and deliver the IT hardware your data centre runs on, from single servers to complete racks.
+      </p>
+    </div>
+
+    <div class="eq-grid">
+
+      <!-- Servers -->
+      <article class="eq-card reveal">
+        <div class="eq-visual"><img src="assets/img/it-servers.jpg" alt="Rack server with fibre network cables" loading="lazy"/></div>
+        <div class="eq-body">
+          <div class="eq-tag" data-en="Compute" data-zh="计算">Compute</div>
+          <h3 class="eq-title" data-en="Servers" data-zh="服务器">Servers</h3>
+          <p class="eq-desc"
+            data-en="Rack, tower and GPU servers for enterprise workloads, virtualisation and AI. Configured to your CPU, memory and storage needs and delivered ready to rack."
+            data-zh="适用于企业应用、虚拟化和AI的机架式、塔式及GPU服务器。按您所需的CPU、内存和存储配置，到货即可上架。">
+            Rack, tower and GPU servers for enterprise workloads, virtualisation and AI. Configured to your CPU, memory and storage needs and delivered ready to rack.
+          </p>
+          <ul class="eq-list">
+            <li data-en="1U and 2U rack servers for general compute" data-zh="1U与2U机架式服务器，适用于通用计算">1U and 2U rack servers for general compute</li>
+            <li data-en="GPU and AI servers for training and inference" data-zh="GPU与AI服务器，适用于训练与推理">GPU and AI servers for training and inference</li>
+            <li data-en="High-density multi-node and liquid-cooled systems" data-zh="高密度多节点及液冷服务器系统">High-density multi-node and liquid-cooled systems</li>
+          </ul>
+          <div class="eq-brands"><span class="eq-chip">Dell</span><span class="eq-chip">Lenovo</span><span class="eq-chip">Supermicro</span></div>
+        </div>
+      </article>
+
+      <!-- Storage -->
+      <article class="eq-card reveal" data-d="80">
+        <div class="eq-visual"><img src="assets/img/it-storage.jpg" alt="Close-up of a hard disk drive" loading="lazy"/></div>
+        <div class="eq-body">
+          <div class="eq-tag" data-en="Data" data-zh="数据">Data</div>
+          <h3 class="eq-title" data-en="Storage" data-zh="存储">Storage</h3>
+          <p class="eq-desc"
+            data-en="All-flash and hybrid storage arrays, storage servers and hyperconverged systems that keep your data fast, protected and easy to scale."
+            data-zh="全闪存与混合存储阵列、存储服务器及超融合系统，让数据访问更快、更安全，并可灵活扩展。">
+            All-flash and hybrid storage arrays, storage servers and hyperconverged systems that keep your data fast, protected and easy to scale.
+          </p>
+          <ul class="eq-list">
+            <li data-en="All-flash and hybrid SAN and NAS arrays" data-zh="全闪存与混合SAN、NAS存储阵列">All-flash and hybrid SAN and NAS arrays</li>
+            <li data-en="High-capacity storage servers for backup and archive" data-zh="大容量存储服务器，适用于备份与归档">High-capacity storage servers for backup and archive</li>
+            <li data-en="Hyperconverged infrastructure (HCI)" data-zh="超融合基础架构（HCI）">Hyperconverged infrastructure (HCI)</li>
+          </ul>
+          <div class="eq-brands"><span class="eq-chip">Dell</span><span class="eq-chip">Lenovo</span><span class="eq-chip">Sangfor</span><span class="eq-chip">Supermicro</span></div>
+        </div>
+      </article>
+
+      <!-- Switches -->
+      <article class="eq-card reveal">
+        <div class="eq-visual"><img src="assets/img/it-switches.jpg" alt="Network switch with patch cables" loading="lazy"/></div>
+        <div class="eq-body">
+          <div class="eq-tag" data-en="Networking" data-zh="网络">Networking</div>
+          <h3 class="eq-title" data-en="Network Switches" data-zh="网络交换机">Network Switches</h3>
+          <p class="eq-desc"
+            data-en="Data centre and campus switching from access to core, with high-speed uplinks to connect servers, storage and the wider network."
+            data-zh="覆盖接入层到核心层的数据中心及园区交换设备，以高速上行链路连接服务器、存储和整体网络。">
+            Data centre and campus switching from access to core, with high-speed uplinks to connect servers, storage and the wider network.
+          </p>
+          <ul class="eq-list">
+            <li data-en="Top-of-rack and leaf-spine data centre switches" data-zh="机架顶部（ToR）及叶脊架构数据中心交换机">Top-of-rack and leaf-spine data centre switches</li>
+            <li data-en="10G, 25G and 100G uplinks" data-zh="10G、25G及100G上行链路">10G, 25G and 100G uplinks</li>
+            <li data-en="Core, aggregation and access switching" data-zh="核心、汇聚及接入层交换">Core, aggregation and access switching</li>
+          </ul>
+          <div class="eq-brands"><span class="eq-chip">Dell</span><span class="eq-chip">Lenovo</span><span class="eq-chip">Supermicro</span></div>
+        </div>
+      </article>
+
+      <!-- Firewalls -->
+      <article class="eq-card reveal" data-d="80">
+        <div class="eq-visual"><img src="assets/img/it-security.jpg" alt="Padlock on a keyboard representing network security" loading="lazy"/></div>
+        <div class="eq-body">
+          <div class="eq-tag" data-en="Security" data-zh="安全">Security</div>
+          <h3 class="eq-title" data-en="Firewalls &amp; Network Security" data-zh="防火墙与网络安全">Firewalls &amp; Network Security</h3>
+          <p class="eq-desc"
+            data-en="Next-generation firewalls and security appliances that protect the data centre edge, control access and keep threats out."
+            data-zh="下一代防火墙及安全设备，守护数据中心边界、管控访问并阻挡威胁。">
+            Next-generation firewalls and security appliances that protect the data centre edge, control access and keep threats out.
+          </p>
+          <ul class="eq-list">
+            <li data-en="Next-generation firewalls (NGFW)" data-zh="下一代防火墙（NGFW）">Next-generation firewalls (NGFW)</li>
+            <li data-en="Intrusion prevention and threat detection" data-zh="入侵防御与威胁检测">Intrusion prevention and threat detection</li>
+            <li data-en="Secure remote access and VPN" data-zh="安全远程访问与VPN">Secure remote access and VPN</li>
+          </ul>
+          <div class="eq-brands"><span class="eq-chip">Sangfor</span></div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── PARTNER BRANDS ── -->
+<section class="section" style="background:var(--surface); border-top:1px solid var(--border); border-bottom:1px solid var(--border);">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="eyebrow" data-en="Partner Brands" data-zh="合作品牌">Partner Brands</div>
+      <h2 class="display-md" data-en="Brands We Work With" data-zh="我们的合作品牌">Brands We Work With</h2>
+    </div>
+
+    <div class="brand-grid">
+      <div class="brand-card reveal">
+        <div class="brand-logo"><img src="assets/img/brands/dell-technologies.svg" alt="Dell Technologies" class="wide"/></div>
+        <div class="brand-body">
+          <div class="brand-name">Dell Technologies</div>
+          <p class="brand-desc"
+            data-en="PowerEdge rack and tower servers, PowerStore and PowerVault storage, and PowerSwitch networking."
+            data-zh="PowerEdge机架式与塔式服务器、PowerStore与PowerVault存储，以及PowerSwitch网络交换机。">
+            PowerEdge rack and tower servers, PowerStore and PowerVault storage, and PowerSwitch networking.
+          </p>
+        </div>
+      </div>
+      <div class="brand-card reveal" data-d="80">
+        <div class="brand-logo"><img src="assets/img/brands/lenovo.svg" alt="Lenovo" class="mid"/></div>
+        <div class="brand-body">
+          <div class="brand-name">Lenovo</div>
+          <p class="brand-desc"
+            data-en="ThinkSystem servers and storage, and ThinkAgile hyperconverged systems for enterprise data centres."
+            data-zh="ThinkSystem服务器与存储，以及面向企业数据中心的ThinkAgile超融合系统。">
+            ThinkSystem servers and storage, and ThinkAgile hyperconverged systems for enterprise data centres.
+          </p>
+        </div>
+      </div>
+      <div class="brand-card reveal" data-d="160">
+        <div class="brand-logo"><img src="assets/img/brands/sangfor.png" alt="Sangfor"/></div>
+        <div class="brand-body">
+          <div class="brand-name">Sangfor</div>
+          <p class="brand-desc"
+            data-en="Next-generation firewalls, network security and hyperconverged infrastructure (HCI)."
+            data-zh="下一代防火墙、网络安全及超融合基础架构（HCI）。">
+            Next-generation firewalls, network security and hyperconverged infrastructure (HCI).
+          </p>
+        </div>
+      </div>
+      <div class="brand-card reveal" data-d="240">
+        <div class="brand-logo"><img src="assets/img/brands/supermicro.svg" alt="Supermicro"/></div>
+        <div class="brand-body">
+          <div class="brand-name">Supermicro</div>
+          <p class="brand-desc"
+            data-en="GPU and AI servers, high-density multi-node systems and storage servers, including liquid-cooled models."
+            data-zh="GPU与AI服务器、高密度多节点系统及存储服务器，包括液冷机型。">
+            GPU and AI servers, high-density multi-node systems and storage servers, including liquid-cooled models.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <p class="brand-more reveal"
+      data-en-html="Looking for another brand or model? &lt;a href=&quot;contact.html&quot;&gt;Ask us&lt;/a&gt; and we will source it for you."
+      data-zh-html="需要其他品牌或型号？&lt;a href=&quot;contact.html&quot;&gt;联系我们&lt;/a&gt;，我们为您采购。">
+      Looking for another brand or model? <a href="contact.html">Ask us</a> and we will source it for you.
+    </p>
+  </div>
+</section>
+
+<!-- ── WHY BUY FROM US ── -->
+<section class="section">
+  <div class="container">
+    <div class="why-split">
+      <div class="reveal">
+        <div class="eyebrow" data-en="Why Glory Technology" data-zh="为什么选择荣耀科技">Why Glory Technology</div>
+        <h2 class="display-md" style="margin:12px 0 32px;" data-en="Compute and Cooling, Planned Together" data-zh="算力与冷却，统一规划">Compute and Cooling, Planned Together</h2>
+        <div class="why-step">
+          <div class="why-num">1</div>
+          <div>
+            <h4 data-en="Matched to your cooling" data-zh="与冷却方案匹配">Matched to your cooling</h4>
+            <p data-en="High-density and GPU servers need the right thermal design. We size the hardware and the cooling as one system, including our two-phase liquid cooling." data-zh="高密度及GPU服务器需要合适的散热设计。我们将硬件与冷却作为一个整体系统规划，包括我们的两相液冷方案。">High-density and GPU servers need the right thermal design. We size the hardware and the cooling as one system, including our two-phase liquid cooling.</p>
+          </div>
+        </div>
+        <div class="why-step">
+          <div class="why-num">2</div>
+          <div>
+            <h4 data-en="Sourcing and configuration" data-zh="采购与配置">Sourcing and configuration</h4>
+            <p data-en="Tell us your workload and budget. We recommend the right models, configure them to spec and handle the ordering." data-zh="告诉我们您的应用需求和预算，我们推荐合适的型号，按规格配置并负责采购下单。">Tell us your workload and budget. We recommend the right models, configure them to spec and handle the ordering.</p>
+          </div>
+        </div>
+        <div class="why-step">
+          <div class="why-num">3</div>
+          <div>
+            <h4 data-en="Installation and support" data-zh="安装与支持">Installation and support</h4>
+            <p data-en="Our engineers rack, cable and commission the equipment on site, with 24/7 technical support after handover." data-zh="我们的工程师负责现场上架、布线和调试，交付后提供全天候技术支持。">Our engineers rack, cable and commission the equipment on site, with 24/7 technical support after handover.</p>
+          </div>
+        </div>
+      </div>
+      <img src="assets/img/dc-engineers.jpg" alt="Engineers installing equipment in a data centre aisle" class="why-img reveal" data-d="80"/>
+    </div>
+  </div>
+</section>
+
+<!-- ── CTA ── -->
+<div class="cta-strip">
+  <h2 data-en="Need a Quote for IT Equipment?" data-zh="需要IT设备报价？">Need a Quote for IT Equipment?</h2>
+  <p data-en="Send us your requirements or bill of materials and we will come back with pricing and lead times." data-zh="将您的需求或设备清单发给我们，我们会尽快回复报价及交期。">Send us your requirements or bill of materials and we will come back with pricing and lead times.</p>
+  <a href="contact.html" class="btn-white" data-en="Request a Quote" data-zh="申请报价">Request a Quote</a>
+</div>
+
+<!-- ── FOOTER ── -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="index.html" class="nav-logo"><img src="assets/img/logo.jpeg" alt="Glory Technology" class="nav-logo-img"></a>
+        <p data-en="Precision cooling solutions for the world's most demanding data centre environments." data-zh="为全球最苛刻的数据中心环境提供精密冷却解决方案。">Precision cooling solutions for the world's most demanding data centre environments.</p>
+      </div>
+      <div class="footer-col">
+        <h4 data-en="Data Centre" data-zh="数据中心">Data Centre</h4>
+        <ul>
+          <li><a href="liquid-cooling.html" data-en="Two-Phase Liquid Cooling" data-zh="两相液冷">Two-Phase Liquid Cooling</a></li>
+          <li><a href="dc-products.html" data-en="DC Related Products" data-zh="数据中心相关产品">DC Related Products</a></li>
+          <li><a href="it-equipment.html" data-en="IT Equipment" data-zh="IT设备">IT Equipment</a></li>
+          <li><a href="smart-cabinet.html" data-en="Intelligent Cabinet" data-zh="智能机柜">Intelligent Cabinet</a></li>
+          <li><a href="data-centre.html" data-en="All DC Solutions" data-zh="所有DC解决方案">All DC Solutions</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 data-en="Company" data-zh="公司">Company</h4>
+        <ul>
+          <li><a href="about.html" data-en="About Us" data-zh="关于我们">About Us</a></li>
+          <li><a href="smart-building.html" data-en="Smart Building" data-zh="智慧建筑">Smart Building</a></li>
+          <li><a href="contact.html" data-en="Contact" data-zh="联系我们">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 data-en="Contact" data-zh="联系方式">Contact</h4>
+        <ul><li><a href="mailto:info@glory-technology.com">info@glory-technology.com</a></li></ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p data-en="© 2025 Glory Technology Pte Ltd. All rights reserved." data-zh="© 2025 荣耀科技私人有限公司。版权所有。">© 2025 Glory Technology Pte Ltd. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<div id="toast" role="status" aria-live="polite"></div>
+<script src="assets/js/main.js"></script>
+</body>
+</html>

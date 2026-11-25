@@ -102,6 +102,13 @@
     @media (max-width: 600px) {
       .solutions-grid { grid-template-columns: 1fr; }
     }
+    .cta-strip { background: var(--accent); color: #fff; padding: 72px 24px; text-align: center; }
+    .cta-strip h2 { font-size: clamp(1.5rem,3.5vw,2.2rem); font-weight: 800; margin-bottom: 16px; }
+    .cta-strip p { font-size: 1rem; opacity: 0.88; max-width: 520px; margin: 0 auto 32px; }
+    .cta-strip a.btn-white {
+      display: inline-block; background: #fff; color: var(--accent); font-weight: 700;
+      font-size: 0.9rem; padding: 14px 32px; border-radius: 6px; text-decoration: none;
+    }
   </style>
 </head>
 <body>
@@ -118,6 +125,7 @@
           <li><a href="green-dc.html" data-en="Green Data Centre" data-zh="绿色数据中心">Green Data Centre</a></li>
           <li><a href="computing-power.html" data-en="Computing Power Cooling" data-zh="算力冷却">Computing Power Cooling</a></li>
           <li><a href="dc-products.html" data-en="DC Related Products" data-zh="数据中心相关产品">DC Related Products</a></li>
+          <li><a href="it-equipment.html" data-en="IT Equipment" data-zh="IT设备">IT Equipment</a></li>
           <li><a href="smart-cabinet.html" data-en="Intelligent Cabinet" data-zh="智能机柜">Intelligent Cabinet</a></li>
           <li><a href="prefab.html" data-en="Prefabricated Solution" data-zh="预制化解决方案">Prefabricated Solution</a></li>
         </ul>
@@ -149,6 +157,7 @@
     <a href="green-dc.html" data-en="Green Data Centre" data-zh="绿色数据中心">Green Data Centre</a>
     <a href="computing-power.html" data-en="Computing Power Cooling" data-zh="算力冷却">Computing Power Cooling</a>
     <a href="dc-products.html" data-en="DC Related Products" data-zh="数据中心相关产品">DC Related Products</a>
+    <a href="it-equipment.html" data-en="IT Equipment" data-zh="IT设备">IT Equipment</a>
     <a href="smart-cabinet.html" data-en="Intelligent Cabinet" data-zh="智能机柜">Intelligent Cabinet</a>
     <a href="prefab.html" data-en="Prefabricated Solution" data-zh="预制化解决方案">Prefabricated Solution</a>
   </div>
@@ -190,7 +199,7 @@
     <div class="stat-label" data-en="PUE Achievable" data-zh="可达PUE">PUE Achievable</div>
   </div>
   <div class="stat-cell">
-    <div class="stat-num">6</div>
+    <div class="stat-num">7</div>
     <div class="stat-label" data-en="Solution Categories" data-zh="解决方案类别">Solution Categories</div>
   </div>
   <div class="stat-cell">
@@ -246,7 +255,7 @@
   <div class="container">
     <div class="section-header reveal">
       <div class="eyebrow" data-en="Our Solutions" data-zh="我们的解决方案">Our Solutions</div>
-      <h2 class="display-md" data-en="Six Categories. One Partner." data-zh="六大类别，一个合作伙伴。">Six Categories. One Partner.</h2>
+      <h2 class="display-md" data-en="Seven Categories. One Partner." data-zh="七大类别，一个合作伙伴。">Seven Categories. One Partner.</h2>
       <p class="body-lg" style="color:var(--muted);"
         data-en="Each solution addresses a specific data centre challenge — select the one that matches your environment."
         data-zh="每种解决方案针对特定的数据中心挑战——选择适合您环境的方案。">
@@ -309,6 +318,20 @@
             Rear-door heat exchangers, in-row coolers, cooling distribution units, and cold plates — discrete components for targeted thermal upgrades within existing infrastructure.
           </div>
           <a href="dc-products.html" class="sol-card-link" data-en="Learn More" data-zh="了解更多">Learn More</a>
+        </div>
+      </div>
+
+      <div class="sol-card">
+        <img src="assets/img/hero-dc.jpg" alt="IT Equipment" class="sol-card-img"/>
+        <div class="sol-card-body">
+          <div class="sol-card-tag" data-en="Hardware" data-zh="硬件">Hardware</div>
+          <div class="sol-card-title" data-en="IT Equipment" data-zh="IT设备">IT Equipment</div>
+          <div class="sol-card-desc"
+            data-en="Servers, storage, network switches and firewalls from Dell, Lenovo, Sangfor and Supermicro. Supplied, installed and matched to your cooling by one team."
+            data-zh="来自DELL、LENOVO、SANGFOR和SUPERMICRO的服务器、存储、网络交换机和防火墙。由同一团队供货、安装并匹配冷却方案。">
+            Servers, storage, network switches and firewalls from Dell, Lenovo, Sangfor and Supermicro. Supplied, installed and matched to your cooling by one team.
+          </div>
+          <a href="it-equipment.html" class="sol-card-link" data-en="Learn More" data-zh="了解更多">Learn More</a>
         </div>
       </div>
 
@@ -377,6 +400,10 @@
             <td style="padding:14px 18px; text-align:center; color:var(--accent); font-weight:600;" data-en="DC Related Products" data-zh="数据中心相关产品">DC Related Products</td>
           </tr>
           <tr style="border-bottom:1px solid var(--border);">
+            <td style="padding:14px 18px; color:var(--fg);" data-en="Servers, storage, network switches or firewalls" data-zh="服务器、存储、网络交换机或防火墙">Servers, storage, network switches or firewalls</td>
+            <td style="padding:14px 18px; text-align:center; color:var(--accent); font-weight:600;" data-en="IT Equipment" data-zh="IT设备">IT Equipment</td>
+          </tr>
+          <tr style="border-bottom:1px solid var(--border); background:var(--surface);">
             <td style="padding:14px 18px; color:var(--fg);" data-en="Colocation or managed hosting with per-rack visibility" data-zh="需要每机架可见性的托管或代管托管">Colocation or managed hosting with per-rack visibility</td>
             <td style="padding:14px 18px; text-align:center; color:var(--accent); font-weight:600;" data-en="Intelligent Cabinet" data-zh="智能机柜">Intelligent Cabinet</td>
           </tr>
@@ -412,6 +439,7 @@
           <li><a href="green-dc.html" data-en="Green Data Centre" data-zh="绿色数据中心">Green Data Centre</a></li>
           <li><a href="computing-power.html" data-en="Computing Power Cooling" data-zh="算力冷却">Computing Power Cooling</a></li>
           <li><a href="dc-products.html" data-en="DC Related Products" data-zh="数据中心相关产品">DC Related Products</a></li>
+          <li><a href="it-equipment.html" data-en="IT Equipment" data-zh="IT设备">IT Equipment</a></li>
           <li><a href="smart-cabinet.html" data-en="Intelligent Cabinet" data-zh="智能机柜">Intelligent Cabinet</a></li>
           <li><a href="prefab.html" data-en="Prefabricated Solution" data-zh="预制化解决方案">Prefabricated Solution</a></li>
         </ul>
